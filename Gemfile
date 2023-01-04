@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry'
   gem 'figaro'
   gem 'faraday'
+  gem 'external_link_to'
 end
 
 group :development do
@@ -67,6 +68,7 @@ group :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'shoulda-matchers'
   gem 'simplecov'
 end
 

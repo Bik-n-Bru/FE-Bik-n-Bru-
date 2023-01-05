@@ -15,5 +15,9 @@ describe 'Login' do
       # click_link "Don't have Strava? Click here!"
       # expect(current_path).to eq("https://www.strava.com/register/free")
     end 
+
+    it "I see a link to continue with strava" do
+      expect(page).to have_link('Continue with Strava')
+    end
   end
 end

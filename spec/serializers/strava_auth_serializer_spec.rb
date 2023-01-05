@@ -38,8 +38,6 @@ RSpec.describe StravaAuthSerializer do
         expect(serialized_user[:data][:username]).to eq(@strava_response[:athlete][:username])
         expect(serialized_user[:data][:token]).to eq(@strava_response[:access_token])
         expect(serialized_user[:data][:athlete_id]).to eq(@strava_response[:athlete][:id])
-        expect(serialized_user[:data][:city]).to eq(@strava_response[:athlete][:city])
-        expect(serialized_user[:data][:state]).to eq(@strava_response[:athlete][:state])
       end
     end
   end

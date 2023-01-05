@@ -8,9 +8,7 @@ RSpec.describe User do
         attributes: {
           athlete_id: '27272687',
           username: 'StevePrefontaine',
-          token: '6b16d87c382z7b979965dbc28b9qbfc47197c2d9',
-          city: 'Eugene',
-          state: 'Oregon'
+          token: '6b16d87c382z7b979965dbc28b9qbfc47197c2d9'
         }
       }
     }
@@ -22,8 +20,6 @@ RSpec.describe User do
       expect(@user.athlete_id).to eq(@user_input[:data][:attributes][:athlete_id])
       expect(@user.username).to eq(@user_input[:data][:attributes][:username])
       expect(@user.token).to eq(@user_input[:data][:attributes][:token])
-      expect(@user.city).to eq(@user_input[:data][:attributes][:city])
-      expect(@user.state).to eq(@user_input[:data][:attributes][:state])
     end
   end
 end

@@ -5,7 +5,7 @@
 This repo is the Front End portion of the Bīk-n-Brü project built by Mod 3 students at [Turing School of Software and Design](https://turing.edu/). <br>
 The purpose of this project is to encourage people to ride their bikes to bars to decrease their carbon footprint by gamifying the exercise/bar experience. 
 
-Also check out the *[Bīk-n-Brü Back End Repo](https://github.com/Bik-n-Bru/BE-Bik-n-Bru)*.
+Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n-Bru/BE-Bik-n-Bru)* and the *[Bīk-n-Brü Back End Website](https://be-bik-n-bru.herokuapp.com/)*
 <br>
 
 # Table of Contents
@@ -70,7 +70,6 @@ Also check out the *[Bīk-n-Brü Back End Repo](https://github.com/Bik-n-Bru/BE-
 ### Project Team:
 <style>
       table,
-      
       td {
         text-align: center;
         vertical-align: middle;
@@ -78,11 +77,11 @@ Also check out the *[Bīk-n-Brü Back End Repo](https://github.com/Bik-n-Bru/BE-
 </style>
 <table>
   <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/101589894?v=4" width="300" height="300"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/108035840?v=4" width="300" height="300"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/108554663?v=4" width="300" height="300"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/108249540?v=4" width="300" height="300"></td>
-    <td><img src="https://avatars.githubusercontent.com/u/102780642?s=400&u=caf69a9ee867dd111a5c160cf96d6a8ca33add7c&v=4" width="300" height="300"></td>
+    <td><img src="https://avatars.githubusercontent.com/u/101589894?v=4" width=auto height=auto></td>
+    <td><img src="https://avatars.githubusercontent.com/u/108035840?v=4" width=auto height=auto></td>
+    <td><img src="https://avatars.githubusercontent.com/u/108554663?v=4" width=auto height=auto></td>
+    <td><img src="https://avatars.githubusercontent.com/u/108249540?v=4" width=auto height=auto></td>
+    <td><img src="https://avatars.githubusercontent.com/u/102780642?s=400&u=caf69a9ee867dd111a5c160cf96d6a8ca33add7c&v=4" width=auto height=auto></td>
   </tr>
   <tr>
     <td><strong>Amanda Ross</strong></td>

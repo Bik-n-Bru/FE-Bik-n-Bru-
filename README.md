@@ -1,5 +1,5 @@
 <h1 align="center">Bīk-n-Brü</h1>
-<center><img src="app/assets/images/bikesbrews_giphy.gif" alt="Deschutes Brewery GIF" class="center" width="300" height="300"></center>
+<div align="center"><img src="app/assets/images/bikesbrews_giphy.gif" alt="Deschutes Brewery GIF" class="center" width="300" height="300"></div>
 <br>
   
 This repo is the Front End portion of the Bīk-n-Brü project built by Mod 3 students at [Turing School of Software and Design](https://turing.edu/). <br>
@@ -69,13 +69,6 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
 
 ### Project Team:
 <table>
-<style>
-      table,
-      td {
-        text-align: center;
-        vertical-align: middle;
-      }
-</style>
   <tr>
     <td><img src="https://avatars.githubusercontent.com/u/101589894?v=4" width=auto height=auto></td>
     <td><img src="https://avatars.githubusercontent.com/u/108035840?v=4" width=auto height=auto></td>
@@ -92,23 +85,23 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/amikaross">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/amanda-ross-2a62093a/">LinkedIn</a>
+      <div align="center"><a href="https://github.com/amikaross">GitHub</a><br>
+      <a href="https://www.linkedin.com/in/amanda-ross-2a62093a/">LinkedIn</a></div>
     </td>
     <td>
-      <a href="https://github.com/Yuji3000">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/yujikosa/">LinkedIn</a>
+      <div align="center"><a href="https://github.com/Yuji3000">GitHub</a><br>
+      <a href="https://www.linkedin.com/in/yujikosa/">LinkedIn</a></div>
     </td>
     <td>
-      <a href="https://github.com/Freeing3092">GitHub</a><br>
+      <div align="center"><a href="https://github.com/Freeing3092">GitHub</a></div>
     </td>
     <td>
-      <a href="https://github.com/MisterJackpots">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/gabriel-c-nunez/">LinkedIn</a>
+      <div align="center"><a href="https://github.com/MisterJackpots">GitHub</a><br>
+      <a href="https://www.linkedin.com/in/gabriel-c-nunez/">LinkedIn</a></div>
     </td>
     <td>
-      <a href="https://github.com/ajpulzone">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/annie-pulzone/">LinkedIn</a>
+      <div align="center"><a href="https://github.com/ajpulzone">GitHub</a><br>
+      <a href="https://www.linkedin.com/in/annie-pulzone/">LinkedIn</a></div>
     </td>
   </tr>
 </table>
@@ -123,8 +116,8 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
   </tr>
   <tr>
     <td>
-      <a href="https://https://github.com/mikedao">GitHub</a><br>
-      <a href="https://www.linkedin.com/in/michaeldao/">LinkedIn</a>
+      <div align="center"><a href="https://https://github.com/mikedao">GitHub</a><br>
+      <a href="https://www.linkedin.com/in/michaeldao/">LinkedIn</a></div>
     </td>
   </tr>
 </table>

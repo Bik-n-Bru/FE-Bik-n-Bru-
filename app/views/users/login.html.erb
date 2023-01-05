@@ -1,0 +1,4 @@
+<h1>Welcome to Bīk-n-Brü!</h1>
+
+<%= link_to "Continue with Strava", "https://www.strava.com/oauth/authorize?client_id=#{ENV['strava_client_id']}&redirect_uri=http://localhost:3000/auth/strava/callback&response_type=code" %><br>
+<%= link_to "Don't have Strava? Click here!", 'https://www.strava.com/register/free' %>

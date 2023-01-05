@@ -68,6 +68,7 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
 # Contributors
 
 ### Project Team:
+<table>
 <style>
       table,
       td {
@@ -75,7 +76,6 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
         vertical-align: middle;
       }
 </style>
-<table>
   <tr>
     <td><img src="https://avatars.githubusercontent.com/u/101589894?v=4" width=auto height=auto></td>
     <td><img src="https://avatars.githubusercontent.com/u/108035840?v=4" width=auto height=auto></td>
@@ -116,7 +116,7 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
 ### Project Manager:
 <table>
   <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/3011748?v=4" width="300" height="300"></td>
+    <td><img src="https://avatars.githubusercontent.com/u/3011748?v=4" width=200px height=auto></td>
   </tr>
   <tr>
     <td><strong>Mike Dao</strong></td>

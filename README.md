@@ -1,5 +1,3 @@
-# README
-
 <h1 align="center">Bīk-n-Brü</h1>
 <center><img src="app/assets/images/bikesbrews_giphy.gif" alt="Deschutes Brewery GIF" class="center" width="300" height="300"></center>
 <br>
@@ -14,19 +12,11 @@ Also check out the *[Bīk-n-Brü Back End Repo](https://github.com/Bik-n-Bru/BE-
 - [Project Overview](#project-overview)
 - [Tech & Tools Used](#tech-and-tools)
 - [How to Set Up](#how-to-set-up)
+- [How to Run Test Suite](#how-to-run-test-suite)
 - [Contributors](#contributors)
     
 
 # Project Overview
-
-  <!-- A user signs in using their [Strava](https://www.strava.com/) authentication. If they don't currently have a Strava Login there will be a link to take them to the Strava 
-  website and create a login there.
-
-  Upon logging in, the user will see
-  The theoretical money that the user saves in gas costs by riding their bike is calculated when a bar trip is logged. That sum can then be used to 
-  "purchase" drinks at the brewery they attended.
-  The user will also be able to find breweries near their location, log their riding activy to a bar and earn badges for certain accomplishments (number of breweries
-  visited, amount of CO2 they have offset by riding their bike vs driving and the chance to be on the app leader board based on miles ridden).  -->
 
 - Schema <br> <img src="app/assets/images/Schema_1_4_23.png" width="700" height="300">
 - [Wireframes](https://www.figma.com/file/hjW32yDb6WSBuInlizzRw9/Welcome?node-id=0%3A1&t=LYBwunAfTTKQwib7-0)
@@ -62,17 +52,17 @@ Also check out the *[Bīk-n-Brü Back End Repo](https://github.com/Bik-n-Bru/BE-
 <ol>
   <li>Fork and clone this repository</li>
   <li>cd into the root directory</li>
-  <li>Run bundle install</li>
-  <li>Run bundle exec figaro install</li>
-  <li>Run rails db:{create,migrate}</li>
-  <li>To run this server, run `rails s` in your terminal</li>
-  <li>To stop the local server, use command `Control + c`</li>
+  <li>Run <code>bundle install</code></li>
+  <li>Run <code>bundle exec figaro install</code></li>
+  <li>Run rails <code>db:{create,migrate}</code></li>
+  <li>To run this server, run <code>rails s</code> in your terminal</li>
+  <li>To stop the local server, use command <code>Control + c</code></li>
 </ol>
 
 # How to Run Test Suite
   After set up:
   <ol>
-    <li>Run bundle exec rspec spec</li>
+    <li>Run <code>bundle exec rspec spec</code></li>
   </ol>
 
 # Contributors

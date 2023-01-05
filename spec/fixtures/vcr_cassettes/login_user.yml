@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"user":{"data":{"athlete_id":"27272687","username":"StevePrefontaine","token":"6b16d87c382z7b979965dbc28b9qbfc47197c2d9","city":"Eugene","state":"Oregon"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 05 Jan 2023 18:10:02 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4f647e80ec8dc4c6a02f5221e354b35f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e26855b4-bca1-474d-9598-36d89a2d104d
+      X-Runtime:
+      - '0.007060'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"7","type":"user","attributes":{"username":"StevePrefontaine","token":"6b16d87c382z7b979965dbc28b9qbfc47197c2d9","athlete_id":"27272687","city":null,"state":null}}}'
+  recorded_at: Thu, 05 Jan 2023 18:10:02 GMT
+recorded_with: VCR 6.1.0

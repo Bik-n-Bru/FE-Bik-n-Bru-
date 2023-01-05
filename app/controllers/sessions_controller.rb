@@ -9,6 +9,12 @@ class SessionsController < ApplicationController
       req.params['grant_type'] = 'authorization_code'
     end
     user_data = JSON.parse(response.body, symbolize_names: true)
-    @serialized_user_data = StravaAuthSerializer.serialize(user_data)
+    serialized_user_data = StravaAuthSerializer.serialize(user_data)
+
+    user_parsed_json = BEService.login_user(serialized_user_data)
+
+    @user = User.new(user_parsed_json)
+    session[:user_id] = @user.id
+    redirect_to '/dashboard'
   end
 end

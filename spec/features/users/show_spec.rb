@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'The Dashboard Index Page', type: :feature do
+RSpec.describe 'The Dashboard Show Page', type: :feature do
   context 'As a logged in user' do
     describe 'when I visit "/dashboard"' do
       before :each do

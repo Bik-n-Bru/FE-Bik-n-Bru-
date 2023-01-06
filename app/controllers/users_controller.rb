@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     
   end
 
+  def show
+    
+  end
+
   def logout
     reset_session
     redirect_to '/'

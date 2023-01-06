@@ -15,4 +15,9 @@ class BEService
     response = conn.get("/api/v1/leaderboard")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.find_user(user_id)
+    response = conn.get("/api/v1/users/#{user_id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

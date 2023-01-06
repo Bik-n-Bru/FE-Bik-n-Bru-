@@ -60,5 +60,18 @@ RSpec.describe BEService do
         end
       end
     end
+
+    describe '#find_user' do
+      it 'returns json data for a given user id' do
+        VCR.use_cassette('find_user') do
+          user_json = BEService.find_user('1')
+          
+          expect(user_json[:data]).to be_a Hash
+          expect(user_json[:data][:attributes]).to be_a Hash
+          expect(user_json[:data][:attributes][:username]).to be_a String
+          expect(user_json[:data][:attributes][:athlete_id]).to be_a String
+        end
+      end
+    end
   end
 end

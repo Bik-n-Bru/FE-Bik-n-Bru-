@@ -1,6 +1,6 @@
 class LeadersFacade
-  def self.leaderboard(parsed_json)
-    parsed_json[:data].map do |leader|
+  def self.leaderboard
+    leaders_json = BEService.leaderboard[:data].map do |leader|
       Leader.new(leader)
     end
   end

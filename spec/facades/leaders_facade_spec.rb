@@ -33,7 +33,9 @@ RSpec.describe LeadersFacade do
           ]
         }
 
-        leaders = LeadersFacade.leaderboard(leaderboard_data)
+        stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/leaderboard').to_return(body: leaderboard_data.to_json)
+
+        leaders = LeadersFacade.leaderboard
 
         expect(leaders.size).to eq(3)
         leaders.each do |leader|

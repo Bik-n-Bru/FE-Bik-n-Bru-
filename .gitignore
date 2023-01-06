@@ -31,3 +31,5 @@
 
 # Ignore Coverage Reports
 /coverage
+
+/.DS_Store

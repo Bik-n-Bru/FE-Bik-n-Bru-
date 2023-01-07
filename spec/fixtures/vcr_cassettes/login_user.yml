@@ -23,25 +23,25 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Thu, 05 Jan 2023 18:10:02 GMT
+      - Fri, 06 Jan 2023 04:51:01 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"4f647e80ec8dc4c6a02f5221e354b35f"
+      - W/"849d3715234cd82eecf4cb147aa104e9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e26855b4-bca1-474d-9598-36d89a2d104d
+      - 9d8d279d-90eb-4223-84d7-6d2af7b08565
       X-Runtime:
-      - '0.007060'
+      - '18.911360'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"7","type":"user","attributes":{"username":"StevePrefontaine","token":"6b16d87c382z7b979965dbc28b9qbfc47197c2d9","athlete_id":"27272687","city":null,"state":null}}}'
-  recorded_at: Thu, 05 Jan 2023 18:10:02 GMT
+      string: '{"data":{"id":"7","type":"user","attributes":{"username":"StevePrefontaine","token":"6b16d87c382z7b979965dbc28b9qbfc47197c2d9","athlete_id":"27272687","city":null,"state":null},"relationships":{"activities":{"data":[]}}}}'
+  recorded_at: Fri, 06 Jan 2023 04:51:02 GMT
 recorded_with: VCR 6.1.0

@@ -10,14 +10,22 @@ class BEService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
-
+  
   def self.leaderboard
     response = conn.get("/api/v1/leaderboard")
     JSON.parse(response.body, symbolize_names: true)
   end
-
+  
   def self.find_user(user_id)
     response = conn.get("/api/v1/users/#{user_id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+  
+  def self.update_user(user_id, serialized_data)
+    response = conn.patch("/api/v1/users/#{user_id}") do |req|
+    req.headers[:CONTENT_TYPE] = "application/json"
+    req.body = JSON.generate(user: serialized_data)
+   end
     JSON.parse(response.body, symbolize_names: true)
   end
 end

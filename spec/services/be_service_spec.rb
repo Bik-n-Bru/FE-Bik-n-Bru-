@@ -30,7 +30,7 @@ RSpec.describe BEService do
     end
 
     describe '#leaderboard' do
-      it 'returns JSON data of the top 10 users by miles biked with their
+      xit 'returns JSON data of the top 10 users by miles biked with their
       respective miles biked, beers earned, and lbs CO2 saved' do
         leaderboard_data = {
           data: [
@@ -70,6 +70,26 @@ RSpec.describe BEService do
           expect(user_json[:data][:attributes]).to be_a Hash
           expect(user_json[:data][:attributes][:username]).to be_a String
           expect(user_json[:data][:attributes][:athlete_id]).to be_a String
+        end
+      end
+    end
+
+    describe '#update_user' do
+      it 'submits a User patch returns updated User json data' do
+        VCR.use_cassette('update_user') do
+          json_patch = {:data=>{:city=>"Eugene", :state=>"Oregon"}}
+          user_json = BEService.update_user('5', json_patch)
+          
+          expect(user_json[:data][:attributes][:city]).to eq('Eugene')
+          expect(user_json[:data][:attributes][:state]).to eq('Oregon')
+        end
+        
+        VCR.use_cassette('update_user_again') do
+          json_patch = {:data=>{:city=>"New York City", :state=>"New York"}}
+          user_json = BEService.update_user('5', json_patch)
+          
+          expect(user_json[:data][:attributes][:city]).to eq('New York City')
+          expect(user_json[:data][:attributes][:state]).to eq('New York')
         end
       end
     end

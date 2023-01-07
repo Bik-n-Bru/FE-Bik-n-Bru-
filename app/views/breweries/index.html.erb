@@ -4,19 +4,24 @@
 <%= render partial: "shared/navbar.html.erb" %>
 </div>
 
+
 <% if @user.city = nil or @user.state = nil %>
-  <%= form_with url: "/dashboard", method: :patch, local: true do |form| %>
-    <%= form.city :city %>
-    <%= form.label "City" %>
-    <%= form.state :state %>
-    <%= form.label "State" %>
-    <%= form.submit "Submit"%>
-  <% end%>
+  <div>We do not have a city/state saved for you, please update</div>
+    <%= form_with url: "/dashboard", method: :patch, local: true do |form| %>
+      <%= form.city :city %>
+      <%= form.label "City" %>
+      <%= form.state :state %>
+      <%= form.label "State" %>
+      <%= form.submit "Submit"%>
+    <% end%>
 <% else %>
   <% @breweries.each do |brewery| %>
-    <%= link_to @brewery.name, @brewery.website %>
-    <%= @brewery.address %>
-    <%= @brewery.phone_number %>
-    <%= @brewery.brewery_type %>
+    <div id="brewery_<%= brewery.name %>">
+      <%= link_to @brewery.name, @brewery.website %>
+      <%= @brewery.address %>
+      <%= @brewery.phone_number %>
+      <%= @brewery.brewery_type %>
+  <% end%>
+    </div>
   <% end%>
 

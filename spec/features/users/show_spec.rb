@@ -32,6 +32,13 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
         expect(page).to have_link('Dashboard')
       end
 
+      it 'when I click the link to logout, I am redirected to the login page
+      and the session is reset' do
+        click_link 'Logout'
+        expect(current_path).to eq('/')
+        expect {page.get_rack_session_key('user_id')}.to raise_error(KeyError)
+      end
+
     end
   end
   # it 'displays a side panel with 10 breweries in the users area if location

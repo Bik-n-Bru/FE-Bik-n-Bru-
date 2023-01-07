@@ -78,8 +78,10 @@ VCR.configure do |config|
   config.filter_sensitive_data('strava_client_secret') { ENV['strava_client_secret'] }
   config.filter_sensitive_data('strava_access_token') { ENV['strava_access_token'] }
   config.filter_sensitive_data('strava_refresh_token') { ENV['strava_refresh_token'] }
+  config.allow_http_connections_when_no_cassette = true
 
-  config.ignore_request do |request|
-    request.method == :get
-  end
+  # config.ignore_request do |request|
+  #   request.method == :get
+  #   request.method == :patch
+  # end
 end

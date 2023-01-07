@@ -30,7 +30,7 @@ RSpec.describe BEService do
     end
 
     describe '#leaderboard' do
-      xit 'returns JSON data of the top 10 users by miles biked with their
+      it 'returns JSON data of the top 10 users by miles biked with their
       respective miles biked, beers earned, and lbs CO2 saved' do
         leaderboard_data = {
           data: [

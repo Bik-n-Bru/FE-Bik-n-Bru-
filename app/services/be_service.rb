@@ -12,4 +12,9 @@ class BEService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  #is this going to be sent through a query or headers?
+  def self.location_update(city, state, user_id)
+    respone = conn.patch("/api/v1/users")
+  end
 end

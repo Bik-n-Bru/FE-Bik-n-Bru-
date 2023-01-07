@@ -10,7 +10,7 @@ RSpec.describe "Breweries Index Page" do
         expect(page).to have_link("Dashboard")
         expect(page).to have_link("Home")
         expect(page).to have_link("Logout")
-      end
+        end
   end
   
   describe "if the user city and state attributes saved" do

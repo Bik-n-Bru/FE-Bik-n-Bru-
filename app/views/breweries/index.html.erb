@@ -5,3 +5,18 @@
 </div>
 
 <% if @user.city = nil or @user.state = nil %>
+  <%= form_with url: "/dashboard", method: :patch, local: true do |form| %>
+    <%= form.city :city %>
+    <%= form.label "City" %>
+    <%= form.state :state %>
+    <%= form.label "State" %>
+    <%= form.submit "Submit"%>
+  <% end%>
+<% else %>
+  <% @breweries.each do |brewery| %>
+    <%= link_to @brewery.name, @brewery.website %>
+    <%= @brewery.address %>
+    <%= @brewery.phone_number %>
+    <%= @brewery.brewery_type %>
+  <% end%>
+

@@ -3,10 +3,10 @@ require "rails_helper"
 RSpec.describe "Breweries Index Page" do
 
   before(:each) do
-      VCR.use_cassette('bend_breweries') do
-        page.set_rack_session(user_id: '1')
-        visit "/breweries" 
-      end
+    VCR.use_cassette('bend_breweries') do
+      page.set_rack_session(user_id: '1')
+      visit "/breweries" 
+    end
   end
 
   describe "nav bar" do
@@ -23,9 +23,6 @@ RSpec.describe "Breweries Index Page" do
   describe "if the user city and state attributes saved" do
     it "shows a list of breweries and includes the brewery name (which is a link to that breweries website), address, phone number, 
       and brewery type" do
-      # visit "/breweries"
-
-      
       within("#brewery_10-barrel-brewing-co-bend-1") do
       expect(page).to have_link("10 Barrel Brewing Co")
       expect(page).to have_content("Brewery Type: brewery")

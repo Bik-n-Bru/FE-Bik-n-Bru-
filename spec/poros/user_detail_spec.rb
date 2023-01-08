@@ -24,10 +24,13 @@ RSpec.describe UserDetail do
           }
       }
   }
+
+  @user_badges = {:data=>['Visited 10 breweries', 'Completed 1 Activity']}
+
   end
   describe 'initialize' do
     it 'has readable attributes' do
-      user_detail = UserDetail.new(@user_data)
+      user_detail = UserDetail.new(@user_data, @user_badges)
 
       expect(user_detail.id).to eq(@user_data[:data][:id])
       expect(user_detail.username).to eq(@user_data[:data][:attributes][:username])
@@ -35,7 +38,7 @@ RSpec.describe UserDetail do
       expect(user_detail.city).to eq(@user_data[:data][:attributes][:city])
       expect(user_detail.state).to eq(@user_data[:data][:attributes][:state])
       expect(user_detail.activities).to be_a Array
-      expect(user_detail.badges).to be_a Array
+      expect(user_detail.badges).to eq(@user_badges[:data])
     end
   end
 end

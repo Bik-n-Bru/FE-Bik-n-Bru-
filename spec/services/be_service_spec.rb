@@ -95,32 +95,6 @@ RSpec.describe BEService do
     end
   end
 
-  xdescribe "location_update" do
-    it "should update the signed in users city and state with Strava" do
-      @user_input = {
-        data: {
-          athlete_id: '27272687',
-          username: 'StevePrefontaine',
-          token: '6b16d87c382z7b979965dbc28b9qbfc47197c2d9',
-          city: 'Eugene',
-          state: 'Oregon'
-        }
-      }
-      
-      expect(@user_input[:data][:city]).to eq("Eugene")
-      expect(@user_input[:data][:state]).to eq("Oregon")
-      
-      update_user_input = {
-        data: {
-          
-          city: 'Bend',
-          state: 'Oregon'
-        }
-      }
-      user_update_response = BEService.location_update("Bend", "Oregon", "4")
-    end
-  end
-
   describe "#breweries_by_user_location" do
     it "returns json data that is a list of breweries located in that users city and state" do
       VCR.use_cassette('login_user') do

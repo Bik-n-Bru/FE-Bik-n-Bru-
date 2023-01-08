@@ -28,4 +28,9 @@ class BEService
    end
     JSON.parse(response.body, symbolize_names: true)
   end
+  
+  def self.find_user_badges(user_id)
+    response = conn.get("/api/v1/users/#{user_id}/badges")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

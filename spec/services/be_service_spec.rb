@@ -46,12 +46,12 @@ RSpec.describe BEService do
         }
 
         stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/leaderboard').to_return(body: leaderboard_data.to_json)
-
+        
         leaderboard_response = BEService.leaderboard
-
+        
         expect(leaderboard_response[:data]).to be_a Array
         expect(leaderboard_response[:data].size).to eq(1)
-
+        
         leaderboard_response[:data].each do |user|
           expect(user[:attributes][:username]).to be_a String
           expect(user[:attributes][:miles]).to be_a String
@@ -60,7 +60,7 @@ RSpec.describe BEService do
         end
       end
     end
-
+    
     describe '#find_user' do
       it 'returns json data for a given user id' do
         VCR.use_cassette('find_user') do
@@ -73,7 +73,7 @@ RSpec.describe BEService do
         end
       end
     end
-
+  
     describe '#update_user' do
       it 'submits a User patch returns updated User json data' do
         VCR.use_cassette('update_user') do
@@ -91,6 +91,17 @@ RSpec.describe BEService do
           expect(user_json[:data][:attributes][:city]).to eq('New York City')
           expect(user_json[:data][:attributes][:state]).to eq('New York')
         end
+      end
+    end
+
+    describe '#find_user_badges' do
+      it "returns json of the user's badges" do
+        badges_data = {:data=>['Visited 10 breweries', 'Completed 1 Activity']}
+        stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1/badges').to_return(body: badges_data.to_json)
+        
+        badges_json = BEService.find_user_badges('1')
+
+        expect(badges_json[:data]).to be_a Array
       end
     end
   end

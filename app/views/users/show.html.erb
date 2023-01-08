@@ -11,6 +11,14 @@
       <%= f.submit 'Submit' %>
     <% end %>
   </div>
+<% else %>
+  <div id="breweries">
+    <% @user.breweries.each do |brewery| %>
+      <%= link_to brewery.name, brewery.website %><br>
+    <% end %><br>
+    <%= link_to 'View All Local Breweries', '/breweries' %>
+  </div>
+
 <% end %>
 
 <div id="badges">

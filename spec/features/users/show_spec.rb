@@ -6,8 +6,19 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     before :each do
       @user_data = {data: {id: "1", type: "user", attributes: {username: "SPrefontaine", token: "12345abcde", athlete_id: "12345", city: "Eugene", state: "Oregon"}, relationships:{activities:{data:[]},badges:{data:[]}}}}
       @user_badges = {data: ['Visited 10 breweries', 'Completed 1 Activity', 'Cycled 100 miles']}
+
+      @brewery_data = {:data=>
+      [{:id=>"agrarian-ales-llc-eugene",
+        :type=>"brewery",
+        :attributes=>{:name=>"Agrarian Ales, LLC", :street_address=>"31115 W Crossroads Ln", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97408-9220", :phone=>"5416323803", :website_url=>"http://www.agales.com"}},
+       {:id=>"alesong-brewing-and-blending-eugene",
+        :type=>"brewery",
+        :attributes=>{:name=>"Alesong Brewing and Blending", :street_address=>"1000 Conger St Ste C", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97402-2950", :phone=>"5419723303", :website_url=>"http://www.alesongbrewing.com"}}]}
+      
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99').to_return(body: @user_data.to_json)
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/badges').to_return(body: @user_badges.to_json)
+      stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/breweries/99').to_return(body: @brewery_data.to_json)
+
       page.set_rack_session(user_id: '99')
       visit '/dashboard'
     end
@@ -57,11 +68,11 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
   describe 'As a logged in user without a city or state provided' do
     describe 'when I visit "/dashboard"' do
       before :each do
-        page.set_rack_session(user_id: '1')
+        page.set_rack_session(user_id: '5')
         visit '/dashboard'
       end
       
-      xit 'displays a form to add city and state if it has not been provided.
+      it 'displays a form to add city and state if it has not been provided.
       When I fill in this form I am redirected to my dashboard where I no
       longer see a form to update my address' do
         expect(page).to have_selector('#address_form')
@@ -76,22 +87,29 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
         expect(page).to have_no_selector('#address_form')
 
         reset = {data:{city: "", state: ""}}
-        BEService.update_user('1', reset)
+        BEService.update_user('5', reset)
       end
 
     end
   end
+
   describe 'As a logged in user with a city and state provided' do
     before :each do
-      page.set_rack_session(user_id: '9')
-      visit '/dashboard'
+      VCR.use_cassette('bend_breweries') do
+        page.set_rack_session(user_id: '1')
+        visit '/dashboard'
+      end
     end
 
-    xit 'displays a side panel with 10 breweries in the users area if location
-    data has been provided' do
+    it 'displays a side panel with 10 breweries in the users area and a link
+    to the breweries index' do
       within("#breweries") do
-        
+        expect(page).to have_link("10 Barrel Brewing Co")
+        expect(page).to have_link("Bend Brewing Co")
+        expect(page).to have_link('View All Local Breweries')
+        click_link 'View All Local Breweries'
       end
+      expect(current_path).to eq('/breweries')
     end
   end
 

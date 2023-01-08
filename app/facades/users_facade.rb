@@ -28,6 +28,7 @@ class UsersFacade
 
     user_json = BEService.find_user(user_id)
     badges_json = BEService.find_user_badges(user_id)
-    UserDetail.new(user_json, badges_json)
+    breweries = BreweryFacade.user_location_breweries(user_id)
+    UserDetail.new(user_json, badges_json, breweries)
   end
 end

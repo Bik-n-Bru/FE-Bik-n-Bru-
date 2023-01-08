@@ -4,7 +4,6 @@ RSpec.describe UsersFacade do
   describe 'class methods' do
     describe '#user_detail' do
       it 'returns UserDetail object' do
-        # require 'pry'; binding.pry
         user_data = {data:{id:1,type: 'user',attributes:{username: 'testcase',token: '12345abcde',athlete_id: '12345',city: 'Bend',state: 'Oregon'},relationships:{activities:{data:[]},badges:{data:[]}}}}
         badges_data = {:data=>['Visited 10 breweries', 'Completed 1 Activity']}
         brewery_data = {:data=>
@@ -26,7 +25,15 @@ RSpec.describe UsersFacade do
         user_detail.breweries.each do |brewery|
           expect(brewery).to be_a Brewery
         end
-      end 
+      end
+
+      it 'returns a max of 10 brewery objects' do
+        VCR.use_cassette('user_detail') do
+          user_details = UsersFacade.user_detail('5')
+  
+          expect(user_details.breweries.size).to eq(10)
+        end
+      end
     end
   end
 end

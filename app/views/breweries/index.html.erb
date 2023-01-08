@@ -1,27 +1,38 @@
 <h1><div align="center">Breweries Around You</div><h1>
 
 <div id="nav_bar">
-<%= render partial: "shared/navbar.html.erb" %>
+  <%= render partial: "shared/navbar.html.erb" %>
 </div>
+<br>
 
-
-<% if @user.city = nil or @user.state = nil %>
-  <div>We do not have a city/state saved for you, please update</div>
-    <%= form_with url: "/dashboard", method: :patch, local: true do |form| %>
-      <%= form.city :city %>
-      <%= form.label "City" %>
-      <%= form.state :state %>
-      <%= form.label "State" %>
-      <%= form.submit "Submit"%>
-    <% end%>
+<% if @user.city == nil or @user.state == nil %>
+  <div id="update_form">
+    <div>We do not have a city/state saved for you, please update</div>
+      <%= form_with url: '/update', method: :patch, local: true do |form| %>
+        <%= form.city :city %>
+        <%= form.label "City" %>
+        <%= form.state :state %>
+        <%= form.label "State" %>
+        <%= form.submit "Submit"%>
+      <% end%>
+  </div>
 <% else %>
   <% @breweries.each do |brewery| %>
-    <div id="brewery_<%= brewery.name %>">
-      <%= link_to @brewery.name, @brewery.website %>
-      <%= @brewery.address %>
-      <%= @brewery.phone_number %>
-      <%= @brewery.brewery_type %>
-  <% end%>
+    <div id="brewery_<%= brewery.id %>">
+      <% if brewery.website == nil %>
+        <li><%= brewery.name %><br>
+      <% else%>
+        <li><%= link_to brewery.name, brewery.website %><br>
+      <% end %>
+        Brewery Type: <%= brewery.type %><br>
+        <%= brewery.street_address %>, <%= brewery.city %>, <%= brewery.state %>, <%= brewery.zip_code %><br>
+      <% if brewery.phone_number == nil %>
+        <%= brewery.phone_number %><br>
+      <% else %>
+        <%= (brewery.phone_number).insert(3, "-").insert(-5, "-") %><br>
+      <% end%>
+      <br>
     </div>
   <% end%>
+<% end%>
 

@@ -43,7 +43,6 @@ group :development, :test do
   gem 'pry'
   gem 'figaro'
   gem 'faraday'
-  gem 'external_link_to'
 end
 
 group :development do
@@ -70,6 +69,7 @@ group :test do
   gem 'faker'
   gem 'shoulda-matchers'
   gem 'simplecov'
+  gem 'rack_session_access'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -41,26 +41,32 @@ save_and_open_page
   end
 end 
 
+#describe when a phone number is nil
+#describe when a brewery does not have a website
+
+#will need to mock up a fake user who does not have any city listed or any state listed
+  #currently with "not a city" or "not a state" user just gets back and empty array
+  #of breweries
+
   # describe "if the user DOES NOT have city and state attributes saved" do
   #   it "shows a message notifying the user that they have not filled in a city or state" do
+  #     page.set_rack_session(user_id: '5')
+
   #     visit "/breweries"
 
   #     expect(page).to have_content("We do not have a city/state saved for you, please update")
   #   end
 
   #   it "has a form for the user to fill in their city and state, which are saved as attributes" do
+  #     page.set_rack_session(user_id: '4')
   #     visit "/breweries"
 
   #     within("#update_form") do
   #       expect(page).to have_field("City")
-  #       expect(page).to have_field("State")
+  #       expect(page).to select_tag("State")
   #       click_button("Submit")
   #     end 
-      
-  #     expect(@user.city).to eq("Bend")
-  #     expect(@user.city).to eq("Oregon")
+
+  #     expect(page).to_not have_content()
   #   end
   # end 
-
-  #describe when a phone number is nil
-  #describe when a brewery does not have a website

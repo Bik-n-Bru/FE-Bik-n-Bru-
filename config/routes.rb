@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get '/logout', to: "users#logout"
   patch '/update', to: 'users#update'
 
+  patch "/dashboard", to: "users#update"
+
+  get "/breweries", to: "breweries#index"
+
   get '/auth/strava/callback', to: 'sessions#create'
 
   

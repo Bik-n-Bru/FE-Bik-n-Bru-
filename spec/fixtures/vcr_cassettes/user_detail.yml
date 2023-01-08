@@ -1,0 +1,144 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 08 Jan 2023 23:29:36 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"13e3141b4d18af3c04bae88cb0319c99"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - '0158402f-f672-42ee-a0ee-5b49bab92df7'
+      X-Runtime:
+      - '0.008286'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"5","type":"user","attributes":{"username":"testcase","token":"12345abcde","athlete_id":"12345","city":"Eugene","state":"Oregon"},"relationships":{"activities":{"data":[]},"badges":{"data":[]}}}}'
+  recorded_at: Sun, 08 Jan 2023 23:29:36 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5/badges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 08 Jan 2023 23:29:36 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e768147b-3158-49c9-b0da-6fd39f6e6be0
+      X-Runtime:
+      - '0.006127'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Sun, 08 Jan 2023 23:29:37 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/breweries/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 08 Jan 2023 23:29:36 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"391d17aee3ac4b56dda395f6cca05421"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4827d3e7-0716-43f9-8743-e2a8b5ea8112
+      X-Runtime:
+      - '0.053564'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"agrarian-ales-llc-eugene","type":"brewery","attributes":{"name":"Agrarian
+        Ales, LLC","street_address":"31115 W Crossroads Ln","city":"Eugene","state":"Oregon","zipcode":"97408-9220","phone":"5416323803","website_url":"http://www.agales.com"}},{"id":"alesong-brewing-and-blending-eugene","type":"brewery","attributes":{"name":"Alesong
+        Brewing and Blending","street_address":"1000 Conger St Ste C","city":"Eugene","state":"Oregon","zipcode":"97402-2950","phone":"5419723303","website_url":"http://www.alesongbrewing.com"}},{"id":"alesong-brewing-and-tasting-room-eugene","type":"brewery","attributes":{"name":"Alesong
+        Brewing and Tasting Room","street_address":"1000 Conger Unit C","city":"Eugene","state":"Oregon","zipcode":"97402","phone":"5419723303","website_url":"http://www.alesongbrewing.com"}},{"id":"claim-52-brewing-eugene","type":"brewery","attributes":{"name":"Claim
+        52 Brewing","street_address":"1030 Tyinn St Ste 1","city":"Eugene","state":"Oregon","zipcode":"97402-6933","phone":"5415546786","website_url":null}},{"id":"coldfire-brewing-eugene","type":"brewery","attributes":{"name":"Coldfire
+        Brewing","street_address":"263 Mill St","city":"Eugene","state":"Oregon","zipcode":"97401-2410","phone":"5415569374","website_url":"http://www.coldfirebrewing.com"}},{"id":"elk-horn-brewery-eugene","type":"brewery","attributes":{"name":"Elk
+        Horn Brewery","street_address":"686 E Broadway","city":"Eugene","state":"Oregon","zipcode":"97401-3340","phone":"5415058356","website_url":"http://www.elkhornbrewery.com"}},{"id":"falling-sky-brewing-eugene","type":"brewery","attributes":{"name":"Falling
+        Sky Brewing","street_address":"1334 Oak Aly","city":"Eugene","state":"Oregon","zipcode":"97401-3190","phone":"5415057096","website_url":"http://www.fallingskybrewing.com"}},{"id":"hop-valley-brewing-co-eugene","type":"brewery","attributes":{"name":"Hop
+        Valley Brewing Co","street_address":"990 W 1st Ave","city":"Eugene","state":"Oregon","zipcode":"97402-4904","phone":null,"website_url":null}},{"id":"manifest-beer-company-eugene","type":"brewery","attributes":{"name":"Manifest
+        Beer Company","street_address":"740 Willamette St","city":"Eugene","state":"Oregon","zipcode":"97401-2934","phone":"5412067232","website_url":"http://www.manifestbeer.com"}},{"id":"mckenzie-brewing-company-eugene","type":"brewery","attributes":{"name":"McKenzie
+        Brewing Company","street_address":"199 E 5th Ave","city":"Eugene","state":"Oregon","zipcode":"97401-8715","phone":"5416862739","website_url":"http://www.steelheadbrewery.com"}},{"id":"mcmenamins-high-street-brewery-eugene","type":"brewery","attributes":{"name":"McMenamins
+        High Street Brewery","street_address":"1243 High St","city":"Eugene","state":"Oregon","zipcode":"97401-3207","phone":"5413454913","website_url":"http://www.mcmenamins.com"}},{"id":"ninkasi-brewing-co-eugene","type":"brewery","attributes":{"name":"Ninkasi
+        Brewing Co","street_address":"155 Blair Blvd","city":"Eugene","state":"Oregon","zipcode":"97402-4146","phone":"5413442739","website_url":"http://www.ninkasibrewing.com"}},{"id":"oakshire-brewing-eugene","type":"brewery","attributes":{"name":"Oakshire
+        Brewing","street_address":"1055 Madera St","city":"Eugene","state":"Oregon","zipcode":"97402-2019","phone":"5416884555","website_url":"http://www.oakbrew.com"}},{"id":"sam-bonds-brewing-co-eugene","type":"brewery","attributes":{"name":"Sam
+        Bond''s Brewing Co","street_address":"540 E 8th Ave","city":"Eugene","state":"Oregon","zipcode":"97401-3344","phone":"5412468162","website_url":"http://www.sambondsbrewing.com"}},{"id":"the-viking-braggot-company-eugene","type":"brewery","attributes":{"name":"The
+        Viking Braggot Company","street_address":"520 Commercial St Unit F","city":"Eugene","state":"Oregon","zipcode":"97402-5347","phone":"5416538371","website_url":"http://www.drinkviking.com"}}]}'
+  recorded_at: Sun, 08 Jan 2023 23:29:37 GMT
+recorded_with: VCR 6.1.0

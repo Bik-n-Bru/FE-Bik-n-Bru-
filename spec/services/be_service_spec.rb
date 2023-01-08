@@ -101,7 +101,7 @@ RSpec.describe BEService do
       @user_output = BEService.login_user(@user_input)
       end
       results = BEService.breweries_by_user_location(@user_output[:data][:id])
-      require 'pry'; binding.pry
+
       expect(results[:data][0][:id]).to eq("10-56-brewing-company-knox")
       expect(results[:data][3][:id]).to eq("10-barrel-brewing-co-bend-pub-bend")
       expect(results[:data][2][:id]).to_not eq("10-barrel-brewing-co-bend-pub-bend")

@@ -17,6 +17,9 @@ RSpec.describe UserDetail do
           relationships: {
               activities: {
                   data: []
+              },
+              badges: {
+                data: []
               }
           }
       }
@@ -32,6 +35,7 @@ RSpec.describe UserDetail do
       expect(user_detail.city).to eq(@user_data[:data][:attributes][:city])
       expect(user_detail.state).to eq(@user_data[:data][:attributes][:state])
       expect(user_detail.activities).to be_a Array
+      expect(user_detail.badges).to be_a Array
     end
   end
 end

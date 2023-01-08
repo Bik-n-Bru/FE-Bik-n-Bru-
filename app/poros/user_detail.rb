@@ -4,7 +4,8 @@ class UserDetail
               :athlete_id,
               :city,
               :state,
-              :activities
+              :activities,
+              :badges
               
   def initialize(user_data)
     @id = user_data[:data][:id]
@@ -13,5 +14,6 @@ class UserDetail
     @city = user_data[:data][:attributes][:city]
     @state = user_data[:data][:attributes][:state]
     @activities = user_data[:data][:relationships][:activities][:data]
+    @badges = user_data[:data][:relationships][:badges][:data]
   end
 end

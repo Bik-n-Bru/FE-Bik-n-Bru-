@@ -1,4 +1,20 @@
 <h1>Welcome to Bīk-n-Brü!</h1>
 
+<% if session[:user_id] %>
+  <%= render partial: "shared/navbar" %><br>
+<% end %>
+
 <%= link_to "Continue with Strava", "https://www.strava.com/oauth/authorize?client_id=#{ENV['strava_client_id']}&redirect_uri=http://localhost:3000/auth/strava/callback&response_type=code" %><br>
-<%= link_to "Don't have Strava? Click here!", 'https://www.strava.com/register/free' %>
+<%= link_to "Don't have Strava? Click here!", 'https://www.strava.com/register/free' %><br><br>
+
+<div id="leaderboard">
+  <caption>Leaderboard</caption>
+  <table>
+    <tr>
+      <th>Rank</th>
+      <th>Username</th>
+      <th>Miles Biked</th>
+      <th>Beers Earned</th>
+      <th>CO2 Saved (lbs)</th>
+  </table>
+</div>

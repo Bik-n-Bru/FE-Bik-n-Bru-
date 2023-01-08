@@ -29,5 +29,82 @@ RSpec.describe BEService do
       end
     end
 
+    describe '#leaderboard' do
+      it 'returns JSON data of the top 10 users by miles biked with their
+      respective miles biked, beers earned, and lbs CO2 saved' do
+        leaderboard_data = {
+          data: [
+            {
+              attributes: {
+                username: 'Lance',
+                miles: '12897',
+                beers: '527',
+                co2_saved: '61'
+              }
+            }
+          ]
+        }
+
+        stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/leaderboard').to_return(body: leaderboard_data.to_json)
+
+        leaderboard_response = BEService.leaderboard
+
+        expect(leaderboard_response[:data]).to be_a Array
+        expect(leaderboard_response[:data].size).to eq(1)
+
+        leaderboard_response[:data].each do |user|
+          expect(user[:attributes][:username]).to be_a String
+          expect(user[:attributes][:miles]).to be_a String
+          expect(user[:attributes][:beers]).to be_a String
+          expect(user[:attributes][:co2_saved]).to be_a String
+        end
+      end
+    end
+
+    describe '#find_user' do
+      it 'returns json data for a given user id' do
+        VCR.use_cassette('find_user') do
+          user_json = BEService.find_user('1')
+          
+          expect(user_json[:data]).to be_a Hash
+          expect(user_json[:data][:attributes]).to be_a Hash
+          expect(user_json[:data][:attributes][:username]).to be_a String
+          expect(user_json[:data][:attributes][:athlete_id]).to be_a String
+        end
+      end
+    end
+
+    describe '#update_user' do
+      it 'submits a User patch returns updated User json data' do
+        VCR.use_cassette('update_user') do
+          json_patch = {:data=>{:city=>"Eugene", :state=>"Oregon"}}
+          user_json = BEService.update_user('5', json_patch)
+    
+          expect(user_json[:data][:attributes][:city]).to eq('Eugene')
+          expect(user_json[:data][:attributes][:state]).to eq('Oregon')
+        end
+        
+        VCR.use_cassette('update_user_again') do
+          json_patch = {:data=>{:city=>"New York City", :state=>"New York"}}
+          user_json = BEService.update_user('5', json_patch)
+          
+          expect(user_json[:data][:attributes][:city]).to eq('New York City')
+          expect(user_json[:data][:attributes][:state]).to eq('New York')
+        end
+      end
+    end
   end
-end
+
+  describe "#breweries_by_user_location" do
+    it "returns json data that is a list of breweries located in that users city and state" do
+      VCR.use_cassette('login_user') do
+      @user_output = BEService.login_user(@user_input)
+      end
+      results = BEService.breweries_by_user_location(@user_output[:data][:id])
+      require 'pry'; binding.pry
+      expect(results[:data][0][:id]).to eq("10-56-brewing-company-knox")
+      expect(results[:data][3][:id]).to eq("10-barrel-brewing-co-bend-pub-bend")
+      expect(results[:data][2][:id]).to_not eq("10-barrel-brewing-co-bend-pub-bend")
+    end
+  end
+end 

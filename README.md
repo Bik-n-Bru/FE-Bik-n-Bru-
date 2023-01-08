@@ -92,13 +92,15 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
 # Contributors
 
 ### Project Team:
+# Contributors
+
 <table>
   <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/101589894?v=4" width=auto height=auto></td>
-    <td><img src="https://avatars.githubusercontent.com/u/108035840?v=4" width=auto height=auto></td>
-    <td><img src="https://avatars.githubusercontent.com/u/108554663?v=4" width=auto height=auto></td>
-    <td><img src="https://avatars.githubusercontent.com/u/108249540?v=4" width=auto height=auto></td>
-    <td><img src="https://avatars.githubusercontent.com/u/102780642?s=400&u=caf69a9ee867dd111a5c160cf96d6a8ca33add7c&v=4" width=auto height=auto></td>
+    <td><img src="https://avatars.githubusercontent.com/u/101589894?v=4" width=auto height=110px></td>
+    <td><img src="https://avatars.githubusercontent.com/u/108035840?v=4" width=auto height=110px></td>
+    <td><img src="https://avatars.githubusercontent.com/u/108554663?v=4" width=auto height=110px></td>
+    <td><img src="https://avatars.githubusercontent.com/u/108249540?v=4" width=auto height=110px></td>
+    <td><img src="https://avatars.githubusercontent.com/u/102780642?s=400&u=caf69a9ee867dd111a5c160cf96d6a8ca33add7c&v=4" width=auto height=110px></td>
   </tr>
   <tr>
     <td><strong>Amanda Ross</strong></td>
@@ -124,7 +126,7 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
       <a href="https://www.linkedin.com/in/gabriel-c-nunez/">LinkedIn</a></div>
     </td>
     <td>
-      <div align="center"><a href="https://github.com/ajpulzone">GitHub</a><br>
+      <div align="center"><a href="https://github.com/ajpulzone">GitHub </a><br>
       <a href="https://www.linkedin.com/in/annie-pulzone/">LinkedIn</a></div>
     </td>
   </tr>
@@ -133,7 +135,7 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
 ### Project Manager:
 <table>
   <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/3011748?v=4" width=200px height=auto></td>
+    <td><img src="https://avatars.githubusercontent.com/u/3011748?v=4" width=110px height=auto></td>
   </tr>
   <tr>
     <td><strong>Mike Dao</strong></td>
@@ -145,6 +147,3 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
     </td>
   </tr>
 </table>
-
-
-  

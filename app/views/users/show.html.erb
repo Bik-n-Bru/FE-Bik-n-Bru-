@@ -1,1 +1,13 @@
-<%= render partial: "shared/navbar" %>
+<%= render partial: "shared/navbar" %><br><br>
+
+<% if @user.city.empty? || @user.state.empty? %>
+  <div id="address_form">
+    <%= form_with url: '/update', method: :patch, local: true do |f| %>
+      <%= f.label :city, 'City' %>
+      <%= f.text_field :city %><br>
+      <%= f.label :state, 'State' %>
+      <%= f.text_field :state %><br>
+      <%= f.submit 'Submit' %>
+    <% end %>
+  </div>
+<% end %>

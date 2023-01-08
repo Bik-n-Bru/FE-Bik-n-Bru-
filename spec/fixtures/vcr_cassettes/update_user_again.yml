@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5
+    body:
+      encoding: UTF-8
+      string: '{"user":{"data":{"city":"New York City","state":"New York"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sat, 07 Jan 2023 02:58:40 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"12b71a7768308f3187fa72a76a5b40dc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 975b7554-08ed-4c9d-a8a8-4678d90c61ef
+      X-Runtime:
+      - '0.015045'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"5","type":"user","attributes":{"username":"testcase","token":"12345abcde","athlete_id":"12345","city":"New
+        York City","state":"New York"},"relationships":{"activities":{"data":[]}}}}'
+  recorded_at: Sat, 07 Jan 2023 02:58:40 GMT
+recorded_with: VCR 6.1.0

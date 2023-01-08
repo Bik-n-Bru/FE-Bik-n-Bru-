@@ -30,7 +30,7 @@ RSpec.describe "Breweries Index Page" do
         expect(page).to have_content("62970 18th St, Bend, Oregon, 97701-9847")
         expect(page).to have_content("541-585-1007")
       end
-save_and_open_page
+      
       within("#brewery_bend-brewing-co-bend") do
         expect(page).to have_link("Bend Brewing Co")
         expect(page).to have_content("Brewery Type: brewery")

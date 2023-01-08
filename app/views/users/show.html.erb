@@ -1,6 +1,7 @@
-<%= render partial: "shared/navbar" %><br><br>
+<h1><%= "#{@user.username}'s Dashboard" %></h1>
 
-<% if @user.city.empty? || @user.state.empty? %>
+<%= render partial: "shared/navbar" %><br><br>
+<% if  @user.city.nil? || @user.state.nil? || @user.city.empty? || @user.state.empty? %>
   <div id="address_form">
     <%= form_with url: '/update', method: :patch, local: true do |f| %>
       <%= f.label :city, 'City' %>
@@ -11,3 +12,14 @@
     <% end %>
   </div>
 <% end %>
+
+<div id="badges">
+  <h3>Badges</h3>
+  <% if @user.badges.any? %>
+    <% @user.badges.each_with_index do |badge, i| %>
+      <div id=<%="badge#{i}"%>>
+        <%= image_tag("badges/#{badge}", size:"100x100", alt: badge) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

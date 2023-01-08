@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = UsersFacade.user_detail(session[:user_id])
   end
 
   def update

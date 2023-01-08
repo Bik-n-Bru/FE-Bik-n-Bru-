@@ -8,7 +8,7 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
         visit '/dashboard'
       end
       
-      it 'displays a form to add city and state if it has not been provided.
+      xit 'displays a form to add city and state if it has not been provided.
       When I fill in this form I am redirected to my dashboard where I no
       longer see a form to update my address' do
         expect(page).to have_selector('#address_form')

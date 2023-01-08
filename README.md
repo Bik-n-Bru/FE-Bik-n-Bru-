@@ -74,16 +74,13 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
 
   In config > application.yml
 
+  ```
      strava_client_id: <client_id>
      strava_client_secret: <client_secret>
+  ```
  
 
-  - GET "/api/v3/oauth/token" 
 
-    client_id = ENV['strava_client_id'] 
-    client_secret = ENV['strava_client_secret']   
-    code = ReplaceWithCode 
-    grant_type = authorization_code</li>
 </ol>
 
 # How to Run Test Suite

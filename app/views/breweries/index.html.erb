@@ -11,7 +11,7 @@
       <%= form_with url: '/update', method: :patch, local: true do |form| %>
         <%= form.city :city %>
         <%= form.label "City" %>
-        <%= form.state :state %>
+        <%= form.select_tag :state, options_for_select(us_states) %>        
         <%= form.label "State" %>
         <%= form.submit "Submit"%>
       <% end%>

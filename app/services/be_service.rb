@@ -44,4 +44,17 @@ class BEService
     response = conn.get("/api/v1/users/#{user_id}/activities")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  #this is not functional at this time
+  def self.create_activity(activity_data)
+    response = conn.post("/api/v1/activities") do |req|
+      req.headers[:CONTENT_TYPE] = "application/json"
+      req.body = JSON.generate(activity: activity_data)
+    end
+  end 
+
+  def self.find_activity(activity_id)
+    response = conn.get("/api/v1/activities/#{activity_id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

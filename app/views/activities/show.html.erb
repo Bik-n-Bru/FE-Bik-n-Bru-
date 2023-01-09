@@ -1,0 +1,15 @@
+<div id="header">
+  <h1><%= @activity.brewery_name %> on <%= @activity.created_at %>
+</div>
+
+<div id="nav_bar">
+  <%= render partial: "shared/navbar.html.erb" %>
+</div>
+<br>
+
+<div id="activity_info">
+  Calories Burned: <%= @activity.calories %>
+  Distance Traveled: <%= @activity.distance %> miles
+  Gas Money Saved: $<%= @activity.dollars_saved %>
+  Drink Type: <%= @activity.drink_type %>
+  Carbon Footprint Offset: <%= @activity.lbs_carbon_saved %> lbs of carbon

@@ -109,7 +109,7 @@ RSpec.describe BEService do
   describe "#breweries_by_user_location" do
     it "returns json data that is a list of breweries located in that users city and state" do
       VCR.use_cassette('login_user') do
-      @user_output = BEService.login_user(@user_input)
+        @user_output = BEService.login_user(@user_input)
       end
       results = BEService.breweries_by_user_location(@user_output[:data][:id])
 
@@ -141,6 +141,27 @@ RSpec.describe BEService do
         expect(activity[:attributes][:lbs_carbon_saved]).to be_a(Float)
         expect(activity[:attributes][:user_id]).to be_a(Integer)
       end
+    end
+  end
+
+  describe "#find_activity" do
+    it "returns JSON of a single activity from a user" do
+      activities_data = {data: {id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}}}
+
+      stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/activities/1").to_return(body: activities_data.to_json)
+      
+      activity = BEService.find_activity("1")
+ 
+      expect(activity[:data]).to have_key(:id)
+      expect(activity[:data]).to have_key(:attributes)
+      expect(activity[:data][:attributes][:brewery_name]).to eq("Wagon Wheel")
+      expect(activity[:data][:attributes][:distance]).to eq(3.7)
+      expect(activity[:data][:attributes][:calories]).to eq(400)
+      expect(activity[:data][:attributes][:num_drinks]).to eq(2)
+      expect(activity[:data][:attributes][:drink_type]).to eq("IPA")
+      expect(activity[:data][:attributes][:dollars_saved]).to eq(1.97)
+      expect(activity[:data][:attributes][:lbs_carbon_saved]).to eq(1.2)
+      expect(activity[:data][:attributes][:user_id]).to eq(5)
     end
   end
 end 

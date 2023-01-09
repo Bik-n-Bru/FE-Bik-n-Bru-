@@ -29,7 +29,7 @@
       <% if brewery.phone_number == nil %>
         <%= brewery.phone_number %><br>
       <% else %>
-        <%= (brewery.phone_number).insert(3, "-").insert(-5, "-") %><br>
+        <%= (brewery.format_number) %><br>
       <% end%>
       <br>
     </div>

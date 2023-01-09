@@ -1,3 +1,5 @@
+require "date"
+
 class Activity
   attr_reader :id,
               :brewery_name,
@@ -7,7 +9,8 @@ class Activity
               :drink_type,
               :dollars_saved,
               :lbs_carbon_saved,
-              :user_id
+              :user_id,
+              :created_at
   
   def initialize(activity_data)
     @id = activity_data[:id]
@@ -19,5 +22,10 @@ class Activity
     @dollars_saved = activity_data[:attributes][:dollars_saved]
     @lbs_carbon_saved = activity_data[:attributes][:lbs_carbon_saved]
     @user_id = activity_data[:attributes][:user_id]
+    @created_at = activity_data[:attributes][:created_at]
+  end
+
+  def format_date
+    DateTime.parse(@created_at).strftime("%A, %B %d, %Y")  
   end
 end

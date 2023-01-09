@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Breweries Index Page" do
 
   before(:each) do
-    VCR.use_cassette('bend_breweries_redux') do
+    VCR.use_cassette('bend_breweries_redux_with_activites') do
       page.set_rack_session(user_id: '1')
       visit "/breweries" 
     end

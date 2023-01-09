@@ -29,7 +29,7 @@ Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n
 
 # Planning Documents
 
-- Schema <br> <img src="app/assets/images/Schema_1_4_23.png" width="700" height="300">
+- Schema <br> <img src="app/assets/images/updated_1_8_2023.png" width=auto height="400">
 - [Wireframes](https://www.figma.com/file/hjW32yDb6WSBuInlizzRw9/Welcome?node-id=0%3A1&t=LYBwunAfTTKQwib7-0)
 - [Project Spec](https://backend.turing.edu/module3/projects/consultancy/)
 

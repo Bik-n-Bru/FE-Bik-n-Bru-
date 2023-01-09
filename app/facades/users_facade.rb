@@ -25,10 +25,15 @@ class UsersFacade
     #         user_json = JSON.parse(json, symbolize_names: true)
     #         badges_unparsed = user_badges.to_json
     #         badges_json = JSON.parse(badges_unparsed, symbolize_names: true)
+    # b1 = Brewery.new({:id=>"agrarian-ales-llc-eugene", :type=>"brewery", :attributes=>{:name=>"Agrarian Ales, LLC", :street_address=>"31115 W Crossroads Ln", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97408-9220", :phone=>"5416323803", :website_url=>"http://www.agales.com"}})
+    # b2 = Brewery.new({:id=>"alesong-brewing-and-blending-eugene", :type=>"brewery", :attributes=>{:name=>"Alesong Brewing and Blending", :street_address=>"1000 Conger St Ste C", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97402-2950", :phone=>"5419723303", :website_url=>"http://www.alesongbrewing.com"}})
+    
+    # breweries = [b1, b2]
 
     user_json = BEService.find_user(user_id)
     badges_json = BEService.find_user_badges(user_id)
     breweries = BreweryFacade.user_location_breweries(user_id).first(10)
-    UserDetail.new(user_json, badges_json, breweries)
+    activities = ActivitiesFacade.user_activities(user_id)
+    UserDetail.new(user_json, badges_json, breweries, activities)
   end
 end

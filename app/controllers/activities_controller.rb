@@ -5,8 +5,6 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    binding.pry
-    # last_user_activity = @user.activity.last
-    @activity = ActivityFacade.find_activity(last_user_activity.id)
+    @activity = ActivitiesFacade.find_an_activity(params[:activity_id])
   end
 end

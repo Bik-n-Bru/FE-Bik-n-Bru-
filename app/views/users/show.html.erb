@@ -13,6 +13,7 @@
   </div>
 <% else %>
   <div id="breweries">
+    <h3>Local Breweries</h3>
     <% @user.breweries.each do |brewery| %>
       <%= link_to brewery.name, brewery.website %><br>
     <% end %><br>
@@ -21,22 +22,20 @@
 
 <% end %>
 
-<div id="badges">
+<div id="badges" style="width: 350px;">
   <h3>Badges</h3>
   <% if @user.badges.any? %>
     <% @user.badges.each_with_index do |badge, i| %>
-      <div id=<%="badge#{i}"%>>
         <%= image_tag("badges/#{badge}", size:"100x100", alt: badge) %>
-      </div>
     <% end %>
   <% end %>
 </div>
 
-<div id="recent_activities">
+<div id="recent_activities" style="position: absolute; top: 300px; left: 350px; width: 500px; background-color: azure;">
   <h3>Recent Activities</h3>
   <% if @user.activities.any? %>
     <% @user.activities.first(10).each do |activity| %>
-      <%= link_to activity.brewery_name, "/#{@user.id}}/activities/#{activity.id}" %>
+      <%= link_to activity.brewery_name, "/#{@user.id}}/activities/#{activity.id}" %><br>
     <% end %>
   <% end %>
 </div>

@@ -19,7 +19,7 @@ class UsersFacade
     #             }
     #         }
 
-    # user_badges = {data: ['Visited 10 breweries', 'Completed 1 Activity', 'Cycled 100 miles']}
+    # user_badges = {data: ['Visited 10 breweries', 'Completed 1 Activity', 'Cycled 100 miles', 'Visited 20 breweries']}
             
     #         json = user_data.to_json
     #         user_json = JSON.parse(json, symbolize_names: true)
@@ -29,6 +29,11 @@ class UsersFacade
     # b2 = Brewery.new({:id=>"alesong-brewing-and-blending-eugene", :type=>"brewery", :attributes=>{:name=>"Alesong Brewing and Blending", :street_address=>"1000 Conger St Ste C", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97402-2950", :phone=>"5419723303", :website_url=>"http://www.alesongbrewing.com"}})
     
     # breweries = [b1, b2]
+
+    # a1 = Activity.new({id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5}})
+    # a2 = Activity.new({id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5}})
+    
+    # activities = [a1, a2]
 
     user_json = BEService.find_user(user_id)
     badges_json = BEService.find_user_badges(user_id)

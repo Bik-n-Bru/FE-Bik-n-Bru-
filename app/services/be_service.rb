@@ -39,4 +39,9 @@ class BEService
     response = conn.get("/api/v1/users/#{user_id}/badges")
     JSON.parse(response.body, symbolize_names: true)
   end
+  
+  def self.user_activities(user_id)
+    response = conn.get("/api/v1/users/#{user_id}/activities")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

@@ -1,0 +1,229 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Jan 2023 14:29:36 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b5c7632d68e3b533727ed9d195a783f1"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 196acc26-3b0a-4307-b6b2-366a33c58a37
+      X-Runtime:
+      - '0.464283'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"5","type":"user","attributes":{"username":"testcase","token":"12345abcde","athlete_id":"12345","city":"","state":""},"relationships":{"activities":{"data":[]},"badges":{"data":[]}}}}'
+  recorded_at: Mon, 09 Jan 2023 14:29:37 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5/badges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Jan 2023 14:29:37 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 72679966-a8dd-4ca0-af19-3cf8c139712d
+      X-Runtime:
+      - '0.010079'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Mon, 09 Jan 2023 14:29:37 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/breweries/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Jan 2023 14:29:36 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3d5458e83c62c86039fc764467a6c879"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 350d188a-6d39-4286-93f9-7f7a1dc80798
+      X-Runtime:
+      - '0.041340'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"10-56-brewing-company-knox","type":"brewery","attributes":{"name":"10-56
+        Brewing Company","street_address":"400 Brown Cir","city":"Knox","state":"Indiana","zipcode":"46534","phone":"6308165790","website_url":null}},{"id":"10-barrel-brewing-co-bend-1","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"62970 18th St","city":"Bend","state":"Oregon","zipcode":"97701-9847","phone":"5415851007","website_url":"http://www.10barrel.com"}},{"id":"10-barrel-brewing-co-bend-2","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"1135 NW Galveston Ave Ste B","city":"Bend","state":"Oregon","zipcode":"97703-2465","phone":"5415851007","website_url":null}},{"id":"10-barrel-brewing-co-bend-pub-bend","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co - Bend Pub","street_address":"62950 NE 18th St","city":"Bend","state":"Oregon","zipcode":"97701","phone":"5415851007","website_url":null}},{"id":"10-barrel-brewing-co-boise-boise","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co - Boise","street_address":"826 W Bannock St","city":"Boise","state":"Idaho","zipcode":"83702-5857","phone":"2083445870","website_url":"http://www.10barrel.com"}},{"id":"10-barrel-brewing-co-denver-denver","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co - Denver","street_address":"2620 Walnut St","city":"Denver","state":"Colorado","zipcode":"80205-2231","phone":"7205738992","website_url":null}},{"id":"10-barrel-brewing-co-portland","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"1411 NW Flanders St","city":"Portland","state":"Oregon","zipcode":"97209-2620","phone":"5032241700","website_url":"http://www.10barrel.com"}},{"id":"10-barrel-brewing-co-san-diego","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"1501 E St","city":"San Diego","state":"California","zipcode":"92101-6618","phone":"6195782311","website_url":"http://10barrel.com"}},{"id":"10-torr-distilling-and-brewing-reno","type":"brewery","attributes":{"name":"10
+        Torr Distilling and Brewing","street_address":"490 Mill St","city":"Reno","state":"Nevada","zipcode":"89502","phone":"7755307014","website_url":"http://www.10torr.com"}},{"id":"101-brewery-quilcene","type":"brewery","attributes":{"name":"101
+        Brewery","street_address":"294793 US Highway 101","city":"Quilcene","state":"Washington","zipcode":"98376-9000","phone":"3607656485","website_url":"http://www.101brewery.com"}},{"id":"101-north-brewing-company-petaluma","type":"brewery","attributes":{"name":"101
+        North Brewing Company","street_address":"1304 Scott St Ste D","city":"Petaluma","state":"California","zipcode":"94954-7100","phone":"7077534934","website_url":"http://www.101northbeer.com"}},{"id":"105-west-brewing-co-castle-rock","type":"brewery","attributes":{"name":"105
+        West Brewing Co","street_address":"1043 Park St","city":"Castle Rock","state":"Colorado","zipcode":"80109-1585","phone":"3033257321","website_url":"http://www.105westbrewing.com"}},{"id":"10k-brewing-anoka","type":"brewery","attributes":{"name":"10K
+        Brewing","street_address":"2005 2nd Ave","city":"Anoka","state":"Minnesota","zipcode":"55303-2243","phone":"7633924753","website_url":"http://10KBrew.com"}},{"id":"10th-district-brewing-company-abington","type":"brewery","attributes":{"name":"10th
+        District Brewing Company","street_address":"491 Washington St","city":"Abington","state":"Massachusetts","zipcode":"02351-2419","phone":"7813071554","website_url":"http://www.10thdistrictbrewing.com"}},{"id":"11-below-brewing-company-houston","type":"brewery","attributes":{"name":"11
+        Below Brewing Company","street_address":"6820 Bourgeois Rd","city":"Houston","state":"Texas","zipcode":"77066-3107","phone":"2814442337","website_url":"http://www.11belowbrewing.com"}},{"id":"1188-brewing-co-john-day","type":"brewery","attributes":{"name":"1188
+        Brewing Co","street_address":"141 E Main St","city":"John Day","state":"Oregon","zipcode":"97845-1210","phone":"5415751188","website_url":"http://www.1188brewing.com"}},{"id":"12-acres-brewing-company-killeshin","type":"brewery","attributes":{"name":"12
+        Acres Brewing Company","street_address":"Unnamed Street","city":"Killeshin","state":null,"zipcode":"R93
+        X3X8","phone":"+353599107299","website_url":"https://12acresbrewing.ie/"}},{"id":"12-gates-brewing-company-williamsville","type":"brewery","attributes":{"name":"12
+        Gates Brewing Company","street_address":"80 Earhart Dr Ste 20","city":"Williamsville","state":"New
+        York","zipcode":"14221-7804","phone":"7169066600","website_url":"http://www.12gatesbrewing.com"}},{"id":"12-west-brewing-company-gilbert","type":"brewery","attributes":{"name":"12
+        West Brewing Company","street_address":"3000 E Ray Rd Bldg 6","city":"Gilbert","state":"Arizona","zipcode":"85296-7832","phone":"6023395014","website_url":"http://www.12westbrewing.com"}},{"id":"12-west-brewing-company-production-facility-mesa","type":"brewery","attributes":{"name":"12
+        West Brewing Company - Production Facility","street_address":null,"city":"Mesa","state":"Arizona","zipcode":"85207","phone":null,"website_url":null}},{"id":"122-west-brewing-co-bellingham","type":"brewery","attributes":{"name":"122
+        West Brewing Co","street_address":"2416 Meridian St","city":"Bellingham","state":"Washington","zipcode":"98225-2405","phone":"3603063285","website_url":"https://www.122westbrew.com/"}},{"id":"127-brewing-jackson","type":"brewery","attributes":{"name":"127
+        Brewing","street_address":"3090 Shirley Dr","city":"Jackson","state":"Michigan","zipcode":"49201-7010","phone":"5172581346","website_url":null}},{"id":"12degree-brewing-louisville","type":"brewery","attributes":{"name":"12Degree
+        Brewing","street_address":"820 Main St","city":"Louisville","state":"Colorado","zipcode":"80027-1865","phone":"3035791004","website_url":"http://www.12degree.com"}},{"id":"12welve-eyes-brewing-saint-paul","type":"brewery","attributes":{"name":"12welve
+        Eyes Brewing","street_address":"141 E 4th St Ste LL2","city":"Saint Paul","state":"Minnesota","zipcode":"55101-1639","phone":"6514938106","website_url":"http://www.12welveEyes.com"}},{"id":"13-below-brewery-cincinnati","type":"brewery","attributes":{"name":"13
+        Below Brewery","street_address":"7391 Forbes Rd","city":"Cincinnati","state":"Ohio","zipcode":"45233-1013","phone":"5139750613","website_url":"http://www.13belowbrewery.com"}},{"id":"13-stripes-brewery-taylors","type":"brewery","attributes":{"name":"13
+        Stripes Brewery","street_address":"250 Mill St, Suite PW3101","city":"Taylors","state":"South
+        Carolina","zipcode":"29687","phone":"8643491430","website_url":"http://www.13StripesBrewery.com"}},{"id":"13-virtues-brewing-co-portland","type":"brewery","attributes":{"name":"13
+        Virtues Brewing Co","street_address":"6410 SE Milwaukie Ave","city":"Portland","state":"Oregon","zipcode":"97202-5518","phone":"5032393831","website_url":"http://www.13virtuesbrewing.com"}},{"id":"1323-r-and-d-raleigh","type":"brewery","attributes":{"name":"1323
+        R \u0026 D","street_address":"1323 Capital Blvd 1323 R and D","city":"Raleigh","state":"North
+        Carolina","zipcode":"27603-1117","phone":"9199775654","website_url":"http://www.1323rnd.com"}},{"id":"14-cannons-brewing-company-westlake-village","type":"brewery","attributes":{"name":"14
+        Cannons Brewing Company","street_address":"31125 Via Colinas Ste 907","city":"Westlake
+        Village","state":"California","zipcode":"91362-3974","phone":"8186996165","website_url":"http://14cannons.com"}},{"id":"14-lakes-brewery-crosslake","type":"brewery","attributes":{"name":"14
+        Lakes Brewery","street_address":null,"city":"Crosslake","state":"Minnesota","zipcode":"56442","phone":"2186924129","website_url":null}},{"id":"14er-brewing-company-denver","type":"brewery","attributes":{"name":"14er
+        Brewing Company","street_address":"2801 Walnut St","city":"Denver","state":"Colorado","zipcode":"80205-2235","phone":"7207731437","website_url":"http://www.14erBrewing.com"}},{"id":"14th-star-brewing-saint-albans","type":"brewery","attributes":{"name":"14th
+        Star Brewing","street_address":"133 N Main St Ste 7","city":"Saint Albans","state":"Vermont","zipcode":"05478-1735","phone":"8025285988","website_url":"http://www.14thstarbrewing.com"}},{"id":"16-lots-brewing-mason","type":"brewery","attributes":{"name":"16
+        Lots Brewing","street_address":"753 Reading Rd","city":"Mason","state":"Ohio","zipcode":"45040-1303","phone":"5134863672","website_url":"http://www.16lots.com"}},{"id":"16-mile-brewing-co-georgetown","type":"brewery","attributes":{"name":"16
+        Mile Brewing Co","street_address":"413 S Bedford St","city":"Georgetown","state":"Delaware","zipcode":"19947-1849","phone":"3022538816","website_url":"http://www.16milebrewery.com"}},{"id":"16-stone-brewpub-holland-patent","type":"brewery","attributes":{"name":"16
+        Stone Brewpub","street_address":"9542 Main St","city":"Holland Patent","state":"New
+        York","zipcode":"13354","phone":"3158658500","website_url":"http://www.16stonebrewpub.com"}},{"id":"1623-brewing-co-llc-westminister","type":"brewery","attributes":{"name":"1623
+        Brewing CO, llc","street_address":"1146 colonel Joshua Ct","city":"Westminister","state":"Maryland","zipcode":"21157","phone":null,"website_url":null}},{"id":"1717-brewing-co-des-moines","type":"brewery","attributes":{"name":"1717
+        Brewing Co","street_address":"322 E Court Ave","city":"Des Moines","state":"Iowa","zipcode":"50309-2015","phone":"5152437868","website_url":"http://1717brewing.com"}},{"id":"1718-ocracoke-brewing-ocracoke","type":"brewery","attributes":{"name":"1718
+        Ocracoke Brewing","street_address":"1129 Irvin Garrish Hwy","city":"Ocracoke","state":"North
+        Carolina","zipcode":"27960","phone":"2529282337","website_url":"http://www.ocracokebrewing.com"}},{"id":"1781-brewing-company-spotsylvania","type":"brewery","attributes":{"name":"1781
+        Brewing Company","street_address":"11109 Plank Rd","city":"Spotsylvania","state":"Virginia","zipcode":"22553-4258","phone":"5408412598","website_url":null}},{"id":"180-and-tapped-coraopolis","type":"brewery","attributes":{"name":"180
+        and Tapped","street_address":"2010 A State Ave","city":"Coraopolis","state":"Pennsylvania","zipcode":"15108","phone":"4127375273","website_url":"http://www.180andtapped.com"}},{"id":"1817-brewery-okolona","type":"brewery","attributes":{"name":"1817
+        Brewery","street_address":"100 B South Olive St","city":"okolona","state":"Mississippi","zipcode":"38860","phone":"6623055907","website_url":null}},{"id":"1840-brewing-company-milwaukee","type":"brewery","attributes":{"name":"1840
+        Brewing Company","street_address":"342 E Ward St","city":"Milwaukee","state":"Wisconsin","zipcode":"53207-1348","phone":"4142364056","website_url":"http://www.1840brewing.com"}},{"id":"1850-brewing-company-mariposa","type":"brewery","attributes":{"name":"1850
+        Brewing Company","street_address":null,"city":"Mariposa","state":"California","zipcode":"95338","phone":null,"website_url":"http://www.1850restaurant.com"}},{"id":"18th-street-brewery-gary","type":"brewery","attributes":{"name":"18th
+        Street Brewery","street_address":"5725 Miller Ave","city":"Gary","state":"Indiana","zipcode":"46403-2871","phone":null,"website_url":"http://www.18thstreetbrewery.com"}},{"id":"18th-street-brewery-hammond","type":"brewery","attributes":{"name":"18th
+        Street Brewery","street_address":"5417 Oakley Ave","city":"Hammond","state":"Indiana","zipcode":"46320-1817","phone":null,"website_url":null}},{"id":"1905-brewing-company-assumption","type":"brewery","attributes":{"name":"1905
+        Brewing Company","street_address":"1301 S Chestnut St","city":"Assumption","state":"Illinois","zipcode":"62510-8504","phone":"2172549374","website_url":"http://1905BrewingCompany.com"}},{"id":"1912-brewing-tucson","type":"brewery","attributes":{"name":"1912
+        Brewing","street_address":"2045 N Forbes Blvd Ste 105","city":"Tucson","state":"Arizona","zipcode":"85745-1444","phone":"5202564851","website_url":"http://www.1912brewing.com"}},{"id":"192-brewing-kenmore","type":"brewery","attributes":{"name":"192
+        Brewing","street_address":"7324 NE 175th St","city":"Kenmore","state":"Washington","zipcode":"98028-2500","phone":"4254242337","website_url":"http://www.192brewing.com"}},{"id":"1940s-brewing-company-holbrook","type":"brewery","attributes":{"name":"1940''s
+        Brewing Company","street_address":"1337 Lincoln Ave Unit 1","city":"Holbrook","state":"New
+        York","zipcode":"11741-2275","phone":"6315334838","website_url":"http://www.1940sbrewingcompany.com"}},{"id":"1st-republic-brewing-co-essex-junction","type":"brewery","attributes":{"name":"1st
+        Republic Brewing Co","street_address":"39 River Rd Ste 6","city":"Essex Junction","state":"Vermont","zipcode":"05452-3879","phone":"8028575318","website_url":"http://www.1strepublic-homebrew.com"}}]}'
+  recorded_at: Mon, 09 Jan 2023 14:29:37 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5/activities
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 09 Jan 2023 14:29:37 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cea7ce57-082e-4181-a440-d65ff1f06af7
+      X-Runtime:
+      - '0.006501'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Mon, 09 Jan 2023 14:29:38 GMT
+recorded_with: VCR 6.1.0

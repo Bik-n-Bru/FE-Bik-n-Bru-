@@ -46,12 +46,12 @@ RSpec.describe BEService do
         }
 
         stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/leaderboard').to_return(body: leaderboard_data.to_json)
-
+        
         leaderboard_response = BEService.leaderboard
-
+        
         expect(leaderboard_response[:data]).to be_a Array
         expect(leaderboard_response[:data].size).to eq(1)
-
+        
         leaderboard_response[:data].each do |user|
           expect(user[:attributes][:username]).to be_a String
           expect(user[:attributes][:miles]).to be_a String
@@ -60,7 +60,7 @@ RSpec.describe BEService do
         end
       end
     end
-
+    
     describe '#find_user' do
       it 'returns json data for a given user id' do
         VCR.use_cassette('find_user') do
@@ -73,7 +73,7 @@ RSpec.describe BEService do
         end
       end
     end
-
+  
     describe '#update_user' do
       it 'submits a User patch returns updated User json data' do
         VCR.use_cassette('update_user') do
@@ -93,6 +93,17 @@ RSpec.describe BEService do
         end
       end
     end
+
+    describe '#find_user_badges' do
+      it "returns json of the user's badges" do
+        badges_data = {:data=>['Visited 10 breweries', 'Completed 1 Activity']}
+        stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1/badges').to_return(body: badges_data.to_json)
+        
+        badges_json = BEService.find_user_badges('1')
+
+        expect(badges_json[:data]).to be_a Array
+      end
+    end
   end
 
   describe "#breweries_by_user_location" do
@@ -105,6 +116,31 @@ RSpec.describe BEService do
       expect(results[:data][0][:id]).to eq("10-56-brewing-company-knox")
       expect(results[:data][3][:id]).to eq("10-barrel-brewing-co-bend-pub-bend")
       expect(results[:data][2][:id]).to_not eq("10-barrel-brewing-co-bend-pub-bend")
+    end
+  end
+
+  describe '#user_activities' do
+    it 'returns JSON data of a users activities' do
+      activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}},
+      {id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5}}]}
+
+      stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1/activities').to_return(body: activities_data.to_json)
+      activities = BEService.user_activities('5')
+
+      activities[:data].each do |activity|
+        expect(activity).to have_key(:id)
+        expect(activity[:id]).to be_an(String)
+  
+        expect(activity).to have_key(:attributes)
+        expect(activity[:attributes][:brewery_name]).to be_a(String)
+        expect(activity[:attributes][:distance]).to be_a(Float)
+        expect(activity[:attributes][:calories]).to be_a(Integer)
+        expect(activity[:attributes][:num_drinks]).to be_a(Integer)
+        expect(activity[:attributes][:drink_type]).to be_a(String)
+        expect(activity[:attributes][:dollars_saved]).to be_a(Float)
+        expect(activity[:attributes][:lbs_carbon_saved]).to be_a(Float)
+        expect(activity[:attributes][:user_id]).to be_a(Integer)
+      end
     end
   end
 end 

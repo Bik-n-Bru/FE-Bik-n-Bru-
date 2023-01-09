@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/breweries/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 08 Jan 2023 21:44:41 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"10ec14e646caa12ac52cfb2ba1af27b9"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4f88b4c0-2f2f-42dd-98b3-c0fee4fed9b0
+      X-Runtime:
+      - '0.046950'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"10-barrel-brewing-co-bend-1","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"62970 18th St","city":"Bend","state":"Oregon","zipcode":"97701-9847","phone":"5415851007","website_url":"http://www.10barrel.com"}},{"id":"10-barrel-brewing-co-bend-2","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"1135 NW Galveston Ave Ste B","city":"Bend","state":"Oregon","zipcode":"97703-2465","phone":"5415851007","website_url":null}},{"id":"10-barrel-brewing-co-bend-pub-bend","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co - Bend Pub","street_address":"62950 NE 18th St","city":"Bend","state":"Oregon","zipcode":"97701","phone":"5415851007","website_url":null}},{"id":"bend-brewing-co-bend","type":"brewery","attributes":{"name":"Bend
+        Brewing Co","street_address":"1019 NW Brooks St","city":"Bend","state":"Oregon","zipcode":"97703-2018","phone":"5413831599","website_url":"http://www.bendbrewingco.com"}},{"id":"bend-brewing-high-desert-bend","type":"brewery","attributes":{"name":"Bend
+        Brewing High Desert","street_address":"20650 NE High Desert Lane","city":"Bend","state":"Oregon","zipcode":"97701","phone":"5413831599","website_url":null}},{"id":"bevel-craft-brewing-bend","type":"brewery","attributes":{"name":"Bevel
+        Craft Brewing","street_address":null,"city":"Bend","state":"Oregon","zipcode":"97701-4924","phone":"8313451922","website_url":"http://www.bevelbeer.com"}},{"id":"boneyard-beer-co-bend-1","type":"brewery","attributes":{"name":"Boneyard
+        Beer Co","street_address":"37 NW Lake Pl Ste B","city":"Bend","state":"Oregon","zipcode":"97703-2971","phone":"5413232325","website_url":null}},{"id":"boneyard-beer-co-bend-2","type":"brewery","attributes":{"name":"Boneyard
+        Beer Co","street_address":"1955 NE Division St","city":"Bend","state":"Oregon","zipcode":"97701","phone":"5413232325","website_url":"http://www.boneyardbeer.com"}},{"id":"bridge-99-brewery-bend","type":"brewery","attributes":{"name":"Bridge
+        99 Brewery","street_address":"63063 Layton Ave","city":"Bend","state":"Oregon","zipcode":"97701-7087","phone":"5412801690","website_url":null}},{"id":"craft-kitchen-and-brewery-bend","type":"brewery","attributes":{"name":"Craft
+        Kitchen and Brewery","street_address":"62988 Layton Ave Ste 103","city":"Bend","state":"Oregon","zipcode":"97701-6692","phone":"5416681766","website_url":"http://www.craftkitchenandbrewery.com"}},{"id":"crux-fermentation-project-bend","type":"brewery","attributes":{"name":"Crux
+        Fermentation Project","street_address":"50 SW Division St","city":"Bend","state":"Oregon","zipcode":"97702-1600","phone":"5413887558","website_url":"http://www.cruxfermentation.com"}},{"id":"crux-fermentation-project-crux2-bend","type":"brewery","attributes":{"name":"Crux
+        Fermentation Project - Crux2","street_address":"63065 NE 18th St","city":"Bend","state":"Oregon","zipcode":"97701-9981","phone":null,"website_url":null}},{"id":"deschutes-brewery-and-public-house-bend","type":"brewery","attributes":{"name":"Deschutes
+        Brewery \u0026 Public House","street_address":"1044 NW Bond St","city":"Bend","state":"Oregon","zipcode":"97703-2002","phone":"5413829242","website_url":"http://www.deschutesbrewery.com"}},{"id":"deschutes-brewery-bend","type":"brewery","attributes":{"name":"Deschutes
+        Brewery","street_address":"901 SW Simpson Ave","city":"Bend","state":"Oregon","zipcode":"97702-3118","phone":"5413858606","website_url":"http://www.deschutesbrewery.com"}},{"id":"goodlife-brewing-company-bend","type":"brewery","attributes":{"name":"GoodLife
+        Brewing Company","street_address":"70 SW Century Ave 100-464","city":"Bend","state":"Oregon","zipcode":"97701","phone":"5417280749","website_url":"http://www.goodlifebrewing.com"}},{"id":"immersion-brewing-bend","type":"brewery","attributes":{"name":"Immersion
+        Brewing","street_address":"550 SW Industrial Way","city":"Bend","state":"Oregon","zipcode":"97702-1084","phone":"5416337821","website_url":"http://www.imbrewing.com"}},{"id":"mcmenamins-old-st-francis-school-bend","type":"brewery","attributes":{"name":"McMenamins
+        Old St. Francis School","street_address":"700 NW Bond St","city":"Bend","state":"Oregon","zipcode":"97703-2702","phone":"5413825174","website_url":"http://www.mcmenamins.com"}},{"id":"monkless-belgian-ales-bend","type":"brewery","attributes":{"name":"Monkless
+        Belgian Ales","street_address":"20750 High Desert Ln Suite 107","city":"Bend","state":"Oregon","zipcode":"97701","phone":"5416105492","website_url":"http://www.monkless.com"}},{"id":"oblivion-brewing-co-bend","type":"brewery","attributes":{"name":"Oblivion
+        Brewing Co","street_address":"63027 Plateau Dr Ste 4","city":"Bend","state":"Oregon","zipcode":"97701-3855","phone":"5417283509","website_url":"http://www.oblivionbrewingco.com"}},{"id":"riverbend-brewing-pub-bend","type":"brewery","attributes":{"name":"RiverBend
+        Brewing Pub","street_address":"2650 NE Division St","city":"Bend","state":"Oregon","zipcode":"97703-3569","phone":"5415507550","website_url":"http://www.riverbendbrewing.com"}},{"id":"shade-tree-brewing-bend","type":"brewery","attributes":{"name":"Shade
+        Tree Brewing","street_address":"19305 Indian Summer Rd","city":"Bend","state":"Oregon","zipcode":"97702","phone":"5413833730","website_url":"http://www.shadetreebrewing.com"}},{"id":"silver-moon-brewing-bend","type":"brewery","attributes":{"name":"Silver
+        Moon Brewing","street_address":"24 NW Greenwood Ave","city":"Bend","state":"Oregon","zipcode":"97703-2027","phone":"5413888331","website_url":null}},{"id":"the-ale-apothecary-bend","type":"brewery","attributes":{"name":"The
+        Ale Apothecary","street_address":"30 SW Century Drive Suite 140","city":"Bend","state":"Oregon","zipcode":"97702","phone":"5414081525","website_url":"http://www.thealeapothecary.com"}},{"id":"worthy-brewing-company-bend","type":"brewery","attributes":{"name":"Worthy
+        Brewing Company","street_address":"495 NE Bellevue Dr","city":"Bend","state":"Oregon","zipcode":"97701-7412","phone":"5416394772","website_url":"http://www.worthybrewing.com"}}]}'
+  recorded_at: Sun, 08 Jan 2023 21:44:42 GMT
+recorded_with: VCR 6.1.0

@@ -34,7 +34,7 @@
 <div id="recent_activities" style="position: absolute; top: 300px; left: 350px; width: 500px; background-color: azure;">
   <h3>Recent Activities</h3>
   <% if @user.activities.any? %>
-    <% @user.activities.first(10).each do |activity| %>
+    <% @user.activities.each do |activity| %>
       <%= link_to activity.brewery_name, "/#{@user.id}}/activities/#{activity.id}" %><br>
     <% end %>
   <% end %>

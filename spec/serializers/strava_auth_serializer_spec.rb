@@ -35,7 +35,7 @@ RSpec.describe StravaAuthSerializer do
       it 'returns the user data in a standardized format' do
         serialized_user = StravaAuthSerializer.serialize(@strava_response)
 
-        expect(serialized_user[:data][:username]).to eq(@strava_response[:athlete][:username])
+        expect(serialized_user[:data][:username]).to eq("#{@strava_response[:athlete][:firstname]} #{@strava_response[:athlete][:lastname]}")
         expect(serialized_user[:data][:token]).to eq(@strava_response[:access_token])
         expect(serialized_user[:data][:athlete_id]).to eq(@strava_response[:athlete][:id])
       end

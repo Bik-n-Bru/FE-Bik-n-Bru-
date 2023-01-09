@@ -55,12 +55,15 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       end
     end
 
-    xit 'I see a form to submit an activity. When I fill out this form I am
-    redirected to the Activity Show Page' do
-      within("#new_activity") do
+    describe 'New Activity Section' do
+      xit 'I see a form to submit an activity. When I fill out this form I am
+      redirected to the Activity Show Page' do
+        within("#new_activity") do
 
+        end
       end
     end
+
 
     it 'I see a section with my 10 most recent activities' do
       within("#recent_activities") do

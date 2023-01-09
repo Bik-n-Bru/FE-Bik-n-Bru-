@@ -9,6 +9,7 @@ class StravaService
       req.params['client_secret'] = ENV['strava_client_secret']
       req.params['code'] = code
       req.params['grant_type'] = 'authorization_code'
+      req.params['scope'] = 'read'
     end
     JSON.parse(response.body, symbolize_names: true)
   end

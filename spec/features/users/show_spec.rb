@@ -15,10 +15,14 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
         :type=>"brewery",
         :attributes=>{:name=>"Alesong Brewing and Blending", :street_address=>"1000 Conger St Ste C", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97402-2950", :phone=>"5419723303", :website_url=>"http://www.alesongbrewing.com"}}]}
       
+      @activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 99}},
+        {id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 99}}]}
+
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99').to_return(body: @user_data.to_json)
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/badges').to_return(body: @user_badges.to_json)
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/breweries/99').to_return(body: @brewery_data.to_json)
-
+      stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
+        
       page.set_rack_session(user_id: '99')
       visit '/dashboard'
     end
@@ -58,9 +62,10 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       end
     end
 
-    xit 'I see a section with my 10 most recent activities' do
+    it 'I see a section with my 10 most recent activities' do
       within("#recent_activities") do
-        
+        expect(page).to have_link("#{@activities_data[:data][0][:attributes][:brewery_name]}")
+        expect(page).to have_link("#{@activities_data[:data][1][:attributes][:brewery_name]}")
       end
     end
   end
@@ -95,7 +100,7 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
 
   describe 'As a logged in user with a city and state provided' do
     before :each do
-      VCR.use_cassette('bend_breweries') do
+      VCR.use_cassette('bend_breweries_with_activites') do
         page.set_rack_session(user_id: '1')
         visit '/dashboard'
       end
@@ -113,6 +118,4 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     end
   end
 
-
-  # it 'displays a link to view more breweries, which redirectes to brewery index page'
 end

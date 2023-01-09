@@ -31,3 +31,12 @@
     <% end %>
   <% end %>
 </div>
+
+<div id="recent_activities">
+  <h3>Recent Activities</h3>
+  <% if @user.activities.any? %>
+    <% @user.activities.each do |activity| %>
+      <%= link_to activity.brewery_name, "/#{@user.id}}/activities/#{activity.id}" %>
+    <% end %>
+  <% end %>
+</div>

@@ -12,4 +12,8 @@ class Brewery
     @website = brewery_data[:attributes][:website_url]
     @type = brewery_data[:type]
   end
+
+  def format_number
+    @phone_number.insert(3, "-").insert(-5, "-")
+  end
 end

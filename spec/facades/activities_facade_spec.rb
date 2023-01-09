@@ -16,5 +16,26 @@ RSpec.describe ActivitiesFacade do
         end
       end
     end
+
+    describe "#find_an_activity" do
+      it "returns an Activity object that matches the search criteria" do
+        activities_data = {data: {id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}}}
+
+        stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/activities/1").to_return(body: activities_data.to_json)
+        
+        activity = ActivitiesFacade.find_an_activity("1")
+        
+        expect(activity).to be_an(Activity)
+        expect(activity.id).to eq("1")
+        expect(activity.brewery_name).to eq("Wagon Wheel")
+        expect(activity.calories).to eq(400)
+        expect(activity.distance).to eq(3.7)
+        expect(activity.dollars_saved).to eq(1.97)
+        expect(activity.drink_type).to eq("IPA")
+        expect(activity.lbs_carbon_saved).to eq(1.2)
+        expect(activity.num_drinks).to eq(2)
+        expect(activity.user_id).to eq(5)
+      end
+    end
   end
 end

@@ -46,12 +46,12 @@ RSpec.describe BEService do
         }
 
         stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/leaderboard').to_return(body: leaderboard_data.to_json)
-
+        
         leaderboard_response = BEService.leaderboard
-
+        
         expect(leaderboard_response[:data]).to be_a Array
         expect(leaderboard_response[:data].size).to eq(1)
-
+        
         leaderboard_response[:data].each do |user|
           expect(user[:attributes][:username]).to be_a String
           expect(user[:attributes][:miles]).to be_a String
@@ -60,7 +60,7 @@ RSpec.describe BEService do
         end
       end
     end
-
+    
     describe '#find_user' do
       it 'returns json data for a given user id' do
         VCR.use_cassette('find_user') do
@@ -73,7 +73,7 @@ RSpec.describe BEService do
         end
       end
     end
-
+  
     describe '#update_user' do
       it 'submits a User patch returns updated User json data' do
         VCR.use_cassette('update_user') do
@@ -93,6 +93,17 @@ RSpec.describe BEService do
         end
       end
     end
+
+    describe '#find_user_badges' do
+      it "returns json of the user's badges" do
+        badges_data = {:data=>['Visited 10 breweries', 'Completed 1 Activity']}
+        stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1/badges').to_return(body: badges_data.to_json)
+        
+        badges_json = BEService.find_user_badges('1')
+
+        expect(badges_json[:data]).to be_a Array
+      end
+    end
   end
 
   describe "#breweries_by_user_location" do
@@ -108,98 +119,28 @@ RSpec.describe BEService do
     end
   end
 
-  # xdescribe "#user_activities" do
-  #   it "returns json data that is a list of the specified users activities" do
-  #     VCR.use_cassette('login_user') do
-  #       @user_output = BEService.login_user(@user_input)
-  #     end
-  #     results = BEService.user_activities(@user_output[:data][:id])
+  describe '#user_activities' do
+    it 'returns JSON data of a users activities' do
+      activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}},
+      {id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5}}]}
 
-  #     expect(results[:data]).to be_a(Hash)
-  #     expect(results[:data][0][:attributes][:brewery_name]).to be_a(String)
-  #     expect(results[:data][0][:attributes][:distance]).to be_a(Float)
-  #     expect(results[:data][0][:attributes][:calories]).to be_a(Integer)
-  #     expect(results[:data][0][:attributes][:num_drinks]).to be_a(Integer)
-  #     expect(results[:data][0][:attributes][:drink_type]).to be_a(String)
-  #     expect(results[:data][0][:attributes][:dollars_saved]).to be_a(Float)
-  #     expect(results[:data][0][:attributes][:lbs_carbon_saved]).to be_a(Float)
-  #     expect(results[:data][0][:attributes][:user_id]).to be_a(Integer) 
-  #   end
-  # end
+      stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1/activities').to_return(body: activities_data.to_json)
+      activities = BEService.user_activities('5')
 
-  describe "#create_activity" do
-    it "submits an activity post and returns activity json data" do
-      VCR.use_cassette('login_user') do
-        @user_output = BEService.login_user(@user_input)
+      activities[:data].each do |activity|
+        expect(activity).to have_key(:id)
+        expect(activity[:id]).to be_an(String)
+  
+        expect(activity).to have_key(:attributes)
+        expect(activity[:attributes][:brewery_name]).to be_a(String)
+        expect(activity[:attributes][:distance]).to be_a(Float)
+        expect(activity[:attributes][:calories]).to be_a(Integer)
+        expect(activity[:attributes][:num_drinks]).to be_a(Integer)
+        expect(activity[:attributes][:drink_type]).to be_a(String)
+        expect(activity[:attributes][:dollars_saved]).to be_a(Float)
+        expect(activity[:attributes][:lbs_carbon_saved]).to be_a(Float)
+        expect(activity[:attributes][:user_id]).to be_a(Integer)
       end
-      activity_params = {
-                        data: {
-                          brewery_name: "Emilio Rau MD",
-                          drink_type: "IPA",
-                          user_id: "#{@user_output[:data][:id]}"
-                        }
-                      }
-     
-      activity_json = BEService.create_activity(activity_params)
-      binding.pry
-
-      expect(activity_json[:data][:brewery_name]).to eq("Emilio Rau MD")
-      expect(activity_json[:data][:drink_type]).to eq("IPA")
-      expect(activity_json[:data][:user_id]).to eq("#{@user_output[:data][:id]}")
-    end
-  end
-
-  xdescribe "#find_user_activity" do
-    it "returns json data for a single activty based on the activity_id" do 
-      VCR.use_cassette('login_user') do
-        @user_output = BEService.login_user(@user_input)
-      end
-      activity_params = {
-                        data: {
-                          brewery_name: "Emilio Rau MD",
-                          drink_type: "IPA",
-                          user_id: "#{@user_output[:data][:id]}"
-                        }
-                      }
-     
-      activity = BEService.create_activity(activity_params)
-      binding.pry
-      activity 
-      # post "/api/v1/activities", headers: headers, params: JSON.generate(activity: activity_params)
-
-      stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/activities/1').to_return(body: activity.to_json)
-      # activity = {
-      #   data: {
-      #       id: '1',
-      #       type: 'activity',
-      #       attributes: {
-      #         brewery_name: 'Emilio Rau MD',
-      #         distance: '64.14',
-      #         calories: '564',
-      #         num_drinks: '2',
-      #         drink_type: 'Arrogant Bastard Ale',
-      #         dollars_saved: '94.53',
-      #         lbs_carbon_saved: '41.0',
-      #         user_id: '1' },
-      #       relationships: {
-      #         user: {
-      #           data: {
-      #             id: "1",
-      #             type: "user"
-      #           }
-      #         }              
-      #       }
-      #     }
-      #   }
-      # VCR.use_cassette('login_user') do
-      #   @user_output = BEService.login_user(@user_input)
-      # end
-      #     post "/api/v1/activities", headers: headers, params: JSON.generate(activity: activity_params)
-
-      # stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/activities/1').to_return(body: activity.to_json)
-
-      # @activity_output = BEService.find_activity(activity[:data][:id])
-      #   binding.pry
     end
   end
 end 

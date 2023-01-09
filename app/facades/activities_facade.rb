@@ -1,19 +1,9 @@
-class ActivityFacade
+class ActivitiesFacade
+  def self.user_activities(user_id)
+    activities = BEService.user_activities(user_id)
 
-  xdef find_all_activities(user_id)
-    results = BEService.user_activities(user_id)
-    results[:data].map do |activity|
-      Brewery.new(activity)
+    activities[:data].map do |activity_data|
+      Activity.new(activity_data)
+    end
   end
-
-  def self.create_an_activity(activity_params)
-
-  end
-  
-  def self.find_activity(activity_id)
-  end
-  
-  # def self.find_last_activity(user_id)
-  #   #do i need this? Or can I call all activities and choose the most recent one?
-  # end
 end

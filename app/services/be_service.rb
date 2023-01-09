@@ -34,25 +34,21 @@ class BEService
     response = conn.get("/api/v1/breweries/#{user_id}")
     JSON.parse(response.body, symbolize_names: true)
   end 
-
-  def self.create_activity(activity_data)
-    response = conn.post("/api/v1/activities") do |req|
-      req.headers[:CONTENT_TYPE] = "application/json"
-      req.body = JSON.generate(activity: activity_data)
-      binding.pry
-    end
-  end
   
-  # def self.user_activities(user_id)
-  #   response = conn.get("/api/v1/users/#{user_id}/activities")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
-
-  def self.find_activity(activity_id)
-    response = conn.get("/api/v1/activities/#{activity_id}")
+  def self.find_user_badges(user_id)
+    response = conn.get("/api/v1/users/#{user_id}/badges")
     JSON.parse(response.body, symbolize_names: true)
   end
-end
+  
+  def self.user_activities(user_id)
+    response = conn.get("/api/v1/users/#{user_id}/activities")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 
-#data response from service for finding an activity
-# "{\"data\":{\"id\":\"666\",\"type\":\"activity\",\"attributes\":{\"brewery_name\":\"Joelle Becker\",\"distance\":72.13,\"calories\":368,\"num_drinks\":0,\"drink_type\":\"Chimay Grande Réserve\",\"dollars_saved\":82.44,\"lbs_carbon_saved\":36.0,\"user_id\":76},\"relationships\":{\"user\":{\"data\":{\"id\":\"76\",\"type\":\"user\"}}}}}"
+  #this is not functional at this time
+  def self.create_activity(activity_data)
+  response = conn.post("/api/v1/activities") do |req|
+    req.headers[:CONTENT_TYPE] = "application/json"
+    req.body = JSON.generate(activity: activity_data)
+  end
+end

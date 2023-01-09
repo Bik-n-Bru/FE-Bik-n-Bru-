@@ -56,10 +56,10 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     end
 
     describe 'New Activity Section' do
-      xit 'I see a form to submit an activity. When I fill out this form I am
+      it 'I see a form to submit an activity. When I fill out this form I am
       redirected to the Activity Show Page' do
         within("#new_activity") do
-
+          expect(page).to have_content('Did you make it to a brewery?')
         end
       end
     end

@@ -40,6 +40,12 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       expect(page).to have_link('Home')
       expect(page).to have_link('Dashboard')
     end
+
+    it "shows gas price on dashboard" do
+      within("#gas_price") do
+        expect(page).to have_content("The current price of gas per gallon is $3.270")
+      end
+    end
     
     it 'when I click the link to logout, I am redirected to the login page
     and the session is reset' do

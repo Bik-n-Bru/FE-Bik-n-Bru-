@@ -21,7 +21,9 @@
   </div>
 
 <% end %>
-
+<div id="gas_price">
+  <p>The current price of gas per gallon is $<%=@price%></p>
+</div>
 <div id="badges" style="width: 350px;">
   <h3>Badges</h3>
   <% if @user.badges.any? %>

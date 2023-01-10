@@ -104,64 +104,89 @@ RSpec.describe BEService do
         expect(badges_json[:data]).to be_a Array
       end
     end
-  end
 
-  describe "#breweries_by_user_location" do
-    it "returns json data that is a list of breweries located in that users city and state" do
-      VCR.use_cassette('login_user') do
-        @user_output = BEService.login_user(@user_input)
+    describe "#breweries_by_user_location" do
+      it "returns json data that is a list of breweries located in that users city and state" do
+        VCR.use_cassette('login_user') do
+          @user_output = BEService.login_user(@user_input)
+        end
+        results = BEService.breweries_by_user_location(@user_output[:data][:id])
+
+        expect(results[:data][0][:id]).to eq("10-56-brewing-company-knox")
+        expect(results[:data][3][:id]).to eq("10-barrel-brewing-co-bend-pub-bend")
+        expect(results[:data][2][:id]).to_not eq("10-barrel-brewing-co-bend-pub-bend")
       end
-      results = BEService.breweries_by_user_location(@user_output[:data][:id])
-
-      expect(results[:data][0][:id]).to eq("10-56-brewing-company-knox")
-      expect(results[:data][3][:id]).to eq("10-barrel-brewing-co-bend-pub-bend")
-      expect(results[:data][2][:id]).to_not eq("10-barrel-brewing-co-bend-pub-bend")
     end
-  end
 
-  describe '#user_activities' do
-    it 'returns JSON data of a users activities' do
-      activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}},
-      {id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5}}]}
+    describe '#user_activities' do
+      it 'returns JSON data of a users activities' do
+        activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}},
+        {id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5}}]}
 
-      stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1/activities').to_return(body: activities_data.to_json)
-      activities = BEService.user_activities('5')
+        stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1/activities').to_return(body: activities_data.to_json)
+        activities = BEService.user_activities('5')
 
-      activities[:data].each do |activity|
-        expect(activity).to have_key(:id)
-        expect(activity[:id]).to be_an(String)
+        activities[:data].each do |activity|
+          expect(activity).to have_key(:id)
+          expect(activity[:id]).to be_an(String)
+    
+          expect(activity).to have_key(:attributes)
+          expect(activity[:attributes][:brewery_name]).to be_a(String)
+          expect(activity[:attributes][:distance]).to be_a(Float)
+          expect(activity[:attributes][:calories]).to be_a(Integer)
+          expect(activity[:attributes][:num_drinks]).to be_a(Integer)
+          expect(activity[:attributes][:drink_type]).to be_a(String)
+          expect(activity[:attributes][:dollars_saved]).to be_a(Float)
+          expect(activity[:attributes][:lbs_carbon_saved]).to be_a(Float)
+          expect(activity[:attributes][:user_id]).to be_a(Integer)
+        end
+      end
+    end
+
+    describe "#find_activity" do
+      it "returns JSON of a single activity from a user" do
+        activities_data = {data: {id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}}}
+
+        stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/activities/1").to_return(body: activities_data.to_json)
+        
+        activity = BEService.find_activity("1")
   
-        expect(activity).to have_key(:attributes)
-        expect(activity[:attributes][:brewery_name]).to be_a(String)
-        expect(activity[:attributes][:distance]).to be_a(Float)
-        expect(activity[:attributes][:calories]).to be_a(Integer)
-        expect(activity[:attributes][:num_drinks]).to be_a(Integer)
-        expect(activity[:attributes][:drink_type]).to be_a(String)
-        expect(activity[:attributes][:dollars_saved]).to be_a(Float)
-        expect(activity[:attributes][:lbs_carbon_saved]).to be_a(Float)
-        expect(activity[:attributes][:user_id]).to be_a(Integer)
+        expect(activity[:data]).to have_key(:id)
+        expect(activity[:data]).to have_key(:attributes)
+        expect(activity[:data][:attributes][:brewery_name]).to eq("Wagon Wheel")
+        expect(activity[:data][:attributes][:distance]).to eq(3.7)
+        expect(activity[:data][:attributes][:calories]).to eq(400)
+        expect(activity[:data][:attributes][:num_drinks]).to eq(2)
+        expect(activity[:data][:attributes][:drink_type]).to eq("IPA")
+        expect(activity[:data][:attributes][:dollars_saved]).to eq(1.97)
+        expect(activity[:data][:attributes][:lbs_carbon_saved]).to eq(1.2)
+        expect(activity[:data][:attributes][:user_id]).to eq(5)
       end
     end
-  end
 
-  describe "#find_activity" do
-    it "returns JSON of a single activity from a user" do
-      activities_data = {data: {id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}}}
+    describe '#create_activity' do
+      it 'posts an activity to the BE database and returns json of the
+      activity' do
+        activities_data = {data: {id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}}}
+        stub_request(:post, "https://be-bik-n-bru.herokuapp.com/api/v1/activities").to_return(body: activities_data.to_json)
 
-      stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/activities/1").to_return(body: activities_data.to_json)
-      
-      activity = BEService.find_activity("1")
- 
-      expect(activity[:data]).to have_key(:id)
-      expect(activity[:data]).to have_key(:attributes)
-      expect(activity[:data][:attributes][:brewery_name]).to eq("Wagon Wheel")
-      expect(activity[:data][:attributes][:distance]).to eq(3.7)
-      expect(activity[:data][:attributes][:calories]).to eq(400)
-      expect(activity[:data][:attributes][:num_drinks]).to eq(2)
-      expect(activity[:data][:attributes][:drink_type]).to eq("IPA")
-      expect(activity[:data][:attributes][:dollars_saved]).to eq(1.97)
-      expect(activity[:data][:attributes][:lbs_carbon_saved]).to eq(1.2)
-      expect(activity[:data][:attributes][:user_id]).to eq(5)
+        activity_params = {data: {brewery_name: "Wild Corgi Pub",drink_type: "IPA",user_id: "1" }}
+        activity = BEService.create_activity(activity_params)
+
+        expect(activity[:data]).to have_key(:id)
+        expect(activity[:data]).to have_key(:attributes)
+        expect(activity[:data][:attributes][:brewery_name]).to eq("Wagon Wheel")
+        expect(activity[:data][:attributes][:distance]).to eq(3.7)
+        expect(activity[:data][:attributes][:calories]).to eq(400)
+        expect(activity[:data][:attributes][:num_drinks]).to eq(2)
+        expect(activity[:data][:attributes][:drink_type]).to eq("IPA")
+        expect(activity[:data][:attributes][:dollars_saved]).to eq(1.97)
+        expect(activity[:data][:attributes][:lbs_carbon_saved]).to eq(1.2)
+        expect(activity[:data][:attributes][:user_id]).to eq(5)
+      end
     end
+
   end
+
+
 end 

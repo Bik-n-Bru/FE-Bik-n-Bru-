@@ -25,7 +25,7 @@ RSpec.describe UserDetail do
       }
   }
 
-  @user_badges = {:data=>['Visited 10 breweries', 'Completed 1 Activity']}
+  @user_badges = ['Visited 10 breweries', 'Completed 1 Activity']
   b1 = Brewery.new({:id=>"agrarian-ales-llc-eugene", :type=>"brewery", :attributes=>{:name=>"Agrarian Ales, LLC", :street_address=>"31115 W Crossroads Ln", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97408-9220", :phone=>"5416323803", :website_url=>"http://www.agales.com"}})
   b2 = Brewery.new({:id=>"alesong-brewing-and-blending-eugene", :type=>"brewery", :attributes=>{:name=>"Alesong Brewing and Blending", :street_address=>"1000 Conger St Ste C", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97402-2950", :phone=>"5419723303", :website_url=>"http://www.alesongbrewing.com"}})
   
@@ -47,7 +47,7 @@ RSpec.describe UserDetail do
       expect(user_detail.city).to eq(@user_data[:data][:attributes][:city])
       expect(user_detail.state).to eq(@user_data[:data][:attributes][:state])
       expect(user_detail.activities).to be_a Array
-      expect(user_detail.badges).to eq(@user_badges[:data])
+      expect(user_detail.badges).to eq(@user_badges)
       expect(user_detail.breweries).to be_a Array
       
       user_detail.breweries.each do |brewery|

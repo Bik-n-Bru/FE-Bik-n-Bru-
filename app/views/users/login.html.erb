@@ -17,4 +17,13 @@
       <th>Beers Earned</th>
       <th>CO2 Saved (lbs)</th>
   </table>
+  <% if @leaders.any? %>
+    <% @leaders.each_with_index do |leader, i| %>
+      <tr><%= i + 1 %></tr>
+      <tr><%= leader.username %></tr>
+      <tr><%= leader.miles.round(1) %></tr>
+      <tr><%= leader.beers %></tr>
+      <tr><%= leader.co2_saved.round(0) %></tr><br>
+    <% end %>
+  <% end %>
 </div>

@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/1/badges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 10 Jan 2023 17:31:41 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d95e31c784ad3fe6097be969e10aba8b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2e76e4a5-bb82-46ac-941d-c7986c8e0731
+      X-Runtime:
+      - '0.034563'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"badge","attributes":{"title":"Completed
+        1 Activity"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"2","type":"badge","attributes":{"title":"Cycled
+        100 miles"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"3","type":"badge","attributes":{"title":"Cycled
+        500 miles"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"4","type":"badge","attributes":{"title":"Visited
+        10 breweries"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"5","type":"badge","attributes":{"title":"Cycled
+        1000 miles"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"6","type":"badge","attributes":{"title":"Visited
+        20 breweries"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"7","type":"badge","attributes":{"title":"Visited
+        30 breweries"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"8","type":"badge","attributes":{"title":"Visited
+        40 breweries"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"9","type":"badge","attributes":{"title":"Completed
+        50 Activities"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}},{"id":"10","type":"badge","attributes":{"title":"Visited
+        50 breweries"},"relationships":{"user":{"data":{"id":"1","type":"user"}}}}]}'
+  recorded_at: Tue, 10 Jan 2023 17:31:42 GMT
+recorded_with: VCR 6.1.0

@@ -34,7 +34,7 @@ RSpec.describe "Activity Show Page" do
 
       within("#header") do
         expect(page).to have_content(@activity.brewery_name)
-        expect(page).to have_content(@activity.format_date)
+        expect(page).to have_content(@activity.created_at)
       end 
     end
     
@@ -43,7 +43,6 @@ RSpec.describe "Activity Show Page" do
       visit "/activities/1"
 
       within("#activity_info") do
-      binding.pry
         expect(page).to have_content(@activity.calories)
         expect(page).to have_content(@activity.distance)
         expect(page).to have_content(@activity.dollars_saved)
@@ -56,11 +55,10 @@ RSpec.describe "Activity Show Page" do
 
   describe "if the user visits the show page of an activity that does not belong to that user" do
     it "has a message that the user does not have access to that activity" do
-      @activity2_data = {data: {id:'', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 2, created_at: "2022-03-04 18:10:07"}}}
+      @activity2_data = {data: {id:'2', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 2, created_at: "2022-03-04 18:10:07"}}}
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/activities/2').to_return(body: @activity2_data.to_json)
       @activity = ActivitiesFacade.find_an_activity("2")
       visit "/activities/2"
-
       expect(page).to have_content("Activity Show Page")
       expect(page).to have_content("You do not have access to this activity")
     end

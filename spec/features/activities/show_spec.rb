@@ -43,6 +43,7 @@ RSpec.describe "Activity Show Page" do
       visit "/activities/1"
 
       within("#activity_info") do
+      binding.pry
         expect(page).to have_content(@activity.calories)
         expect(page).to have_content(@activity.distance)
         expect(page).to have_content(@activity.dollars_saved)

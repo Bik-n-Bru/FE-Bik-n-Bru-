@@ -5,8 +5,8 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
 
     before :each do
       @user_data = {data: {id: "1", type: "user", attributes: {username: "SPrefontaine", token: "12345abcde", athlete_id: "12345", city: "Eugene", state: "Oregon"}, relationships:{activities:{data:[]},badges:{data:[]}}}}
-      @user_badges = {data: ['Visited 10 breweries', 'Completed 1 Activity', 'Cycled 100 miles']}
-
+      @user_badges = {data: [{id: "1",type: "badge",attributes: {title: "Completed 1 Activity"},relationships: {user: {data: {id: "1",type: "user"}}}},
+            {id: "2",type: "badge",attributes: {title: "Cycled 100 miles"}, relationships: {user: {data: {id: "1",type: "user"}}}}]}
       @brewery_data = {:data=>
       [{:id=>"agrarian-ales-llc-eugene",
         :type=>"brewery",
@@ -51,9 +51,9 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     describe 'Badges Section' do
       it 'I see a section with the badges I have earned' do
         within("#badges") do
-          expect(page).to have_css("img[src*='/assets/badges/Visited 10 breweries-8b6e560c05d64d4d83bc961d866c8cb78e326a26ae4d1527e4070e7c060f4552.jpg']")
           expect(page).to have_css("img[src*='/assets/badges/Completed 1 Activity-abac81fa505a42de52eac06cbcb00c56fc4b1f70b5d419680bf5e61f4872376d.jpg']")
           expect(page).to have_css("img[src*='/assets/badges/Cycled 100 miles-e597dbbfcc87c1ea9d50ae07fb210ed55f24eb1a9fe91491c69ed481fccb7d45.jpg']")
+          expect(page).to have_no_css("img[src*='/assets/badges/Visited 10 breweries-8b6e560c05d64d4d83bc961d866c8cb78e326a26ae4d1527e4070e7c060f4552.jpg']")
           expect(page).to have_no_css("img[src*='/assets/badges/Cycled 500 miles-f365b81676358c173fbc4157e7d4d5649247e2808b5de4fbb1b7ba74432fff14.jpg']")
         end
       end
@@ -92,7 +92,7 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       When I fill in this form I am redirected to my dashboard where I no
       longer see a form to update my address' do
         expect(page).to have_selector('#address_form')
-
+        
         within("#address_form") do
           fill_in "city", with: "Eugene"
           fill_in "state", with: "Oregon"

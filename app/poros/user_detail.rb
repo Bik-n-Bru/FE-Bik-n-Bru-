@@ -16,7 +16,7 @@ class UserDetail
     @city = user_data[:data][:attributes][:city]
     @state = user_data[:data][:attributes][:state]
     @activities = user_data[:data][:relationships][:activities][:data]
-    @badges = badges[:data]
+    @badges = badges
     @breweries = breweries
     @activities = activities.first(10)
   end

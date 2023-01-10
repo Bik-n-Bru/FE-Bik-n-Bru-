@@ -8,9 +8,9 @@ describe 'Login' do
         {
           attributes: {
             username: 'Lance',
-            miles: '12897',
-            beers: '527',
-            co2_saved: '61'
+            miles: 12897,
+            beers: 527,
+            co2_saved: 61
           }
         }
       ]
@@ -42,6 +42,11 @@ describe 'Login' do
         expect(page).to have_content('Miles Biked')
         expect(page).to have_content('Beers Earned')
         expect(page).to have_content('CO2 Saved (lbs)')
+        expect(page).to have_content('1')
+        expect(page).to have_content('Lance')
+        expect(page).to have_content('12897')
+        expect(page).to have_content('527')
+        expect(page).to have_content('61')
       end
     end
   end

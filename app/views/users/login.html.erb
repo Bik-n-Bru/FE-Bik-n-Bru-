@@ -4,7 +4,7 @@
   <%= render partial: "shared/navbar" %><br>
 <% end %>
 
-<%= link_to "Continue with Strava", "https://www.strava.com/oauth/authorize?client_id=#{ENV['strava_client_id']}&redirect_uri=http://localhost:3000/auth/strava/callback&response_type=code" %><br>
+<%= link_to "Continue with Strava", "https://www.strava.com/oauth/authorize?client_id=#{ENV['strava_client_id']}&redirect_uri=#{ENV['strava_redirect_url']}&response_type=code&scope=activity:read_all&approval_prompt=force" %><br>
 <%= link_to "Don't have Strava? Click here!", 'https://www.strava.com/register/free' %><br><br>
 
 <div id="leaderboard">
@@ -17,4 +17,13 @@
       <th>Beers Earned</th>
       <th>CO2 Saved (lbs)</th>
   </table>
+  <% if @leaders.any? %>
+    <% @leaders.each_with_index do |leader, i| %>
+      <tr><%= i + 1 %></tr>
+      <tr><%= leader.username %></tr>
+      <tr><%= leader.miles.round(1) %></tr>
+      <tr><%= leader.beers %></tr>
+      <tr><%= leader.co2_saved.round(0) %></tr><br>
+    <% end %>
+  <% end %>
 </div>

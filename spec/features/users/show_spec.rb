@@ -5,8 +5,8 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
 
     before :each do
       @user_data = {data: {id: "1", type: "user", attributes: {username: "SPrefontaine", token: "12345abcde", athlete_id: "12345", city: "Eugene", state: "Oregon"}, relationships:{activities:{data:[]},badges:{data:[]}}}}
-      @user_badges = {data: ['Visited 10 breweries', 'Completed 1 Activity', 'Cycled 100 miles']}
-
+      @user_badges = {data: [{id: "1",type: "badge",attributes: {title: "Completed 1 Activity"},relationships: {user: {data: {id: "1",type: "user"}}}},
+            {id: "2",type: "badge",attributes: {title: "Cycled 100 miles"}, relationships: {user: {data: {id: "1",type: "user"}}}}]}
       @brewery_data = {:data=>
       [{:id=>"agrarian-ales-llc-eugene",
         :type=>"brewery",
@@ -15,13 +15,17 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
         :type=>"brewery",
         :attributes=>{:name=>"Alesong Brewing and Blending", :street_address=>"1000 Conger St Ste C", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97402-2950", :phone=>"5419723303", :website_url=>"http://www.alesongbrewing.com"}}]}
       
-      @activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 99}},
-        {id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 99}}]}
+      @activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 99, created_at: "2023-01-10 04:24:35"}},
+        {id:'2', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 99, created_at: "2023-01-10 04:24:35"}}]}
 
+      new_activity_data = {data: {id:'3', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5, created_at: "2023-01-10 04:24:35"}}}
+      stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/activities/3").to_return(body: new_activity_data.to_json)
+      stub_request(:post, "https://be-bik-n-bru.herokuapp.com/api/v1/activities").to_return(body: new_activity_data.to_json)
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99').to_return(body: @user_data.to_json)
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/badges').to_return(body: @user_badges.to_json)
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/breweries/99').to_return(body: @brewery_data.to_json)
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
+      stub_request(:post, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
         
       page.set_rack_session(user_id: '99')
       visit '/dashboard'
@@ -47,19 +51,23 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     describe 'Badges Section' do
       it 'I see a section with the badges I have earned' do
         within("#badges") do
-          expect(page).to have_css("img[src*='/assets/badges/Visited 10 breweries-8b6e560c05d64d4d83bc961d866c8cb78e326a26ae4d1527e4070e7c060f4552.jpg']")
           expect(page).to have_css("img[src*='/assets/badges/Completed 1 Activity-abac81fa505a42de52eac06cbcb00c56fc4b1f70b5d419680bf5e61f4872376d.jpg']")
           expect(page).to have_css("img[src*='/assets/badges/Cycled 100 miles-e597dbbfcc87c1ea9d50ae07fb210ed55f24eb1a9fe91491c69ed481fccb7d45.jpg']")
+          expect(page).to have_no_css("img[src*='/assets/badges/Visited 10 breweries-8b6e560c05d64d4d83bc961d866c8cb78e326a26ae4d1527e4070e7c060f4552.jpg']")
           expect(page).to have_no_css("img[src*='/assets/badges/Cycled 500 miles-f365b81676358c173fbc4157e7d4d5649247e2808b5de4fbb1b7ba74432fff14.jpg']")
         end
       end
     end
 
     describe 'New Activity Section' do
-      xit 'I see a form to submit an activity. When I fill out this form I am
+      it 'I see a form to submit an activity. When I fill out this form I am
       redirected to the Activity Show Page' do
         within("#new_activity") do
-
+          expect(page).to have_content('Did you make it to a brewery?')
+          select('Agrarian Ales, LLC', from: 'brewery_name')
+          select('IPA', from: 'drink_type')
+          click_button ('Log Activity')
+          expect(current_path).to eq('/activities/3')
         end
       end
     end
@@ -84,7 +92,7 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       When I fill in this form I am redirected to my dashboard where I no
       longer see a form to update my address' do
         expect(page).to have_selector('#address_form')
-
+        
         within("#address_form") do
           fill_in "city", with: "Eugene"
           fill_in "state", with: "Oregon"

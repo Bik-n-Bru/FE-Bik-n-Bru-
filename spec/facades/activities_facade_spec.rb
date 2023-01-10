@@ -35,7 +35,7 @@ RSpec.describe ActivitiesFacade do
         expect(activity.lbs_carbon_saved).to eq(1.2)
         expect(activity.num_drinks).to eq(2)
         expect(activity.user_id).to eq(5)
-        expect(activity.created_at).to eq("2023-01-09 18:10:07")
+        expect(activity.created_at).to eq("Monday, January 09, 2023")
       end
     end
   end

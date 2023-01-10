@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def login
-    # @leaders = LeadersFacade.leaderboard
+    @leaders = LeadersFacade.leaderboard
   end
 
   def show

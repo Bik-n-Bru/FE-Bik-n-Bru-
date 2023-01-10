@@ -31,8 +31,8 @@ RSpec.describe UserDetail do
   
   @breweries = [b1, b2]
 
-  activity1 = Activity.new({id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5}})
-  activity2 = Activity.new({id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}})
+  activity1 = Activity.new({id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 5, created_at: "2023-01-10 04:24:35"}})
+  activity2 = Activity.new({id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5, created_at: "2023-01-10 04:24:35"}})
 
   @activities = [activity1, activity2]
   end

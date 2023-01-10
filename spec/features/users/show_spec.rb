@@ -15,13 +15,17 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
         :type=>"brewery",
         :attributes=>{:name=>"Alesong Brewing and Blending", :street_address=>"1000 Conger St Ste C", :city=>"Eugene", :state=>"Oregon", :zipcode=>"97402-2950", :phone=>"5419723303", :website_url=>"http://www.alesongbrewing.com"}}]}
       
-      @activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 99}},
-        {id:'1', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 99}}]}
+      @activities_data = {data:[{id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 99, created_at: "2023-01-10 04:24:35"}},
+        {id:'2', attributes:{brewery_name:'Wild Corgi Pub', distance: 5.1, calories: 521, num_drinks: 3, drink_type: 'Domestic', dollars_saved: 2.71, lbs_carbon_saved: 1.6, user_id: 99, created_at: "2023-01-10 04:24:35"}}]}
 
+      new_activity_data = {data: {id:'3', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5, created_at: "2023-01-10 04:24:35"}}}
+      stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/activities/3").to_return(body: new_activity_data.to_json)
+      stub_request(:post, "https://be-bik-n-bru.herokuapp.com/api/v1/activities").to_return(body: new_activity_data.to_json)
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99').to_return(body: @user_data.to_json)
       stub_request(:any, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/badges').to_return(body: @user_badges.to_json)
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/breweries/99').to_return(body: @brewery_data.to_json)
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
+      stub_request(:post, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
         
       page.set_rack_session(user_id: '99')
       visit '/dashboard'
@@ -60,6 +64,10 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       redirected to the Activity Show Page' do
         within("#new_activity") do
           expect(page).to have_content('Did you make it to a brewery?')
+          select('Agrarian Ales, LLC', from: 'brewery_name')
+          select('IPA', from: 'drink_type')
+          click_button ('Log Activity')
+          expect(current_path).to eq('/activities/3')
         end
       end
     end

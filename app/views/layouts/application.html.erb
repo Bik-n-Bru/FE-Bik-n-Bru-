@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div id="flash-messages">
+        <%= msg %>
+      </div>
+    <% end %>
+    <%= image_tag("biknbru.jpg", class: "img-fluid", alt: "biknbru") %>
+
     <%= yield %>
   </body>
 </html>

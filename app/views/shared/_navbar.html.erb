@@ -1,3 +1,14 @@
-<%= link_to 'Dashboard', dashboard_path %>
-<%= link_to 'Home', "/" %>
-<%= link_to 'Logout', "/logout" %>
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href=<%= dashboard_path %>>Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/logout">Logout</a>
+      </li>
+    </ul>
+</div>
+

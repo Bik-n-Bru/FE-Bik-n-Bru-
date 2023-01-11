@@ -43,12 +43,12 @@ RSpec.describe "Activity Show Page" do
       visit "/activities/1"
 
       within("#activity_info") do
-        expect(page).to have_content(@activity.calories)
-        expect(page).to have_content(@activity.distance)
-        expect(page).to have_content(@activity.dollars_saved)
-        expect(page).to have_content(@activity.drink_type)
-        expect(page).to have_content(@activity.lbs_carbon_saved)
-        expect(page).to have_content(@activity.num_drinks)
+        expect(page).to have_content("Calories Burned: #{@activity.calories}")
+        expect(page).to have_content("Distance Traveled: #{@activity.distance} miles")
+        expect(page).to have_content("Gas Money Saved: $#{@activity.dollars_saved}")
+        expect(page).to have_content("Drink Type: #{@activity.drink_type}")
+        expect(page).to have_content("Number of #{@activity.drink_type}'s Earned: #{@activity.num_drinks}")
+        expect(page).to have_content("Carbon Footprint Offset: #{@activity.lbs_carbon_saved}")
       end
     end 
   end 

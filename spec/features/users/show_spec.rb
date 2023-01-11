@@ -26,7 +26,10 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/breweries/99').to_return(body: @brewery_data.to_json)
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
       stub_request(:post, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
-        
+      @oregon_gas = {data:{gas_price: "3.270"}}
+  
+      stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/get_gas_price/Oregon").to_return(body: @oregon_gas.to_json)
+    
       page.set_rack_session(user_id: '99')
       visit '/dashboard'
     end
@@ -42,8 +45,9 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     end
 
     it "shows gas price on dashboard" do
-      within("#gas_price") do
-        expect(page).to have_content("The current price of gas per gallon is $3.270")
+
+      within("#the_gas_price") do
+        expect(page).to have_content("The current price of gas per gallon is $3.27")
       end
     end
     
@@ -86,11 +90,16 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       end
     end
   end
-
+  
   describe 'As a logged in user without a city or state provided' do
     describe 'when I visit "/dashboard"' do
       before :each do
-        page.set_rack_session(user_id: '5')
+        @user = {data:{id: "1", type: "user", attributes:{username: "testcase",token: "12345abcde",athlete_id: "12345",city: "",state: ""}, relationships:{activities:{data:[]},badges:{data:[]}}}}
+        stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1').to_return(body: @user.to_json) 
+        @oregon_gas = {data:{gas_price: "3.270"}}
+  
+        stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/get_gas_price/Oregon").to_return(body: @oregon_gas.to_json)  
+        page.set_rack_session(user_id: '1')
         visit '/dashboard'
       end
       
@@ -104,25 +113,33 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
           fill_in "state", with: "Oregon"
           click_button 'Submit'
         end
-
         expect(current_path).to eq('/dashboard')
+        require 'pry'; binding.pry
         expect(page).to have_no_selector('#address_form')
 
-        reset = {data:{city: "", state: ""}}
-        BEService.update_user('5', reset)
+        # reset = {data:{city: "", state: ""}}
+        # BEService.update_user('1', reset)
       end
 
     end
   end
 
+  # describe 'As a logged in user with a city and state provided' do
+  #   before :each do
+  #     VCR.use_cassette('bend_breweries_with_activites') do
+  #       page.set_rack_session(user_id: '1')
+  #       visit '/dashboard'
+  #     end
+  #   end
+
   describe 'As a logged in user with a city and state provided' do
     before :each do
-      VCR.use_cassette('bend_breweries_with_activites') do
-        page.set_rack_session(user_id: '1')
+      @user = {data:{id: "1", type: "user", attributes:{username: "testcase",token: "12345abcde",athlete_id: "12345",city: "Bend",state: "Oregon"}, relationships:{activities:{data:[]},badges:{data:[]}}}}
+      stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/1').to_return(body: @user.to_json)  
+      page.set_rack_session(user_id: '1')
         visit '/dashboard'
-      end
     end
-
+  
     it 'displays a side panel with 10 breweries in the users area and a link
     to the breweries index' do
       within("#breweries") do
@@ -134,5 +151,4 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       expect(current_path).to eq('/breweries')
     end
   end
-
 end

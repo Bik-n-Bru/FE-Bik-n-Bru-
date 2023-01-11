@@ -4,7 +4,6 @@ RSpec.describe GasFacade do
   describe 'class methods' do
     describe '#gas_price' do
       it 'should return gas_price object' do
-
         state = "Oregon"
         oregon_gas = {data:{gas_price: "3.270"}}
 

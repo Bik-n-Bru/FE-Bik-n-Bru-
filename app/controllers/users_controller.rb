@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+    # require 'pry'; binding.pry
+    if @user.state != ""
+      state_price = GasFacade.price(@user.state)
+      @price = state_price.gas_price
+    end
   end
 
   def update

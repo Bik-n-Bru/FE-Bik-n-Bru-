@@ -6,7 +6,7 @@ RSpec.describe Gas do
       gas_data = {data:{gas_price: "3.270"}}
 
       gas = Gas.new(gas_data)
-      expect(gas.gas_price).to eq(gas_data[:data][:gas_price])
+      expect(gas.format_price("3.270")).to eq(3.27)
     end
   end
 

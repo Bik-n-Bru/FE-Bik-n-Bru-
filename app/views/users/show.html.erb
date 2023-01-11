@@ -12,13 +12,13 @@
   </ul>
 </div>
 
-<div id="the_gas_price">
-  <% if @user.state.empty? == false %>
-    <p>The current price of gas per gallon is $<%=@price.gas_price%></p>
-  <% end %> 
-</div>
 
 <div class="container">
+  <div id="the_gas_price">
+    <% if @price %>
+      <p>The current price of gas per gallon is $<%=@price.gas_price%> in <%= @user.state %></p>
+    <% end %> 
+  </div>
 <center>
 <h1><%= "#{@user.username}'s Dashboard" %></h1> <br><br>
 </center>
@@ -39,7 +39,7 @@
       <% else %>
         <div id="breweries" style="text-align:left">
           <h2>Local Breweries</h2>
-          <% @user.breweries.each do |brewery| %>
+          <% @user.breweries.first(10).each do |brewery| %>
             <%= link_to brewery.name, brewery.website %><br>
           <% end %><br>
           <%= link_to 'View All Local Breweries', '/breweries' %>

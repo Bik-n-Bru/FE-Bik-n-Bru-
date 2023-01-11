@@ -27,7 +27,7 @@ RSpec.describe UsersFacade do
         VCR.use_cassette('user_detail_with_activities') do
           user_details = UsersFacade.user_detail('5')
   
-          expect(user_details.breweries.size).to eq(10)
+          expect(user_details.breweries.size).to eq(50)
         end
       end
     end

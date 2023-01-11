@@ -38,7 +38,6 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     end
 
     it "shows gas price on dashboard" do
-  
       within("#the_gas_price") do
         expect(page).to have_content("The current price of gas per gallon is $3.27")
       end
@@ -93,26 +92,27 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
   describe 'As a logged in user without a city or state provided' do
     describe 'when I visit "/dashboard"' do
       before :each do
+        VCR.use_cassette('user_5_empty_info') do
         page.set_rack_session(user_id: '5')
         visit '/dashboard'
+        end
       end
       
       it 'displays a form to add city and state if it has not been provided.
       When I fill in this form I am redirected to my dashboard where I no
       longer see a form to update my address' do
-      require 'pry'; binding.pry
-        expect(page).to have_selector('#address_form')
-        within("#address_form") do
-          fill_in "city", with: "Eugene"
-          fill_in "state", with: "Oregon"
-          click_button 'Submit'
-        end
+        VCR.use_cassette('user_5_in_fill') do
+          expect(page).to have_selector('#address_form')
+          expect(page).to_not have_content("The current price of gas per gallon is $3.27")
+          within("#address_form") do
+            fill_in "city", with: "Eugene"
+            fill_in "state", with: "Oregon"
+            click_button 'Submit'
+          end
 
         expect(current_path).to eq('/dashboard')
         expect(page).to have_no_selector('#address_form')
-
-        reset = {data:{city: "", state: ""}}
-        BEService.update_user('5', reset)
+        end  
       end
     end
   end
@@ -122,19 +122,20 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       VCR.use_cassette('bend_breweries_with_activites') do
         page.set_rack_session(user_id: '1')
         visit '/dashboard'
+
       end
     end
 
     it 'displays a side panel with 10 breweries in the users area and a link
     to the breweries index' do
+
       within("#breweries") do
-        expect(page).to have_link("10 Barrel Brewing Co")
-        expect(page).to have_link("Bend Brewing Co")
+        expect(page).to have_link("Agrarian Ales, LLC")
+        expect(page).to have_link("Alesong Brewing and Blending")
         expect(page).to have_link('View All Local Breweries')
         click_link 'View All Local Breweries'
       end
       expect(current_path).to eq('/breweries')
     end
   end
-
 end

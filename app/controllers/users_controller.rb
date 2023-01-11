@@ -4,10 +4,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    # require 'pry'; binding.pry
-    # if @user.city.empty? == false && @user.state.empty? == false
-    @price = GasFacade.price(@user.id)
-    # end
+    if @user.city.empty? == false && @user.state.empty? == false
+      @price = GasFacade.price(@user.id)
+    end
   end
 
   def update

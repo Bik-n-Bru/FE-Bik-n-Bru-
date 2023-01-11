@@ -1,0 +1,281 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 11 Jan 2023 20:31:43 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"895bab8b47cd50b5b4184fba807c1f4d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 52ade245-ebdf-42b7-8efd-d2c923c007ec
+      X-Runtime:
+      - '0.008393'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"5","type":"user","attributes":{"username":"Ivorwen","token":"8982559354","athlete_id":"957142","city":"","state":""},"relationships":{"activities":{"data":[{"id":"201","type":"activity"},{"id":"202","type":"activity"},{"id":"203","type":"activity"},{"id":"204","type":"activity"},{"id":"205","type":"activity"},{"id":"206","type":"activity"},{"id":"207","type":"activity"},{"id":"208","type":"activity"},{"id":"209","type":"activity"},{"id":"210","type":"activity"},{"id":"211","type":"activity"},{"id":"212","type":"activity"},{"id":"213","type":"activity"},{"id":"214","type":"activity"},{"id":"215","type":"activity"},{"id":"216","type":"activity"},{"id":"217","type":"activity"},{"id":"218","type":"activity"},{"id":"219","type":"activity"},{"id":"220","type":"activity"},{"id":"221","type":"activity"},{"id":"222","type":"activity"},{"id":"223","type":"activity"},{"id":"224","type":"activity"},{"id":"225","type":"activity"},{"id":"226","type":"activity"},{"id":"227","type":"activity"},{"id":"228","type":"activity"},{"id":"229","type":"activity"},{"id":"230","type":"activity"},{"id":"231","type":"activity"},{"id":"232","type":"activity"},{"id":"233","type":"activity"},{"id":"234","type":"activity"},{"id":"235","type":"activity"},{"id":"236","type":"activity"},{"id":"237","type":"activity"},{"id":"238","type":"activity"},{"id":"239","type":"activity"},{"id":"240","type":"activity"},{"id":"241","type":"activity"},{"id":"242","type":"activity"},{"id":"243","type":"activity"},{"id":"244","type":"activity"},{"id":"245","type":"activity"},{"id":"246","type":"activity"},{"id":"247","type":"activity"},{"id":"248","type":"activity"},{"id":"249","type":"activity"},{"id":"250","type":"activity"}]},"badges":{"data":[{"id":"41","type":"badge"},{"id":"42","type":"badge"},{"id":"43","type":"badge"},{"id":"44","type":"badge"},{"id":"45","type":"badge"},{"id":"46","type":"badge"},{"id":"47","type":"badge"},{"id":"48","type":"badge"},{"id":"49","type":"badge"},{"id":"50","type":"badge"}]}}}}'
+  recorded_at: Wed, 11 Jan 2023 20:31:43 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5/badges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 11 Jan 2023 20:31:43 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"18ae1375b1d7b476da8f9d197deb39e4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8f33a4ee-2664-43bb-b4d3-a333c74dba3f
+      X-Runtime:
+      - '0.007199'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"41","type":"badge","attributes":{"title":"Completed
+        1 Activity"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"42","type":"badge","attributes":{"title":"Cycled
+        100 miles"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"43","type":"badge","attributes":{"title":"Cycled
+        500 miles"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"44","type":"badge","attributes":{"title":"Visited
+        10 breweries"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"45","type":"badge","attributes":{"title":"Cycled
+        1000 miles"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"46","type":"badge","attributes":{"title":"Visited
+        20 breweries"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"47","type":"badge","attributes":{"title":"Visited
+        30 breweries"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"48","type":"badge","attributes":{"title":"Visited
+        40 breweries"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"49","type":"badge","attributes":{"title":"Completed
+        50 Activities"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}},{"id":"50","type":"badge","attributes":{"title":"Visited
+        50 breweries"},"relationships":{"user":{"data":{"id":"5","type":"user"}}}}]}'
+  recorded_at: Wed, 11 Jan 2023 20:31:44 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/breweries/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 11 Jan 2023 20:31:43 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3d5458e83c62c86039fc764467a6c879"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eb5d922f-57bd-4ae8-90eb-dfd53b65f232
+      X-Runtime:
+      - '0.042217'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"10-56-brewing-company-knox","type":"brewery","attributes":{"name":"10-56
+        Brewing Company","street_address":"400 Brown Cir","city":"Knox","state":"Indiana","zipcode":"46534","phone":"6308165790","website_url":null}},{"id":"10-barrel-brewing-co-bend-1","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"62970 18th St","city":"Bend","state":"Oregon","zipcode":"97701-9847","phone":"5415851007","website_url":"http://www.10barrel.com"}},{"id":"10-barrel-brewing-co-bend-2","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"1135 NW Galveston Ave Ste B","city":"Bend","state":"Oregon","zipcode":"97703-2465","phone":"5415851007","website_url":null}},{"id":"10-barrel-brewing-co-bend-pub-bend","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co - Bend Pub","street_address":"62950 NE 18th St","city":"Bend","state":"Oregon","zipcode":"97701","phone":"5415851007","website_url":null}},{"id":"10-barrel-brewing-co-boise-boise","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co - Boise","street_address":"826 W Bannock St","city":"Boise","state":"Idaho","zipcode":"83702-5857","phone":"2083445870","website_url":"http://www.10barrel.com"}},{"id":"10-barrel-brewing-co-denver-denver","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co - Denver","street_address":"2620 Walnut St","city":"Denver","state":"Colorado","zipcode":"80205-2231","phone":"7205738992","website_url":null}},{"id":"10-barrel-brewing-co-portland","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"1411 NW Flanders St","city":"Portland","state":"Oregon","zipcode":"97209-2620","phone":"5032241700","website_url":"http://www.10barrel.com"}},{"id":"10-barrel-brewing-co-san-diego","type":"brewery","attributes":{"name":"10
+        Barrel Brewing Co","street_address":"1501 E St","city":"San Diego","state":"California","zipcode":"92101-6618","phone":"6195782311","website_url":"http://10barrel.com"}},{"id":"10-torr-distilling-and-brewing-reno","type":"brewery","attributes":{"name":"10
+        Torr Distilling and Brewing","street_address":"490 Mill St","city":"Reno","state":"Nevada","zipcode":"89502","phone":"7755307014","website_url":"http://www.10torr.com"}},{"id":"101-brewery-quilcene","type":"brewery","attributes":{"name":"101
+        Brewery","street_address":"294793 US Highway 101","city":"Quilcene","state":"Washington","zipcode":"98376-9000","phone":"3607656485","website_url":"http://www.101brewery.com"}},{"id":"101-north-brewing-company-petaluma","type":"brewery","attributes":{"name":"101
+        North Brewing Company","street_address":"1304 Scott St Ste D","city":"Petaluma","state":"California","zipcode":"94954-7100","phone":"7077534934","website_url":"http://www.101northbeer.com"}},{"id":"105-west-brewing-co-castle-rock","type":"brewery","attributes":{"name":"105
+        West Brewing Co","street_address":"1043 Park St","city":"Castle Rock","state":"Colorado","zipcode":"80109-1585","phone":"3033257321","website_url":"http://www.105westbrewing.com"}},{"id":"10k-brewing-anoka","type":"brewery","attributes":{"name":"10K
+        Brewing","street_address":"2005 2nd Ave","city":"Anoka","state":"Minnesota","zipcode":"55303-2243","phone":"7633924753","website_url":"http://10KBrew.com"}},{"id":"10th-district-brewing-company-abington","type":"brewery","attributes":{"name":"10th
+        District Brewing Company","street_address":"491 Washington St","city":"Abington","state":"Massachusetts","zipcode":"02351-2419","phone":"7813071554","website_url":"http://www.10thdistrictbrewing.com"}},{"id":"11-below-brewing-company-houston","type":"brewery","attributes":{"name":"11
+        Below Brewing Company","street_address":"6820 Bourgeois Rd","city":"Houston","state":"Texas","zipcode":"77066-3107","phone":"2814442337","website_url":"http://www.11belowbrewing.com"}},{"id":"1188-brewing-co-john-day","type":"brewery","attributes":{"name":"1188
+        Brewing Co","street_address":"141 E Main St","city":"John Day","state":"Oregon","zipcode":"97845-1210","phone":"5415751188","website_url":"http://www.1188brewing.com"}},{"id":"12-acres-brewing-company-killeshin","type":"brewery","attributes":{"name":"12
+        Acres Brewing Company","street_address":"Unnamed Street","city":"Killeshin","state":null,"zipcode":"R93
+        X3X8","phone":"+353599107299","website_url":"https://12acresbrewing.ie/"}},{"id":"12-gates-brewing-company-williamsville","type":"brewery","attributes":{"name":"12
+        Gates Brewing Company","street_address":"80 Earhart Dr Ste 20","city":"Williamsville","state":"New
+        York","zipcode":"14221-7804","phone":"7169066600","website_url":"http://www.12gatesbrewing.com"}},{"id":"12-west-brewing-company-gilbert","type":"brewery","attributes":{"name":"12
+        West Brewing Company","street_address":"3000 E Ray Rd Bldg 6","city":"Gilbert","state":"Arizona","zipcode":"85296-7832","phone":"6023395014","website_url":"http://www.12westbrewing.com"}},{"id":"12-west-brewing-company-production-facility-mesa","type":"brewery","attributes":{"name":"12
+        West Brewing Company - Production Facility","street_address":null,"city":"Mesa","state":"Arizona","zipcode":"85207","phone":null,"website_url":null}},{"id":"122-west-brewing-co-bellingham","type":"brewery","attributes":{"name":"122
+        West Brewing Co","street_address":"2416 Meridian St","city":"Bellingham","state":"Washington","zipcode":"98225-2405","phone":"3603063285","website_url":"https://www.122westbrew.com/"}},{"id":"127-brewing-jackson","type":"brewery","attributes":{"name":"127
+        Brewing","street_address":"3090 Shirley Dr","city":"Jackson","state":"Michigan","zipcode":"49201-7010","phone":"5172581346","website_url":null}},{"id":"12degree-brewing-louisville","type":"brewery","attributes":{"name":"12Degree
+        Brewing","street_address":"820 Main St","city":"Louisville","state":"Colorado","zipcode":"80027-1865","phone":"3035791004","website_url":"http://www.12degree.com"}},{"id":"12welve-eyes-brewing-saint-paul","type":"brewery","attributes":{"name":"12welve
+        Eyes Brewing","street_address":"141 E 4th St Ste LL2","city":"Saint Paul","state":"Minnesota","zipcode":"55101-1639","phone":"6514938106","website_url":"http://www.12welveEyes.com"}},{"id":"13-below-brewery-cincinnati","type":"brewery","attributes":{"name":"13
+        Below Brewery","street_address":"7391 Forbes Rd","city":"Cincinnati","state":"Ohio","zipcode":"45233-1013","phone":"5139750613","website_url":"http://www.13belowbrewery.com"}},{"id":"13-stripes-brewery-taylors","type":"brewery","attributes":{"name":"13
+        Stripes Brewery","street_address":"250 Mill St, Suite PW3101","city":"Taylors","state":"South
+        Carolina","zipcode":"29687","phone":"8643491430","website_url":"http://www.13StripesBrewery.com"}},{"id":"13-virtues-brewing-co-portland","type":"brewery","attributes":{"name":"13
+        Virtues Brewing Co","street_address":"6410 SE Milwaukie Ave","city":"Portland","state":"Oregon","zipcode":"97202-5518","phone":"5032393831","website_url":"http://www.13virtuesbrewing.com"}},{"id":"1323-r-and-d-raleigh","type":"brewery","attributes":{"name":"1323
+        R \u0026 D","street_address":"1323 Capital Blvd 1323 R and D","city":"Raleigh","state":"North
+        Carolina","zipcode":"27603-1117","phone":"9199775654","website_url":"http://www.1323rnd.com"}},{"id":"14-cannons-brewing-company-westlake-village","type":"brewery","attributes":{"name":"14
+        Cannons Brewing Company","street_address":"31125 Via Colinas Ste 907","city":"Westlake
+        Village","state":"California","zipcode":"91362-3974","phone":"8186996165","website_url":"http://14cannons.com"}},{"id":"14-lakes-brewery-crosslake","type":"brewery","attributes":{"name":"14
+        Lakes Brewery","street_address":null,"city":"Crosslake","state":"Minnesota","zipcode":"56442","phone":"2186924129","website_url":null}},{"id":"14er-brewing-company-denver","type":"brewery","attributes":{"name":"14er
+        Brewing Company","street_address":"2801 Walnut St","city":"Denver","state":"Colorado","zipcode":"80205-2235","phone":"7207731437","website_url":"http://www.14erBrewing.com"}},{"id":"14th-star-brewing-saint-albans","type":"brewery","attributes":{"name":"14th
+        Star Brewing","street_address":"133 N Main St Ste 7","city":"Saint Albans","state":"Vermont","zipcode":"05478-1735","phone":"8025285988","website_url":"http://www.14thstarbrewing.com"}},{"id":"16-lots-brewing-mason","type":"brewery","attributes":{"name":"16
+        Lots Brewing","street_address":"753 Reading Rd","city":"Mason","state":"Ohio","zipcode":"45040-1303","phone":"5134863672","website_url":"http://www.16lots.com"}},{"id":"16-mile-brewing-co-georgetown","type":"brewery","attributes":{"name":"16
+        Mile Brewing Co","street_address":"413 S Bedford St","city":"Georgetown","state":"Delaware","zipcode":"19947-1849","phone":"3022538816","website_url":"http://www.16milebrewery.com"}},{"id":"16-stone-brewpub-holland-patent","type":"brewery","attributes":{"name":"16
+        Stone Brewpub","street_address":"9542 Main St","city":"Holland Patent","state":"New
+        York","zipcode":"13354","phone":"3158658500","website_url":"http://www.16stonebrewpub.com"}},{"id":"1623-brewing-co-llc-westminister","type":"brewery","attributes":{"name":"1623
+        Brewing CO, llc","street_address":"1146 colonel Joshua Ct","city":"Westminister","state":"Maryland","zipcode":"21157","phone":null,"website_url":null}},{"id":"1717-brewing-co-des-moines","type":"brewery","attributes":{"name":"1717
+        Brewing Co","street_address":"322 E Court Ave","city":"Des Moines","state":"Iowa","zipcode":"50309-2015","phone":"5152437868","website_url":"http://1717brewing.com"}},{"id":"1718-ocracoke-brewing-ocracoke","type":"brewery","attributes":{"name":"1718
+        Ocracoke Brewing","street_address":"1129 Irvin Garrish Hwy","city":"Ocracoke","state":"North
+        Carolina","zipcode":"27960","phone":"2529282337","website_url":"http://www.ocracokebrewing.com"}},{"id":"1781-brewing-company-spotsylvania","type":"brewery","attributes":{"name":"1781
+        Brewing Company","street_address":"11109 Plank Rd","city":"Spotsylvania","state":"Virginia","zipcode":"22553-4258","phone":"5408412598","website_url":null}},{"id":"180-and-tapped-coraopolis","type":"brewery","attributes":{"name":"180
+        and Tapped","street_address":"2010 A State Ave","city":"Coraopolis","state":"Pennsylvania","zipcode":"15108","phone":"4127375273","website_url":"http://www.180andtapped.com"}},{"id":"1817-brewery-okolona","type":"brewery","attributes":{"name":"1817
+        Brewery","street_address":"100 B South Olive St","city":"okolona","state":"Mississippi","zipcode":"38860","phone":"6623055907","website_url":null}},{"id":"1840-brewing-company-milwaukee","type":"brewery","attributes":{"name":"1840
+        Brewing Company","street_address":"342 E Ward St","city":"Milwaukee","state":"Wisconsin","zipcode":"53207-1348","phone":"4142364056","website_url":"http://www.1840brewing.com"}},{"id":"1850-brewing-company-mariposa","type":"brewery","attributes":{"name":"1850
+        Brewing Company","street_address":null,"city":"Mariposa","state":"California","zipcode":"95338","phone":null,"website_url":"http://www.1850restaurant.com"}},{"id":"18th-street-brewery-gary","type":"brewery","attributes":{"name":"18th
+        Street Brewery","street_address":"5725 Miller Ave","city":"Gary","state":"Indiana","zipcode":"46403-2871","phone":null,"website_url":"http://www.18thstreetbrewery.com"}},{"id":"18th-street-brewery-hammond","type":"brewery","attributes":{"name":"18th
+        Street Brewery","street_address":"5417 Oakley Ave","city":"Hammond","state":"Indiana","zipcode":"46320-1817","phone":null,"website_url":null}},{"id":"1905-brewing-company-assumption","type":"brewery","attributes":{"name":"1905
+        Brewing Company","street_address":"1301 S Chestnut St","city":"Assumption","state":"Illinois","zipcode":"62510-8504","phone":"2172549374","website_url":"http://1905BrewingCompany.com"}},{"id":"1912-brewing-tucson","type":"brewery","attributes":{"name":"1912
+        Brewing","street_address":"2045 N Forbes Blvd Ste 105","city":"Tucson","state":"Arizona","zipcode":"85745-1444","phone":"5202564851","website_url":"http://www.1912brewing.com"}},{"id":"192-brewing-kenmore","type":"brewery","attributes":{"name":"192
+        Brewing","street_address":"7324 NE 175th St","city":"Kenmore","state":"Washington","zipcode":"98028-2500","phone":"4254242337","website_url":"http://www.192brewing.com"}},{"id":"1940s-brewing-company-holbrook","type":"brewery","attributes":{"name":"1940''s
+        Brewing Company","street_address":"1337 Lincoln Ave Unit 1","city":"Holbrook","state":"New
+        York","zipcode":"11741-2275","phone":"6315334838","website_url":"http://www.1940sbrewingcompany.com"}},{"id":"1st-republic-brewing-co-essex-junction","type":"brewery","attributes":{"name":"1st
+        Republic Brewing Co","street_address":"39 River Rd Ste 6","city":"Essex Junction","state":"Vermont","zipcode":"05452-3879","phone":"8028575318","website_url":"http://www.1strepublic-homebrew.com"}}]}'
+  recorded_at: Wed, 11 Jan 2023 20:31:44 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/5/activities
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 11 Jan 2023 20:31:44 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"df7d52449d0097a64c6b18f6fdcfab03"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ac65e0af-cc29-4a28-9aa8-e8f4a66fb0b7
+      X-Runtime:
+      - '0.017933'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6IjIwMSIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiR292LiBOaWtraSBCb3JlciIsImRpc3RhbmNlIjo0Mi41MSwiY2Fsb3JpZXMiOjEyNzUsIm51bV9kcmlua3MiOjUsImRyaW5rX3R5cGUiOiJNYXVkaXRlIiwiZG9sbGFyc19zYXZlZCI6Ni43NiwibGJzX2NhcmJvbl9zYXZlZCI6MzguMjYsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0LjQ3OFoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjAyIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJNcnMuIEVtaWwgUm9sZnNvbiIsImRpc3RhbmNlIjo1Mi4zNiwiY2Fsb3JpZXMiOjE1NzAsIm51bV9kcmlua3MiOjYsImRyaW5rX3R5cGUiOiJNYXVkaXRlIiwiZG9sbGFyc19zYXZlZCI6OC4zMywibGJzX2NhcmJvbl9zYXZlZCI6NDcuMTIsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0LjUwOVoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjAzIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJTdGVwaGFuIFNjaHVsdHoiLCJkaXN0YW5jZSI6NzAuMTEsImNhbG9yaWVzIjoyMTAzLCJudW1fZHJpbmtzIjo4LCJkcmlua190eXBlIjoiU3RvbmUgSW1wZXJpYWwgUnVzc2lhbiBTdG91dCIsImRvbGxhcnNfc2F2ZWQiOjExLjE1LCJsYnNfY2FyYm9uX3NhdmVkIjo2My4xLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC41MzJaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIwNCIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiR292LiBQYWxtZXIgQ2hyaXN0aWFuc2VuIiwiZGlzdGFuY2UiOjQ2Ljk0LCJjYWxvcmllcyI6MTQwOCwibnVtX2RyaW5rcyI6NiwiZHJpbmtfdHlwZSI6Ik1haGFyYWoiLCJkb2xsYXJzX3NhdmVkIjo3LjQ3LCJsYnNfY2FyYm9uX3NhdmVkIjo0Mi4yNSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDQuNTU2WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMDUiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkhhbnMgTGFuZ3dvcnRoIiwiZGlzdGFuY2UiOjg3LjYxLCJjYWxvcmllcyI6MjYyOCwibnVtX2RyaW5rcyI6MTEsImRyaW5rX3R5cGUiOiJCb3VyYm9uIENvdW50eSBTdG91dCIsImRvbGxhcnNfc2F2ZWQiOjEzLjk0LCJsYnNfY2FyYm9uX3NhdmVkIjo3OC44NSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDQuNTgwWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMDYiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6Ik1ycy4gTmVkIEJheWVyIiwiZGlzdGFuY2UiOjM4LjIyLCJjYWxvcmllcyI6MTE0NiwibnVtX2RyaW5rcyI6NSwiZHJpbmtfdHlwZSI6IlRyYXBwaXN0ZXMgUm9jaGVmb3J0IDEwIiwiZG9sbGFyc19zYXZlZCI6Ni4wOCwibGJzX2NhcmJvbl9zYXZlZCI6MzQuNCwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDQuNTk5WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMDciLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IlN5ZG5leSBXYWxrZXIgRXNxLiIsImRpc3RhbmNlIjoyOS41NiwiY2Fsb3JpZXMiOjg4NiwibnVtX2RyaW5rcyI6NCwiZHJpbmtfdHlwZSI6IktpcmluIEluY2hpYmFuIiwiZG9sbGFyc19zYXZlZCI6NC43LCJsYnNfY2FyYm9uX3NhdmVkIjoyNi42LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC42MTdaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIwOCIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiTWF1ZGllIEt1YiIsImRpc3RhbmNlIjo3MC43NiwiY2Fsb3JpZXMiOjIxMjIsIm51bV9kcmlua3MiOjgsImRyaW5rX3R5cGUiOiJNYXVkaXRlIiwiZG9sbGFyc19zYXZlZCI6MTEuMjYsImxic19jYXJib25fc2F2ZWQiOjYzLjY4LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC42MzdaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIwOSIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiVGhlIEhvbi4gTmEgVG9ycGh5IiwiZGlzdGFuY2UiOjY3Ljg5LCJjYWxvcmllcyI6MjAzNiwibnVtX2RyaW5rcyI6OCwiZHJpbmtfdHlwZSI6IkRlbGlyaXVtIFRyZW1lbnMiLCJkb2xsYXJzX3NhdmVkIjoxMC44LCJsYnNfY2FyYm9uX3NhdmVkIjo2MS4xLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC42NThaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIxMCIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiU3RldmllIFByb3NhY2NvIiwiZGlzdGFuY2UiOjYwLjM2LCJjYWxvcmllcyI6MTgxMCwibnVtX2RyaW5rcyI6NywiZHJpbmtfdHlwZSI6IkxhIEZpbiBEdSBNb25kZSIsImRvbGxhcnNfc2F2ZWQiOjkuNiwibGJzX2NhcmJvbl9zYXZlZCI6NTQuMzIsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0LjY3N1oiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjExIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJUb3JyaSBCcmVra2UiLCJkaXN0YW5jZSI6MzAuMTMsImNhbG9yaWVzIjo5MDMsIm51bV9kcmlua3MiOjQsImRyaW5rX3R5cGUiOiJTYW11ZWwgU21pdGjigJlzIEltcGVyaWFsIElQQSIsImRvbGxhcnNfc2F2ZWQiOjQuNzksImxic19jYXJib25fc2F2ZWQiOjI3LjEyLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC42OTVaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIxMiIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiRmVkZXJpY28gS2F1dHplciIsImRpc3RhbmNlIjo3NC44NCwiY2Fsb3JpZXMiOjIyNDUsIm51bV9kcmlua3MiOjksImRyaW5rX3R5cGUiOiJOdWdnZXQgTmVjdGFyIiwiZG9sbGFyc19zYXZlZCI6MTEuOTEsImxic19jYXJib25fc2F2ZWQiOjY3LjM2LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC43MTBaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIxMyIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiUm9zYXVyYSBMZWdyb3MiLCJkaXN0YW5jZSI6NTUuNjMsImNhbG9yaWVzIjoxNjY4LCJudW1fZHJpbmtzIjo3LCJkcmlua190eXBlIjoiUGxpbnkgVGhlIEVsZGVyIiwiZG9sbGFyc19zYXZlZCI6OC44NSwibGJzX2NhcmJvbl9zYXZlZCI6NTAuMDcsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0LjcyOFoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjE0IiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJTaGVsZG9uIEhpY2tsZSBFc3EuIiwiZGlzdGFuY2UiOjMwLjk3LCJjYWxvcmllcyI6OTI5LCJudW1fZHJpbmtzIjo0LCJkcmlua190eXBlIjoiRG91YmxlIEJhc3RhcmQgQWxlIiwiZG9sbGFyc19zYXZlZCI6NC45MywibGJzX2NhcmJvbl9zYXZlZCI6MjcuODcsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0Ljc0NVoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjE1IiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJBc2hhIERpY2tpbnNvbiBDUEEiLCJkaXN0YW5jZSI6MzYuMDMsImNhbG9yaWVzIjoxMDgwLCJudW1fZHJpbmtzIjo0LCJkcmlua190eXBlIjoiQm91cmJvbiBDb3VudHkgU3RvdXQiLCJkb2xsYXJzX3NhdmVkIjo1LjczLCJsYnNfY2FyYm9uX3NhdmVkIjozMi40MywiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDQuNzYzWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMTYiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IlJldi4gSm9hcXVpbiBGdW5rIiwiZGlzdGFuY2UiOjk5LjI0LCJjYWxvcmllcyI6Mjk3NywibnVtX2RyaW5rcyI6MTIsImRyaW5rX3R5cGUiOiJNYWhhcmFqIiwiZG9sbGFyc19zYXZlZCI6MTUuNzksImxic19jYXJib25fc2F2ZWQiOjg5LjMyLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC43ODRaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIxNyIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiV2VuIEphc2tvbHNraSBEQyIsImRpc3RhbmNlIjozNy43OSwiY2Fsb3JpZXMiOjExMzMsIm51bV9kcmlua3MiOjUsImRyaW5rX3R5cGUiOiJTdG9ybSBLaW5nIFN0b3V0IiwiZG9sbGFyc19zYXZlZCI6Ni4wMSwibGJzX2NhcmJvbl9zYXZlZCI6MzQuMDEsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0LjgwMFoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjE4IiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJBZnRvbiBIaWxsbCIsImRpc3RhbmNlIjo1My4yMywiY2Fsb3JpZXMiOjE1OTYsIm51bV9kcmlua3MiOjYsImRyaW5rX3R5cGUiOiJTYXBwb3JvIFByZW1pdW0iLCJkb2xsYXJzX3NhdmVkIjo4LjQ3LCJsYnNfY2FyYm9uX3NhdmVkIjo0Ny45MSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDQuODIwWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMTkiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkR3YWluIEdyYW50IiwiZGlzdGFuY2UiOjMyLjA1LCJjYWxvcmllcyI6OTYxLCJudW1fZHJpbmtzIjo0LCJkcmlua190eXBlIjoiRm91bmRlcnMgQnJlYWtmYXN0IFN0b3V0IiwiZG9sbGFyc19zYXZlZCI6NS4xLCJsYnNfY2FyYm9uX3NhdmVkIjoyOC44NSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDQuODYxWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMjAiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6Ik5ha2lhIEViZXJ0IiwiZGlzdGFuY2UiOjIyLjM4LCJjYWxvcmllcyI6NjcxLCJudW1fZHJpbmtzIjozLCJkcmlua190eXBlIjoiU2FtdWVsIFNtaXRo4oCZcyBPYXRtZWFsIFN0b3V0IiwiZG9sbGFyc19zYXZlZCI6My41NiwibGJzX2NhcmJvbl9zYXZlZCI6MjAuMTQsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0Ljg4NloiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjIxIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJEZWxjaWUgSGVhbmV5IiwiZGlzdGFuY2UiOjI2LjM1LCJjYWxvcmllcyI6NzkwLCJudW1fZHJpbmtzIjozLCJkcmlua190eXBlIjoiU3QuIEJlcm5hcmR1cyBBYnQgMTIiLCJkb2xsYXJzX3NhdmVkIjo0LjE5LCJsYnNfY2FyYm9uX3NhdmVkIjoyMy43MiwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDQuOTIzWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMjIiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IlR5cmVsbCBNYWNlamtvdmljIiwiZGlzdGFuY2UiOjQ4LjEzLCJjYWxvcmllcyI6MTQ0MywibnVtX2RyaW5rcyI6NiwiZHJpbmtfdHlwZSI6Ikhlbm5lcGluIiwiZG9sbGFyc19zYXZlZCI6Ny42NiwibGJzX2NhcmJvbl9zYXZlZCI6NDMuMzIsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA0Ljk2M1oiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjIzIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJNYXJpbyBMdWVpbHdpdHoiLCJkaXN0YW5jZSI6OTcuNjksImNhbG9yaWVzIjoyOTMwLCJudW1fZHJpbmtzIjoxMiwiZHJpbmtfdHlwZSI6Ikhlbm5lcGluIiwiZG9sbGFyc19zYXZlZCI6MTUuNTQsImxic19jYXJib25fc2F2ZWQiOjg3LjkyLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNC45NzhaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIyNCIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiTXMuIFNjb3QgRmF5IiwiZGlzdGFuY2UiOjU0Ljk0LCJjYWxvcmllcyI6MTY0OCwibnVtX2RyaW5rcyI6NywiZHJpbmtfdHlwZSI6IlN0b25lIEltcGVyaWFsIFJ1c3NpYW4gU3RvdXQiLCJkb2xsYXJzX3NhdmVkIjo4Ljc0LCJsYnNfY2FyYm9uX3NhdmVkIjo0OS40NSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuMDExWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMjUiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkJlcnQgV2VpbWFubiIsImRpc3RhbmNlIjo2OC45NSwiY2Fsb3JpZXMiOjIwNjgsIm51bV9kcmlua3MiOjgsImRyaW5rX3R5cGUiOiJXZXN0bWFsbGUgVHJhcHBpc3QgVHJpcGVsIiwiZG9sbGFyc19zYXZlZCI6MTAuOTcsImxic19jYXJib25fc2F2ZWQiOjYyLjA2LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4wNDdaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIyNiIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiQ3lyaWwgQ3Jvb2tzIiwiZGlzdGFuY2UiOjk2LjE5LCJjYWxvcmllcyI6Mjg4NSwibnVtX2RyaW5rcyI6MTIsImRyaW5rX3R5cGUiOiJPYWsgQWdlZCBZZXRpIEltcGVyaWFsIFN0b3V0IiwiZG9sbGFyc19zYXZlZCI6MTUuMywibGJzX2NhcmJvbl9zYXZlZCI6ODYuNTcsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA1LjA2NVoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjI3IiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJMZW9uaWRhIEJsaWNrIiwiZGlzdGFuY2UiOjI4LjQ3LCJjYWxvcmllcyI6ODU0LCJudW1fZHJpbmtzIjozLCJkcmlua190eXBlIjoiOTAgTWludXRlIElQQSIsImRvbGxhcnNfc2F2ZWQiOjQuNTMsImxic19jYXJib25fc2F2ZWQiOjI1LjYyLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4wODNaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIyOCIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiSWFuIExhcnNvbiIsImRpc3RhbmNlIjoxNS4zNCwiY2Fsb3JpZXMiOjQ2MCwibnVtX2RyaW5rcyI6MiwiZHJpbmtfdHlwZSI6IlNhbXVlbCBTbWl0aOKAmXMgSW1wZXJpYWwgSVBBIiwiZG9sbGFyc19zYXZlZCI6Mi40NCwibGJzX2NhcmJvbl9zYXZlZCI6MTMuODEsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA1LjEwMVoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjI5IiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJLYXRyaW5hIFdpbGtpbnNvbiIsImRpc3RhbmNlIjo0OC40MiwiY2Fsb3JpZXMiOjE0NTIsIm51bV9kcmlua3MiOjYsImRyaW5rX3R5cGUiOiJUcmFwcGlzdGVzIFJvY2hlZm9ydCAxMCIsImRvbGxhcnNfc2F2ZWQiOjcuNywibGJzX2NhcmJvbl9zYXZlZCI6NDMuNTgsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA1LjEyM1oiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjMwIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJEci4gTWFyZ2FyZXR0IEdsZWljaG5lciIsImRpc3RhbmNlIjoyOC41NCwiY2Fsb3JpZXMiOjg1NiwibnVtX2RyaW5rcyI6MywiZHJpbmtfdHlwZSI6IkFscGhhIEtpbmcgUGFsZSBBbGUiLCJkb2xsYXJzX3NhdmVkIjo0LjU0LCJsYnNfY2FyYm9uX3NhdmVkIjoyNS42OSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuMTQ3WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMzEiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IlByb2YuIENhc3NpZHkgS29zcyIsImRpc3RhbmNlIjo4NS4yNiwiY2Fsb3JpZXMiOjI1NTcsIm51bV9kcmlua3MiOjEwLCJkcmlua190eXBlIjoiQ2VsZWJyYXRvciBEb3BwZWxib2NrIiwiZG9sbGFyc19zYXZlZCI6MTMuNTYsImxic19jYXJib25fc2F2ZWQiOjc2LjczLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4xNjlaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIzMiIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiTGkgQmxhbmRhIiwiZGlzdGFuY2UiOjk0LjUxLCJjYWxvcmllcyI6MjgzNSwibnVtX2RyaW5rcyI6MTEsImRyaW5rX3R5cGUiOiJUcm9pcyBQaXN0b2xlcyIsImRvbGxhcnNfc2F2ZWQiOjE1LjA0LCJsYnNfY2FyYm9uX3NhdmVkIjo4NS4wNiwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuMTk0WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMzMiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkRhbW9uIFJleW5vbGRzIiwiZGlzdGFuY2UiOjg2LjU0LCJjYWxvcmllcyI6MjU5NiwibnVtX2RyaW5rcyI6MTAsImRyaW5rX3R5cGUiOiJEZWxpcml1bSBOb2N0b3J1bSIsImRvbGxhcnNfc2F2ZWQiOjEzLjc3LCJsYnNfY2FyYm9uX3NhdmVkIjo3Ny44OSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuMjA5WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMzQiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkNsZW1lbmNpYSBHdWxnb3dza2kiLCJkaXN0YW5jZSI6MTIuMTIsImNhbG9yaWVzIjozNjMsIm51bV9kcmlua3MiOjEsImRyaW5rX3R5cGUiOiJTdWJsaW1lbHkgU2VsZi1SaWdodGVvdXMgQWxlIiwiZG9sbGFyc19zYXZlZCI6MS45MywibGJzX2NhcmJvbl9zYXZlZCI6MTAuOTEsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA1LjIyNVoiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjM1IiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJUb3J5IEd1c2lrb3dza2kiLCJkaXN0YW5jZSI6MTMuODcsImNhbG9yaWVzIjo0MTYsIm51bV9kcmlua3MiOjIsImRyaW5rX3R5cGUiOiJBcnJvZ2FudCBCYXN0YXJkIEFsZSIsImRvbGxhcnNfc2F2ZWQiOjIuMjEsImxic19jYXJib25fc2F2ZWQiOjEyLjQ4LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4yNDNaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIzNiIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiVmluY2UgQnJhdW4iLCJkaXN0YW5jZSI6MzcuMTYsImNhbG9yaWVzIjoxMTE0LCJudW1fZHJpbmtzIjo0LCJkcmlua190eXBlIjoiWWV0aSBJbXBlcmlhbCBTdG91dCIsImRvbGxhcnNfc2F2ZWQiOjUuOTEsImxic19jYXJib25fc2F2ZWQiOjMzLjQ0LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4yNTlaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjIzNyIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiSGVybWEgS29ub3BlbHNraSIsImRpc3RhbmNlIjo4My4yNywiY2Fsb3JpZXMiOjI0OTgsIm51bV9kcmlua3MiOjEwLCJkcmlua190eXBlIjoiU2NobmVpZGVyIEF2ZW50aW51cyIsImRvbGxhcnNfc2F2ZWQiOjEzLjI1LCJsYnNfY2FyYm9uX3NhdmVkIjo3NC45NCwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuMjc2WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMzgiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkVsaWphaCBXaWVnYW5kIiwiZGlzdGFuY2UiOjQ2LjM0LCJjYWxvcmllcyI6MTM5MCwibnVtX2RyaW5rcyI6NiwiZHJpbmtfdHlwZSI6IkJlbGzigJlzIEV4cGVkaXRpb24iLCJkb2xsYXJzX3NhdmVkIjo3LjM3LCJsYnNfY2FyYm9uX3NhdmVkIjo0MS43MSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuMjkyWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyMzkiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IktlbGxleSBBYnNoaXJlIiwiZGlzdGFuY2UiOjI3LjY3LCJjYWxvcmllcyI6ODMwLCJudW1fZHJpbmtzIjozLCJkcmlua190eXBlIjoiRWRtdW5kIEZpdHpnZXJhbGQgUG9ydGVyIiwiZG9sbGFyc19zYXZlZCI6NC40LCJsYnNfY2FyYm9uX3NhdmVkIjoyNC45LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4zMDlaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjI0MCIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiTXMuIE1vemVsbGUgRG9vbGV5IiwiZGlzdGFuY2UiOjY0LjM0LCJjYWxvcmllcyI6MTkzMCwibnVtX2RyaW5rcyI6OCwiZHJpbmtfdHlwZSI6IlRyYXBwaXN0ZXMgUm9jaGVmb3J0IDgiLCJkb2xsYXJzX3NhdmVkIjoxMC4yNCwibGJzX2NhcmJvbl9zYXZlZCI6NTcuOTEsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA1LjMyMloiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjQxIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJOaW5mYSBLdW56ZSIsImRpc3RhbmNlIjo2My4wNCwiY2Fsb3JpZXMiOjE4OTEsIm51bV9kcmlua3MiOjgsImRyaW5rX3R5cGUiOiJXZWloZW5zdGVwaGFuZXIgSGVmZXdlaXNzYmllciIsImRvbGxhcnNfc2F2ZWQiOjEwLjAzLCJsYnNfY2FyYm9uX3NhdmVkIjo1Ni43NCwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuMzQxWiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyNDIiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IldpbGJlcnQgTXJheiIsImRpc3RhbmNlIjo3Ni4yOCwiY2Fsb3JpZXMiOjIyODgsIm51bV9kcmlua3MiOjksImRyaW5rX3R5cGUiOiJDaG9jb2xhdGUgU3QiLCJkb2xsYXJzX3NhdmVkIjoxMi4xNCwibGJzX2NhcmJvbl9zYXZlZCI6NjguNjUsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA1LjM1N1oiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjQzIiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJHaXNlbGUgRG9ubmVsbHkiLCJkaXN0YW5jZSI6OTYuNDIsImNhbG9yaWVzIjoyODkyLCJudW1fZHJpbmtzIjoxMiwiZHJpbmtfdHlwZSI6IlN0LiBCZXJuYXJkdXMgQWJ0IDEyIiwiZG9sbGFyc19zYXZlZCI6MTUuMzQsImxic19jYXJib25fc2F2ZWQiOjg2Ljc4LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4zNzJaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjI0NCIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiS2Fyb2xlIEhhYWciLCJkaXN0YW5jZSI6NTEuNzYsImNhbG9yaWVzIjoxNTUyLCJudW1fZHJpbmtzIjo2LCJkcmlua190eXBlIjoiSGVyY3VsZXMgRG91YmxlIElQQSIsImRvbGxhcnNfc2F2ZWQiOjguMjMsImxic19jYXJib25fc2F2ZWQiOjQ2LjU4LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS4zODhaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjI0NSIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiQmFyaSBOaWtvbGF1cyIsImRpc3RhbmNlIjo3NS43NSwiY2Fsb3JpZXMiOjIyNzIsIm51bV9kcmlua3MiOjksImRyaW5rX3R5cGUiOiI5MCBNaW51dGUgSVBBIiwiZG9sbGFyc19zYXZlZCI6MTIuMDUsImxic19jYXJib25fc2F2ZWQiOjY4LjE4LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS40MDRaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjI0NiIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiSHllIEhhaG4iLCJkaXN0YW5jZSI6NzIuOTQsImNhbG9yaWVzIjoyMTg4LCJudW1fZHJpbmtzIjo5LCJkcmlua190eXBlIjoiU2hha2VzcGVhcmUgT2F0bWVhbCIsImRvbGxhcnNfc2F2ZWQiOjExLjYsImxic19jYXJib25fc2F2ZWQiOjY1LjY1LCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS40MjBaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX0seyJpZCI6IjI0NyIsInR5cGUiOiJhY3Rpdml0eSIsImF0dHJpYnV0ZXMiOnsiYnJld2VyeV9uYW1lIjoiTGFyaXRhIEhhcnJpcyBWIiwiZGlzdGFuY2UiOjc2LjY3LCJjYWxvcmllcyI6MjMwMCwibnVtX2RyaW5rcyI6OSwiZHJpbmtfdHlwZSI6IkR1dmVsIiwiZG9sbGFyc19zYXZlZCI6MTIuMiwibGJzX2NhcmJvbl9zYXZlZCI6NjkuMCwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuNDM2WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyNDgiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkdlbmUgS3VwaGFsIiwiZGlzdGFuY2UiOjUzLjQxLCJjYWxvcmllcyI6MTYwMiwibnVtX2RyaW5rcyI6NiwiZHJpbmtfdHlwZSI6Ik9ydmFsIFRyYXBwaXN0IEFsZSIsImRvbGxhcnNfc2F2ZWQiOjguNSwibGJzX2NhcmJvbl9zYXZlZCI6NDguMDcsImNyZWF0ZWRfYXQiOiIyMDIzLTAxLTExVDE2OjQ5OjA1LjQ1M1oiLCJ1c2VyX2lkIjo1fSwicmVsYXRpb25zaGlwcyI6eyJ1c2VyIjp7ImRhdGEiOnsiaWQiOiI1IiwidHlwZSI6InVzZXIifX19fSx7ImlkIjoiMjQ5IiwidHlwZSI6ImFjdGl2aXR5IiwiYXR0cmlidXRlcyI6eyJicmV3ZXJ5X25hbWUiOiJBbGVuZSBIZWF0aGNvdGUiLCJkaXN0YW5jZSI6MTUuNDQsImNhbG9yaWVzIjo0NjMsIm51bV9kcmlua3MiOjIsImRyaW5rX3R5cGUiOiJTY2huZWlkZXIgQXZlbnRpbnVzIiwiZG9sbGFyc19zYXZlZCI6Mi40NiwibGJzX2NhcmJvbl9zYXZlZCI6MTMuOSwiY3JlYXRlZF9hdCI6IjIwMjMtMDEtMTFUMTY6NDk6MDUuNDY4WiIsInVzZXJfaWQiOjV9LCJyZWxhdGlvbnNoaXBzIjp7InVzZXIiOnsiZGF0YSI6eyJpZCI6IjUiLCJ0eXBlIjoidXNlciJ9fX19LHsiaWQiOiIyNTAiLCJ0eXBlIjoiYWN0aXZpdHkiLCJhdHRyaWJ1dGVzIjp7ImJyZXdlcnlfbmFtZSI6IkRyLiBEYW5ueSBTY2hvZW4iLCJkaXN0YW5jZSI6MTQuNjksImNhbG9yaWVzIjo0NDAsIm51bV9kcmlua3MiOjIsImRyaW5rX3R5cGUiOiJLaXJpbiBJbmNoaWJhbiIsImRvbGxhcnNfc2F2ZWQiOjIuMzQsImxic19jYXJib25fc2F2ZWQiOjEzLjIyLCJjcmVhdGVkX2F0IjoiMjAyMy0wMS0xMVQxNjo0OTowNS40ODJaIiwidXNlcl9pZCI6NX0sInJlbGF0aW9uc2hpcHMiOnsidXNlciI6eyJkYXRhIjp7ImlkIjoiNSIsInR5cGUiOiJ1c2VyIn19fX1dfQ==
+  recorded_at: Wed, 11 Jan 2023 20:31:44 GMT
+- request:
+    method: get
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/gas_price/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 11 Jan 2023 20:31:44 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 7ef3414f-c36f-4414-bb95-c759f546ac85
+      X-Runtime:
+      - '0.006484'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"message":"Request is missing necessary information","errors":["The
+        user has not provided a valid State"]}'
+  recorded_at: Wed, 11 Jan 2023 20:31:45 GMT
+recorded_with: VCR 6.1.0

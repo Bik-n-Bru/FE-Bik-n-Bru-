@@ -45,7 +45,7 @@
   <h3>Recent Activities</h3>
   <% if @user.activities.any? %>
     <% @user.activities.each do |activity| %>
-      <%= link_to activity.brewery_name, "/#{@user.id}}/activities/#{activity.id}" %><br>
+      <%= link_to activity.brewery_name, activity_path(activity.id) %><br>
     <% end %>
   <% end %>
 </div>

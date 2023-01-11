@@ -186,8 +186,13 @@ RSpec.describe BEService do
     describe "#gas_price" do
       it "should return a gas price" do
         state = "Oregon"
-        oregon_gas = {data:{gas_price: "3.270"}}
-
+        oregon_gas = 
+        {
+          data: {
+            state: "oregon",
+            gas_price: "3.270"
+          }
+        }
         stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/get_gas_price/#{state}").to_return(body: oregon_gas.to_json)
         price = BEService.get_gas_price(state)
 
@@ -195,8 +200,5 @@ RSpec.describe BEService do
         expect(price[:data][:gas_price]).to eq("3.270")
       end
     end
-
   end
-
-
 end 

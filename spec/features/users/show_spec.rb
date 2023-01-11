@@ -66,7 +66,7 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
           expect(page).to have_content('Did you make it to a brewery?')
           select('Agrarian Ales, LLC', from: 'brewery_name')
           select('IPA', from: 'drink_type')
-          click_button ('Log Activity')
+          click_button ("Tell me how many beers I've earned!")
           expect(current_path).to eq('/activities/3')
         end
       end

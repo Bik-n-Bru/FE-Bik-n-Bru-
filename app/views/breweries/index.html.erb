@@ -4,18 +4,21 @@
   <%= render partial: "shared/navbar.html.erb" %>
 </div>
 <br>
-
-<% if @user.city == nil or @user.state == nil %>
-  <div id="update_form">
+<% if @user.city == nil or @user.state == nil or @breweries.count == 0 %>
+  <% if @user.city == nil or @user.state == nil %>
     <div>We do not have a city/state saved for you, please update</div>
-      <%= form_with url: '/update', method: :patch, local: true do |form| %>
-        <%= form.city :city %>
-        <%= form.label "City" %>
-        <%= form.select_tag :state, options_for_select(us_states) %>        
-        <%= form.label "State" %>
-        <%= form.submit "Submit"%>
-      <% end%>
-  </div>
+  <% else @breweries.count == 0 %>
+    <div>We were unable to find any breweries for you, please add a new city/state</div>
+  <% end%>
+    <div id="update_form">   
+        <%= form_with url: '/update', method: :patch, local: true do |form| %>
+          <%= form.text_field :city %>
+          <%= form.label "City" %>
+          <%= form.select :state, options_for_select(us_states) %>        
+          <%= form.label "State" %>
+          <%= form.submit "Submit"%>
+        <% end%>
+    </div>
 <% else %>
   <% @breweries.each do |brewery| %>
     <div id="brewery_<%= brewery.id %>">

@@ -9,6 +9,6 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = ActivitiesFacade.find_an_activity(params[:activity_id])
+    @activity = ActivitiesFacade.find_an_activity(params[:id])
   end
 end

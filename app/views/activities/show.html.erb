@@ -1,15 +1,29 @@
-<div id="header">
-  <h1><%= @activity.brewery_name %> on <%= @activity.created_at %>
-</div>
-
-<div id="nav_bar">
-  <%= render partial: "shared/navbar.html.erb" %>
-</div>
-<br>
-
-<div id="activity_info">
-  Calories Burned: <%= @activity.calories %>
-  Distance Traveled: <%= @activity.distance %> miles
-  Gas Money Saved: $<%= @activity.dollars_saved %>
-  Drink Type: <%= @activity.drink_type %>
-  Carbon Footprint Offset: <%= @activity.lbs_carbon_saved %> lbs of carbon
+<% if @user.id == @activity.user_id.to_s %>
+  <div id="header">
+    <h1><%= @activity.brewery_name %> on <%= @activity.created_at %>
+  </div>
+    <br>
+  <div id="nav_bar">
+    <%= render partial: "shared/navbar.html.erb" %>
+  </div>
+    <br>
+  <div id="activity_info">
+    <li>
+      Calories Burned: <%= @activity.calories %>
+      Distance Traveled: <%= @activity.distance %> miles
+      Gas Money Saved: $<%= @activity.dollars_saved %>
+      Drink Type: <%= @activity.drink_type %>
+      Carbon Footprint Offset: <%= @activity.lbs_carbon_saved %> lbs of carbon
+    </li>
+  </div>
+<% else %>
+  <div align="center">
+    <h1>Activity Show Page</h1>
+  </div>
+    <br>
+  <div id="nav_bar">
+    <%= render partial: "shared/navbar.html.erb" %>
+  </div>
+    <br>
+  <h2>You do not have access to this activity</h2>
+<% end %>

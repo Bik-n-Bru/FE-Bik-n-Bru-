@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://be-bik-n-bru.herokuapp.com/api/v1/users/12
+    body:
+      encoding: UTF-8
+      string: '{"user":{"data":{"city":"not a city","state":"not a state"}}}'
+    headers:
+      User-Agent:
+      - Faraday v2.7.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 10 Jan 2023 22:07:37 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7d817c1f4c7308541209e8b2f5761e90"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f812ba69-6b57-4184-98e5-2822cc94d8ca
+      X-Runtime:
+      - '0.056396'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"12","type":"user","attributes":{"username":"Briffo Boffin","token":"5741605152","athlete_id":"623591","city":"not
+        a city","state":"not a state"},"relationships":{"activities":{"data":[{"id":"551","type":"activity"},{"id":"552","type":"activity"},{"id":"553","type":"activity"},{"id":"554","type":"activity"},{"id":"555","type":"activity"},{"id":"556","type":"activity"},{"id":"557","type":"activity"},{"id":"558","type":"activity"},{"id":"559","type":"activity"},{"id":"560","type":"activity"},{"id":"561","type":"activity"},{"id":"562","type":"activity"},{"id":"563","type":"activity"},{"id":"564","type":"activity"},{"id":"565","type":"activity"},{"id":"566","type":"activity"},{"id":"567","type":"activity"},{"id":"568","type":"activity"},{"id":"569","type":"activity"},{"id":"570","type":"activity"},{"id":"571","type":"activity"},{"id":"572","type":"activity"},{"id":"573","type":"activity"},{"id":"574","type":"activity"},{"id":"575","type":"activity"},{"id":"576","type":"activity"},{"id":"577","type":"activity"},{"id":"578","type":"activity"},{"id":"579","type":"activity"},{"id":"580","type":"activity"},{"id":"581","type":"activity"},{"id":"582","type":"activity"},{"id":"583","type":"activity"},{"id":"584","type":"activity"},{"id":"585","type":"activity"},{"id":"586","type":"activity"},{"id":"587","type":"activity"},{"id":"588","type":"activity"},{"id":"589","type":"activity"},{"id":"590","type":"activity"},{"id":"591","type":"activity"},{"id":"592","type":"activity"},{"id":"593","type":"activity"},{"id":"594","type":"activity"},{"id":"595","type":"activity"},{"id":"596","type":"activity"},{"id":"597","type":"activity"},{"id":"598","type":"activity"},{"id":"599","type":"activity"},{"id":"600","type":"activity"}]},"badges":{"data":[{"id":"111","type":"badge"},{"id":"112","type":"badge"},{"id":"113","type":"badge"},{"id":"114","type":"badge"},{"id":"115","type":"badge"},{"id":"116","type":"badge"},{"id":"117","type":"badge"},{"id":"118","type":"badge"},{"id":"119","type":"badge"},{"id":"120","type":"badge"}]}}}}'
+  recorded_at: Tue, 10 Jan 2023 22:07:37 GMT
+recorded_with: VCR 6.1.0

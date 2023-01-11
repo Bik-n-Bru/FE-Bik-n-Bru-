@@ -57,4 +57,9 @@ class BEService
     response = conn.get("/api/v1/activities/#{activity_id}")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_gas_price(user_id)
+    response = conn.get("/api/v1/gas_price/#{user_id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

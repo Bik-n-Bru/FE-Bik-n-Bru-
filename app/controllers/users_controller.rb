@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if @user.city.empty? == false && @user.state.empty? == false
+    unless  @user.city.nil? || @user.state.nil? || @user.city.empty? || @user.state.empty?
       @price = GasFacade.price(@user.id)
     end
   end

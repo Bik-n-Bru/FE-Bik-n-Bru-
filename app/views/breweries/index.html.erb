@@ -1,9 +1,10 @@
-<h1><div align="center">Breweries Around You</div><h1>
-
 <div id="nav_bar">
   <%= render partial: "shared/navbar.html.erb" %>
 </div>
 <br>
+<h1 style="text-align:center">Breweries Around You</h1>
+<br>
+<div class="container">
 <% if @user.city == nil or @user.state == nil or @breweries.count == 0 %>
   <% if @user.city == nil or @user.state == nil %>
     <div>We do not have a city/state saved for you, please update</div>
@@ -39,3 +40,4 @@
   <% end%>
 <% end%>
 
+</div>

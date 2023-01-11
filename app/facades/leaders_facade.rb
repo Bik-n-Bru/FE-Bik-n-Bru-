@@ -4,5 +4,4 @@ class LeadersFacade
       Leader.new(leader)
     end
   end
-
 end

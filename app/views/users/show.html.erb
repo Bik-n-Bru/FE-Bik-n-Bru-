@@ -12,6 +12,12 @@
   </ul>
 </div>
 
+<div id="the_gas_price">
+  <% if @user.state.empty? == false %>
+    <p>The current price of gas per gallon is $<%=@price.gas_price%></p>
+  <% end %> 
+</div>
+
 <div class="container">
 <center>
 <h1><%= "#{@user.username}'s Dashboard" %></h1> <br><br>

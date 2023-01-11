@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    if @user.city.empty? == false && @user.state.empty? == false
+      @price = GasFacade.price(@user.id)
+    end
   end
 
   def update
@@ -17,3 +20,4 @@ class UsersController < ApplicationController
     redirect_to '/'
   end
 end
+

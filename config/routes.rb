@@ -6,10 +6,8 @@ Rails.application.routes.draw do
 
   patch "/dashboard", to: "users#update"
 
-  get "/breweries", to: "breweries#index"
-
   get '/auth/strava/callback', to: 'sessions#create'
 
-  get "/activities/:activity_id", to: "activities#show"
-  post '/activities', to: 'activities#create'
+  resources :breweries, only: [:index]
+  resources :activities, only: [:show, :create]
 end

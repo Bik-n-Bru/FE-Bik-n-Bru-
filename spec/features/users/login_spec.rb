@@ -25,7 +25,7 @@ describe 'Login' do
       # Capybara doesn't seem to get along with external URLs.
       # Rails Server redirectes fine, but alternative tests should be explored.
 
-      expect(page).to have_link("Don't have Strava? Click here!")
+      expect(page).to have_link("Don't have Strava? Sign up for Strava here!")
       # click_link "Don't have Strava? Click here!"
       # expect(current_path).to eq("https://www.strava.com/register/free")
     end 

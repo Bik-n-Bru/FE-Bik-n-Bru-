@@ -26,7 +26,7 @@
       <% if brewery.website == nil %>
         <li><%= brewery.name %><br>
       <% else%>
-        <li><%= link_to brewery.name, brewery.website %><br>
+        <li><%= link_to brewery.name, brewery.website, target: "_blank" %><br>
       <% end %>
         Brewery Type: <%= brewery.type %><br>
         <%= brewery.street_address %>, <%= brewery.city %>, <%= brewery.state %>, <%= brewery.zip_code %><br>

@@ -32,7 +32,6 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
 
 # Planning Documents
 
-- Schema <br> <img src="app/assets/images/updated_1_8_2023.png" width=auto height="400">
 - [Wireframes](https://www.figma.com/file/hjW32yDb6WSBuInlizzRw9/Welcome?node-id=0%3A1&t=LYBwunAfTTKQwib7-0)
 - [Project Spec](https://backend.turing.edu/module3/projects/consultancy/)
 
@@ -62,7 +61,7 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
   - ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
   - <img src="app/assets/images/CircleCi_logo.png" alt="Circle Ci" height="30">
 
-# How to Set Up
+# Developer Setup
 <ol>
   <li>Fork and clone this repository</li>
   <li>cd into the root directory</li>
@@ -73,7 +72,7 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
   <li>To stop the local server, use command <code>Control + c</code></li>
   <li>
   
-  [Sign up to use the Strava Api](https://developers.strava.com/docs/getting-started/#account)
+  [Sign up to use the Strava API](https://developers.strava.com/docs/getting-started/#account)
 
   In config > application.yml
 
@@ -91,8 +90,6 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
   <ol>
     <li>Run <code>bundle exec rspec spec</code></li>
   </ol>
-
-# Contributors
 
 ### Project Team:
 # Contributors

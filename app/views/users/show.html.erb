@@ -12,11 +12,11 @@
   </ul>
 </div>
 
-<%if @user.state.empty? == false%>
-  <div id="the_gas_price">
-    <p>The current price of gas per gallon is $<%=@price%></p>
-  </div>
-<%end%> 
+<div id="the_gas_price">
+  <% if @user.state.empty? == false %>
+    <p>The current price of gas per gallon is $<%=@price.gas_price%></p>
+  <% end %> 
+</div>
 
 <div class="container">
 <center>

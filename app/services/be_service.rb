@@ -58,8 +58,10 @@ class BEService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_gas_price(state)
-    response = conn.get("/api/v1/get_gas_price/#{state}")
+  def self.get_gas_price(user)
+    # require 'pry'; binding.pry
+    response = conn.get("/api/v1/gas_price/#{user}")
+    # require 'pry'; binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
 end

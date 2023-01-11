@@ -160,7 +160,6 @@ RSpec.describe BEService do
         expect(activity[:data][:attributes][:created_at]).to be_a(String)
       end
     end
-<<<<<<< HEAD
 
     describe '#create_activity' do
       it 'posts an activity to the BE database and returns json of the
@@ -186,7 +185,7 @@ RSpec.describe BEService do
 
     describe "#gas_price" do
       it "should return a gas price" do
-        state = "Oregon"
+        user = {data: {id: "1", type: "user", attributes: {username: "SPrefontaine", token: "12345abcde", athlete_id: "12345", city: "Eugene", state: "Oregon"}, relationships:{activities:{data:[]},badges:{data:[]}}}}
         oregon_gas = 
         {
           data: {
@@ -194,8 +193,9 @@ RSpec.describe BEService do
             gas_price: "3.270"
           }
         }
-        stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/get_gas_price/#{state}").to_return(body: oregon_gas.to_json)
-        price = BEService.get_gas_price(state)
+   
+        stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/gas_price/1").to_return(body: oregon_gas.to_json)
+        price = BEService.get_gas_price(user[:data][:id])
 
         expect(price[:data]).to have_key(:gas_price)
         expect(price[:data][:gas_price]).to eq("3.270")
@@ -203,7 +203,3 @@ RSpec.describe BEService do
     end
   end
 end 
-=======
-  end
-end 
->>>>>>> main

@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    if @user.state != ""
-      state_price = GasFacade.price(@user.state)
-      @price = state_price.gas_price    
-    end
+    # require 'pry'; binding.pry
+    # if @user.city.empty? == false && @user.state.empty? == false
+    @price = GasFacade.price(@user.id)
+    # end
   end
 
   def update
@@ -22,12 +22,3 @@ class UsersController < ApplicationController
   end
 end
 
-# it "shows gas price on dashboard" do
-#   # within("#the_gas_price") do
-#   #   expect(page).to have_content("The current price of gas per gallon is $3.27")
-#   # end
-# end
-
-# @oregon_gas = {data:{gas_price: "3.270"}}
-  
-#       stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/get_gas_price/Oregon").to_return(body: @oregon_gas.to_json)

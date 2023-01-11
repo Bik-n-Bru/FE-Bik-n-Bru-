@@ -26,9 +26,9 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/breweries/99').to_return(body: @brewery_data.to_json)
       stub_request(:get, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
       stub_request(:post, 'https://be-bik-n-bru.herokuapp.com/api/v1/users/99/activities').to_return(body: @activities_data.to_json)
-      @oregon_gas = {data:{gas_price: "3.270"}}
+      @oregon_gas = {data: {state: "oregon",gas_price: "3.270"}}
   
-      stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/get_gas_price/Oregon").to_return(body: @oregon_gas.to_json)
+      stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/gas_price/1").to_return(body: @oregon_gas.to_json)
       page.set_rack_session(user_id: '99')
       visit '/dashboard'
     end
@@ -38,6 +38,7 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     end
 
     it "shows gas price on dashboard" do
+  
       within("#the_gas_price") do
         expect(page).to have_content("The current price of gas per gallon is $3.27")
       end
@@ -99,8 +100,8 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
       it 'displays a form to add city and state if it has not been provided.
       When I fill in this form I am redirected to my dashboard where I no
       longer see a form to update my address' do
+      require 'pry'; binding.pry
         expect(page).to have_selector('#address_form')
-        
         within("#address_form") do
           fill_in "city", with: "Eugene"
           fill_in "state", with: "Oregon"
@@ -113,7 +114,6 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
         reset = {data:{city: "", state: ""}}
         BEService.update_user('5', reset)
       end
-
     end
   end
 

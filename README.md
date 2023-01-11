@@ -5,7 +5,10 @@
 This repo is the Front End portion of the Bīk-n-Brü project built by Mod 3 students at [Turing School of Software and Design](https://turing.edu/). <br>
 The purpose of this project is to encourage people to ride their bikes to bars to decrease their carbon footprint by gamifying the exercise/bar experience. 
 
-Also check out the *[Bīk-n-Brü Back End Git Hub Repo](https://github.com/Bik-n-Bru/BE-Bik-n-Bru)* and the *[Bīk-n-Brü Back End Website](https://be-bik-n-bru.herokuapp.com/)*
+Visit our [Bīk-n-Brü Website](https://bik-n-bru.herokuapp.com/)! Hosted on Heroku!
+<br>
+
+Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-Bru/BE-Bik-n-Bru)*
 <br>
 
 # Table of Contents

@@ -45,7 +45,6 @@ RSpec.describe 'The Dashboard Show Page', type: :feature do
     end
 
     it "shows gas price on dashboard" do
-
       within("#the_gas_price") do
         expect(page).to have_content("The current price of gas per gallon is $3.27")
       end

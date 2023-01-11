@@ -160,5 +160,46 @@ RSpec.describe BEService do
         expect(activity[:data][:attributes][:created_at]).to be_a(String)
       end
     end
+
+    describe '#create_activity' do
+      it 'posts an activity to the BE database and returns json of the
+      activity' do
+        activities_data = {data: {id:'1', attributes:{brewery_name:'Wagon Wheel', distance: 3.7, calories: 400, num_drinks: 2, drink_type: 'IPA', dollars_saved: 1.97, lbs_carbon_saved: 1.2, user_id: 5}}}
+        stub_request(:post, "https://be-bik-n-bru.herokuapp.com/api/v1/activities").to_return(body: activities_data.to_json)
+
+        activity_params = {data: {brewery_name: "Wild Corgi Pub",drink_type: "IPA",user_id: "1" }}
+        activity = BEService.create_activity(activity_params)
+
+        expect(activity[:data]).to have_key(:id)
+        expect(activity[:data]).to have_key(:attributes)
+        expect(activity[:data][:attributes][:brewery_name]).to eq("Wagon Wheel")
+        expect(activity[:data][:attributes][:distance]).to eq(3.7)
+        expect(activity[:data][:attributes][:calories]).to eq(400)
+        expect(activity[:data][:attributes][:num_drinks]).to eq(2)
+        expect(activity[:data][:attributes][:drink_type]).to eq("IPA")
+        expect(activity[:data][:attributes][:dollars_saved]).to eq(1.97)
+        expect(activity[:data][:attributes][:lbs_carbon_saved]).to eq(1.2)
+        expect(activity[:data][:attributes][:user_id]).to eq(5)
+      end
+    end
+
+    describe "#gas_price" do
+      it "should return a gas price" do
+        user = {data: {id: "1", type: "user", attributes: {username: "SPrefontaine", token: "12345abcde", athlete_id: "12345", city: "Eugene", state: "Oregon"}, relationships:{activities:{data:[]},badges:{data:[]}}}}
+        oregon_gas = 
+        {
+          data: {
+            state: "oregon",
+            gas_price: "3.270"
+          }
+        }
+   
+        stub_request(:get, "https://be-bik-n-bru.herokuapp.com/api/v1/gas_price/1").to_return(body: oregon_gas.to_json)
+        price = BEService.get_gas_price(user[:data][:id])
+
+        expect(price[:data]).to have_key(:gas_price)
+        expect(price[:data][:gas_price]).to eq("3.270")
+      end
+    end
   end
 end 

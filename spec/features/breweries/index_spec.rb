@@ -104,6 +104,7 @@ RSpec.describe "Breweries Index Page" do
       user returns to the breweries index page where a list of breweries are seen" do
         VCR.use_cassette('change_city_state_to_bend_oregon') do
           visit "/breweries"
+      
           fill_in :city, with: "Bend"
           select("Oregon", from: :state)
           click_button("Submit")

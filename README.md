@@ -3,6 +3,7 @@
 <br>
   
 This repo is the Front End portion of the Bīk-n-Brü project built by Mod 3 students at [Turing School of Software and Design](https://turing.edu/). <br>
+
 The purpose of this project is to encourage people to ride their bikes to bars to decrease their carbon footprint by gamifying the exercise/bar experience. 
 
 Visit our [Bīk-n-Brü Website](https://bik-n-bru.herokuapp.com/)! Hosted on Heroku!
@@ -17,6 +18,7 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
 - [Tech & Tools Used](#tech-and-tools)
 - [How to Set Up](#how-to-set-up)
 - [How to Run Test Suite](#how-to-run-test-suite)
+- [Use of Bīk-n-Brü](#use-of-bīk-n-brü)
 - [Contributors](#contributors)
     
 # Learning Goals
@@ -91,8 +93,31 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
     <li>Run <code>bundle exec rspec spec</code></li>
   </ol>
 
-### Project Team:
-# Contributors
+
+# Use of Bīk-n-Brü
+  - The landing page is home base. You will see a current user leaderboard with stats about that user and login options: <br>
+    <img src="doc/landing_page.png" width=auto height=500px>
+
+  - If you do not currently have a Strava account, choose that option. You will be directed to the Strava website and asked to set up an account.
+  - Once you have signed up for a Strava account, return to the landing page to sign in using Strava OAuth.
+  - You will use OAuth through your Strava account to utilize the Bīk-n-Brü site. <br>
+    <img src="doc/strava_oauth.png" width=auto height=500px>
+
+  - Once you are logged in using the Strava OAuth, you will be redirected to your dashboard page. <br>
+    <img src="doc/dashboard.png" width=auto height=500px>
+
+  - From your landing page you have access to many features, including:
+    - Creating an Activity: To create a new activity you would use you choose the brewery that you went to, your beverage of choice and click the button to "Tell me how many beers I've earned". 
+    - You would then be taken to that Activities show page. <br>
+      <img src="doc/activities_show.png" width=auto height=500px>
+    
+    - The index of breweries around your location: click on the "View All Local Breweries" link and you will be taken to the breweries index page. <br>
+      <img src="doc/breweries_index.png" width=auto height=500px>
+
+  - The navigation bar appears on all pages, allowing you to return to your home page, dashboard or logout at any time.
+
+# Project Team:
+## Contributors
 
 <table>
   <tr>

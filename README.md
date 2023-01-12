@@ -17,6 +17,7 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
 - [Tech & Tools Used](#tech-and-tools)
 - [How to Set Up](#how-to-set-up)
 - [How to Run Test Suite](#how-to-run-test-suite)
+- [Use of Bīk-n-Brü](#use-of-bīk-n-brü)
 - [Contributors](#contributors)
     
 # Learning Goals
@@ -90,6 +91,14 @@ Also check out the *[Bīk-n-Brü Back End GitHub Repo](https://github.com/Bik-n-
   <ol>
     <li>Run <code>bundle exec rspec spec</code></li>
   </ol>
+
+
+# Use of Bīk-n-Brü
+  - Start on the login page: <br>
+  <img src="https://avatars.githubusercontent.com/u/101589894?v=4" width=auto height=300px>
+
+  - You will use OAuth through your Strava account to utilize the Bīk-n-Brü site. 
+  - If you do not currently have a Strava account, choose that option
 
 ### Project Team:
 # Contributors
